@@ -4,86 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <title>2026 英國曼徹斯特與倫敦旅遊計畫 (V11 防截斷完美版)</title>
-    <style>
-        /* 強制所有元素包含 padding 與 border 計算寬度 */
-        html { box-sizing: border-box; }
-        *, *:before, *:after { box-sizing: inherit; }
+<style>
+    /* 調整後的加大字型樣式 */
+    @page { size: A4 landscape; margin: 10mm 12mm; }
+    body { 
+        font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; 
+        font-size: 15px; /* 內文基礎加大 */
+        line-height: 1.6; 
+        color: #333; 
+        margin: 0; 
+        padding: 20px;
+    }
+    h1 { font-size: 26px; color: #1a5276; text-align: center; border-bottom: 3px solid #1a5276; padding-bottom: 10px; }
+    h2 { font-size: 20px; color: #2980b9; margin-top: 30px; border-left: 8px solid #e74c3c; padding-left: 15px; }
+    table { width: 100%; border-collapse: collapse; table-layout: fixed; margin-top: 15px; }
+    th, td { 
+        border: 1px solid #bdc3c7; 
+        padding: 12px 10px; /* 增加內距，讓文字不擁擠 */
+        word-wrap: break-word; 
+    }
+    th { background-color: #2980b9; color: white; font-size: 16px; }
+    .notes { background-color: #fef9e7; padding: 15px; font-size: 14px; border-left: 6px solid #f1c40f; }
+</style>
 
-        @page { 
-            size: A4 landscape; 
-            margin: 12mm 15mm; 
-        }
-        body { 
-            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; 
-            font-size: 11px; /* 微調字體大小確保容納 */
-            line-height: 1.4; 
-            color: #333; 
-            background-color: #fff; 
-            margin: 0; 
-            padding: 0; 
-        }
-        h1 { 
-            text-align: center; 
-            color: #1a5276; 
-            border-bottom: 2px solid #2980b9; 
-            padding-bottom: 8px; 
-            margin-bottom: 12px; 
-            font-size: 18px;
-        }
-        h2 { 
-            page-break-before: always; 
-            color: #2980b9; 
-            margin-top: 0; 
-            padding-top: 5px; 
-            border-left: 6px solid #e74c3c; 
-            padding-left: 10px; 
-            font-size: 15px;
-        }
-        h2:first-of-type { 
-            page-break-before: avoid; 
-        }
-        
-        /* 表格容器設定為 99% 保留極小緩衝空間 */
-        table { 
-            width: 99%; 
-            border-collapse: collapse; 
-            margin-bottom: 12px; 
-            table-layout: fixed; 
-        }
-        th, td { 
-            border: 1px solid #bdc3c7; 
-            padding: 6px 4px; 
-            vertical-align: top; 
-            word-wrap: break-word; 
-            overflow-wrap: break-word; 
-            white-space: normal; 
-        }
-        th { 
-            background-color: #2980b9; 
-            color: #ffffff; 
-            text-align: left; 
-            font-weight: normal; 
-        }
-        tr { 
-            page-break-inside: avoid; 
-        }
-        
-        .notes { 
-            width: 99%;
-            background-color: #fef9e7; 
-            padding: 8px; 
-            border-radius: 4px; 
-            border-left: 5px solid #f1c40f; 
-            white-space: pre-line; 
-            page-break-inside: avoid; 
-        }
-        a.map-btn { 
-            display: inline-block; 
-            color: #d35400; 
-            text-decoration: underline; 
-            font-weight: bold; 
-        }
-    </style>
 </head>
 <body>
     <h1>2026 英國曼徹斯特與倫敦 家庭與學術旅遊計畫</h1>
