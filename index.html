@@ -2,1159 +2,1207 @@
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026 英國親子旅遊行程</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>2026 英國親子旅遊</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+:root {
+  --navy:#1B3A6B; --blue:#2E75B6; --sky:#D6E4F0;
+  --amber:#F0A500; --amberbg:#FEF3D0;
+  --green:#2E7D32; --greenbg:#E8F5E9;
+  --red:#C62828; --redbg:#FFEBEE;
+  --gray:#F5F5F5; --border:#E0E0E0;
+  --text:#212121; --muted:#757575;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang TC','Microsoft JhengHei',sans-serif;background:#F0F4F8;color:var(--text);font-size:14px;line-height:1.6;padding-bottom:80px;}
+a{color:var(--blue);text-decoration:none;}
+a:hover{text-decoration:underline;}
 
-  :root {
-    --navy: #1B3A6B;
-    --blue: #2E75B6;
-    --sky: #D6E4F0;
-    --amber: #F0A500;
-    --amberbg: #FEF3D0;
-    --green: #2E7D32;
-    --greenbg: #E8F5E9;
-    --red: #C62828;
-    --redbg: #FFEBEE;
-    --gray: #F5F5F5;
-    --border: #E0E0E0;
-    --text: #212121;
-    --muted: #757575;
-    --man: #EBF4FF;
-    --lon: #EBF9EE;
-  }
+/* Header */
+.hdr{background:linear-gradient(135deg,var(--navy),#2E5090);color:#fff;padding:16px;position:sticky;top:0;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,.3);}
+.hdr h1{font-size:17px;font-weight:700;}
+.hdr p{font-size:11px;opacity:.85;margin-top:2px;}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+/* Tab Nav */
+.tabs{display:flex;overflow-x:auto;background:#fff;border-bottom:2px solid var(--border);-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:68px;z-index:100;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{flex:0 0 auto;padding:10px 13px;font-size:12px;font-weight:500;color:var(--muted);background:none;border:none;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap;}
+.tab.on{color:var(--blue);border-bottom-color:var(--blue);font-weight:700;}
 
-  body {
-    font-family: 'Noto Sans TC', sans-serif;
-    background: #F0F4F8;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.6;
-  }
+/* Panels */
+.panel{display:none;padding:12px;}
+.panel.on{display:block;}
 
-  /* ── Header ── */
-  .app-header {
-    background: linear-gradient(135deg, var(--navy) 0%, #2E5090 100%);
-    color: white;
-    padding: 20px 16px 16px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  }
-  .app-header h1 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
-  .app-header p { font-size: 12px; opacity: 0.85; }
+/* Cards */
+.card{background:#fff;border-radius:12px;padding:14px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-left:4px solid var(--blue);}
+.card.man{border-left-color:#2196F3;}
+.card.lon{border-left-color:var(--green);}
+.card.tr{border-left-color:var(--amber);}
+.card.warn{border-left-color:var(--red);background:var(--redbg);}
+.card.tip{border-left-color:var(--green);background:var(--greenbg);}
+.card-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
 
-  /* ── Tab Nav ── */
-  .tab-nav {
-    display: flex;
-    overflow-x: auto;
-    background: white;
-    border-bottom: 2px solid var(--border);
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: 0;
-  }
-  .tab-nav::-webkit-scrollbar { display: none; }
-  .tab-btn {
-    flex: 0 0 auto;
-    padding: 10px 14px;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--muted);
-    background: none;
-    border: none;
-    border-bottom: 3px solid transparent;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: all 0.2s;
-  }
-  .tab-btn.active {
-    color: var(--blue);
-    border-bottom-color: var(--blue);
-    font-weight: 700;
-  }
+/* Badge */
+.badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700;background:var(--navy);color:#fff;}
+.badge.man{background:#2196F3;}
+.badge.lon{background:var(--green);}
+.badge.tr{background:var(--amber);color:var(--navy);}
 
-  /* ── Content ── */
-  .tab-content { display: none; padding: 12px; }
-  .tab-content.active { display: block; }
+/* Section header */
+.sec{font-size:13px;font-weight:700;color:var(--navy);background:var(--sky);padding:7px 12px;border-radius:6px;margin:12px 0 8px;display:flex;align-items:center;gap:5px;}
 
-  /* ── Cards ── */
-  .card {
-    background: white;
-    border-radius: 12px;
-    padding: 14px;
-    margin-bottom: 12px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-    border-left: 4px solid var(--blue);
-  }
-  .card.man { border-left-color: #2196F3; }
-  .card.lon { border-left-color: var(--green); }
-  .card.travel { border-left-color: var(--amber); }
-  .card.warning { border-left-color: var(--red); background: var(--redbg); }
-  .card.tip { border-left-color: var(--green); background: var(--greenbg); }
+/* Timeline */
+.tl{display:flex;gap:8px;margin-bottom:10px;position:relative;}
+.tl::before{content:'';position:absolute;left:32px;top:24px;bottom:-10px;width:2px;background:var(--border);}
+.tl:last-child::before{display:none;}
+.tl-time{flex:0 0 46px;font-size:11px;font-weight:700;color:var(--blue);text-align:right;padding-top:2px;}
+.tl-dot{flex:0 0 14px;width:14px;height:14px;border-radius:50%;background:var(--blue);margin-top:4px;z-index:1;flex-shrink:0;}
+.tl-dot.food{background:var(--amber);}
+.tl-dot.star{background:#9C27B0;}
+.tl-dot.warn{background:var(--red);}
+.tl-body{flex:1;}
+.tl-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px;}
+.tl-desc{font-size:11px;color:var(--muted);margin-bottom:3px;}
 
-  .card-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .badge {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 700;
-    background: var(--navy);
-    color: white;
-  }
-  .badge.man { background: #2196F3; }
-  .badge.lon { background: var(--green); }
-  .badge.travel { background: var(--amber); color: var(--navy); }
+/* Tags */
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;}
+.tag{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:10px;font-weight:500;}
+.tag.tr{background:#E3F2FD;color:#1565C0;}
+.tag.alt{background:#FFF3E0;color:#E65100;}
+.tag.food{background:#FFF8E1;color:#F57F17;}
+.tag.w{background:var(--redbg);color:var(--red);}
+.tag.ok{background:var(--greenbg);color:var(--green);}
+.tag.in{background:#EDE7F6;color:#4527A0;}
+.tag.out{background:#E0F2F1;color:#00695C;}
+.tag.fr{background:#E8F5E9;color:#2E7D32;}
 
-  /* ── Day Detail ── */
-  .day-header {
-    background: var(--navy);
-    color: white;
-    padding: 10px 12px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .day-header .day-num { font-size: 18px; font-weight: 700; }
-  .day-header .day-date { font-size: 12px; opacity: 0.85; }
+/* Map link */
+.maplink{display:inline-flex;align-items:center;gap:3px;color:var(--blue);font-size:11px;padding:3px 8px;background:var(--sky);border-radius:10px;margin-top:3px;}
 
-  .timeline-item {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-    position: relative;
-  }
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: 36px;
-    top: 28px;
-    bottom: -10px;
-    width: 2px;
-    background: var(--border);
-  }
-  .timeline-item:last-child::before { display: none; }
+/* Toilet */
+.toilet{background:#E3F2FD;border-radius:8px;padding:7px 10px;margin:4px 0;font-size:11px;display:flex;align-items:flex-start;gap:5px;}
 
-  .time-col {
-    flex: 0 0 52px;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--blue);
-    text-align: right;
-    padding-top: 2px;
-  }
-  .dot {
-    flex: 0 0 16px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: var(--blue);
-    margin-top: 4px;
-    z-index: 1;
-    flex-shrink: 0;
-  }
-  .dot.food { background: var(--amber); }
-  .dot.warn { background: var(--red); }
-  .dot.star { background: #9C27B0; }
+/* Day selector */
+.day-sel{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;}
+.day-btn{padding:5px 9px;border-radius:14px;font-size:11px;font-weight:600;border:2px solid var(--border);cursor:pointer;background:#fff;color:var(--muted);}
+.day-btn.man{border-color:#2196F3;}
+.day-btn.lon{border-color:var(--green);}
+.day-btn.tr{border-color:var(--amber);}
+.day-btn.on.man{background:#2196F3;color:#fff;}
+.day-btn.on.lon{background:var(--green);color:#fff;}
+.day-btn.on.tr{background:var(--amber);color:var(--navy);}
+.day-detail{display:none;}
+.day-detail.on{display:block;}
 
-  .item-body { flex: 1; }
-  .item-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 3px;
-  }
-  .item-desc {
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 4px;
-  }
+/* Day header */
+.day-hdr{background:var(--navy);color:#fff;padding:10px 12px;border-radius:8px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;}
+.day-hdr .dn{font-size:17px;font-weight:700;}
+.day-hdr .dd{font-size:11px;opacity:.85;}
 
-  .tag-row { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
-  .tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 11px;
-    font-weight: 500;
-  }
-  .tag.transport { background: #E3F2FD; color: #1565C0; }
-  .tag.alt { background: #FFF3E0; color: #E65100; }
-  .tag.food-tag { background: #FFF8E1; color: #F57F17; }
-  .tag.warn-tag { background: var(--redbg); color: var(--red); }
-  .tag.tip-tag { background: var(--greenbg); color: var(--green); }
-  .tag.indoor { background: #EDE7F6; color: #4527A0; }
-  .tag.outdoor { background: #E0F2F1; color: #00695C; }
-  .tag.free { background: #E8F5E9; color: #2E7D32; }
+/* Depart/Return box */
+.dr-box{background:var(--sky);border-radius:8px;padding:8px 12px;margin-bottom:10px;font-size:12px;}
+.dr-box .dr-title{font-weight:700;color:var(--navy);margin-bottom:4px;font-size:12px;}
+.dr-row{display:flex;align-items:flex-start;gap:6px;margin-top:3px;}
+.dr-icon{font-size:14px;flex-shrink:0;}
 
-  /* Google Maps 連結 */
-  .map-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    color: var(--blue);
-    font-size: 11px;
-    text-decoration: none;
-    margin-top: 4px;
-    padding: 3px 8px;
-    background: var(--sky);
-    border-radius: 12px;
-  }
+/* Table */
+.tbl{width:100%;border-collapse:collapse;font-size:12px;}
+.tbl th{background:var(--navy);color:#fff;padding:7px 9px;text-align:left;font-weight:600;}
+.tbl td{padding:7px 9px;border-bottom:1px solid var(--border);vertical-align:top;}
+.tbl tr:nth-child(even) td{background:var(--gray);}
 
-  /* ── Table ── */
-  .info-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-  .info-table th {
-    background: var(--navy);
-    color: white;
-    padding: 8px 10px;
-    text-align: left;
-    font-weight: 600;
-  }
-  .info-table td {
-    padding: 8px 10px;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-  }
-  .info-table tr:nth-child(even) td { background: var(--gray); }
-  .info-table tr:hover td { background: var(--sky); }
+/* Checklist */
+.chk-item{display:flex;align-items:flex-start;gap:8px;padding:9px 12px;border-bottom:1px solid var(--border);cursor:pointer;}
+.chk-item:hover{background:var(--gray);}
+.chk-item input[type=checkbox]{flex-shrink:0;width:18px;height:18px;margin-top:2px;accent-color:var(--green);}
+.chk-item.done .chk-title{text-decoration:line-through;color:var(--muted);}
+.chk-text{flex:1;}
+.chk-title{font-weight:600;font-size:13px;}
+.chk-desc{font-size:11px;color:var(--muted);margin-top:2px;}
+.chk-link{font-size:11px;color:var(--blue);word-break:break-all;}
+.pbadge{flex-shrink:0;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:700;}
+.pr{background:var(--redbg);color:var(--red);}
+.pa{background:var(--amberbg);color:#7B5E00;}
+.pg{background:var(--greenbg);color:var(--green);}
 
-  /* ── Checklist ── */
-  .check-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--border);
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .check-item:hover { background: var(--gray); }
-  .check-item input[type=checkbox] {
-    flex-shrink: 0;
-    width: 18px;
-    height: 18px;
-    margin-top: 2px;
-    cursor: pointer;
-    accent-color: var(--green);
-  }
-  .check-item.done .check-text { text-decoration: line-through; color: var(--muted); }
-  .check-text { flex: 1; }
-  .check-title { font-weight: 600; font-size: 13px; }
-  .check-desc { font-size: 11px; color: var(--muted); margin-top: 2px; }
-  .check-link { font-size: 11px; color: var(--blue); word-break: break-all; }
-  .priority-badge {
-    flex-shrink: 0;
-    font-size: 10px;
-    padding: 2px 6px;
-    border-radius: 10px;
-    font-weight: 700;
-  }
-  .p-red { background: var(--redbg); color: var(--red); }
-  .p-amber { background: var(--amberbg); color: #7B5E00; }
-  .p-green { background: var(--greenbg); color: var(--green); }
+/* Cost */
+.cost-sec{margin-bottom:14px;}
+.cost-hdr{font-size:12px;font-weight:700;color:#fff;background:var(--navy);padding:6px 12px;border-radius:6px 6px 0 0;}
+.cost-row{display:flex;justify-content:space-between;padding:7px 12px;border-bottom:1px solid var(--border);font-size:12px;}
+.cost-row:nth-child(even){background:var(--gray);}
+.cost-row.total{background:var(--amberbg);font-weight:700;font-size:13px;}
+.cost-amt{font-weight:600;color:var(--navy);}
 
-  /* ── Cost Table ── */
-  .cost-section { margin-bottom: 16px; }
-  .cost-section-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: white;
-    background: var(--navy);
-    padding: 6px 12px;
-    border-radius: 6px 6px 0 0;
-  }
-  .cost-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px 12px;
-    border-bottom: 1px solid var(--border);
-    font-size: 12px;
-  }
-  .cost-row:nth-child(even) { background: var(--gray); }
-  .cost-row.total {
-    background: var(--amberbg);
-    font-weight: 700;
-    font-size: 13px;
-  }
-  .cost-amount { font-weight: 600; color: var(--navy); }
+/* Currency converter */
+.converter{background:#fff;border-radius:10px;padding:14px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,.08);}
+.converter input{width:100%;padding:10px;border:2px solid var(--border);border-radius:8px;font-size:16px;text-align:center;margin:6px 0;}
+.converter .result{font-size:20px;font-weight:700;color:var(--navy);text-align:center;padding:8px;}
+.converter .rate{font-size:11px;color:var(--muted);text-align:center;}
+.btn-swap{width:100%;padding:8px;background:var(--sky);border:none;border-radius:8px;color:var(--navy);font-weight:700;cursor:pointer;margin:4px 0;}
 
-  /* ── Emergency ── */
-  .emergency-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--border);
-  }
-  .emergency-item .e-icon { font-size: 20px; flex-shrink: 0; }
-  .emergency-item .e-label { font-size: 11px; color: var(--muted); }
-  .emergency-item .e-value { font-size: 13px; font-weight: 600; }
-  .emergency-item a { color: var(--blue); text-decoration: none; }
+/* Summary grid */
+.sum-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px;}
+.sum-card{background:#fff;border-radius:10px;padding:12px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.08);}
+.sum-card .sn{font-size:20px;font-weight:700;color:var(--navy);}
+.sum-card .sl{font-size:11px;color:var(--muted);margin-top:2px;}
 
-  /* ── Section Header ── */
-  .section-header {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--navy);
-    background: var(--sky);
-    padding: 8px 12px;
-    border-radius: 6px;
-    margin: 12px 0 8px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
+/* Hotel grid */
+.hotel-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;}
+@media(max-width:400px){.hotel-grid{grid-template-columns:1fr;}}
+.hotel-card{background:#fff;border-radius:10px;padding:12px;box-shadow:0 1px 4px rgba(0,0,0,.1);border-top:4px solid var(--blue);}
+.hotel-card.lon{border-top-color:var(--green);}
+.hotel-name{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:5px;}
+.hotel-info{font-size:10px;color:var(--muted);line-height:1.9;}
+.hotel-price{font-size:15px;font-weight:700;color:var(--amber);margin:6px 0 3px;}
+.hotel-rating{display:inline-block;background:var(--green);color:#fff;font-size:11px;font-weight:700;padding:2px 7px;border-radius:5px;}
 
-  /* ── Hotel Card ── */
-  .hotel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  @media (max-width: 480px) { .hotel-grid { grid-template-columns: 1fr; } }
-  .hotel-card {
-    background: white;
-    border-radius: 10px;
-    padding: 12px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    border-top: 4px solid var(--blue);
-  }
-  .hotel-card.london { border-top-color: var(--green); }
-  .hotel-name { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-  .hotel-info { font-size: 11px; color: var(--muted); line-height: 1.8; }
-  .hotel-price {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--amber);
-    margin: 8px 0 4px;
-  }
-  .hotel-rating {
-    display: inline-block;
-    background: var(--green);
-    color: white;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 6px;
-  }
+/* Emergency */
+.em-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid var(--border);}
+.em-icon{font-size:22px;flex-shrink:0;}
+.em-label{font-size:11px;color:var(--muted);}
+.em-value{font-size:13px;font-weight:600;}
 
-  /* ── Toilet Info ── */
-  .toilet-item {
-    background: #E3F2FD;
-    border-radius: 8px;
-    padding: 8px 12px;
-    margin: 4px 0;
-    font-size: 11px;
-    display: flex;
-    align-items: flex-start;
-    gap: 6px;
-  }
-  .toilet-item .t-icon { font-size: 14px; flex-shrink: 0; }
+/* Booking list */
+.bk-item{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 12px;border-bottom:1px solid var(--border);font-size:12px;}
+.bk-name{font-weight:600;color:var(--navy);}
+.bk-detail{font-size:11px;color:var(--muted);margin-top:2px;}
+.bk-num{font-size:13px;font-weight:700;color:var(--amber);text-align:right;min-width:80px;}
 
-  /* ── Summary Cards ── */
-  .summary-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-bottom: 12px;
-  }
-  .summary-card {
-    background: white;
-    border-radius: 10px;
-    padding: 12px;
-    text-align: center;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-  }
-  .summary-card .s-num {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--navy);
-  }
-  .summary-card .s-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
+/* Phrase */
+.phrase-item{display:flex;justify-content:space-between;padding:9px 12px;border-bottom:1px solid var(--border);font-size:12px;}
+.phrase-zh{color:var(--navy);font-weight:600;}
+.phrase-en{color:var(--muted);}
 
-  /* Day selector */
-  .day-selector {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 12px;
-  }
-  .day-btn {
-    padding: 5px 10px;
-    border-radius: 16px;
-    font-size: 11px;
-    font-weight: 600;
-    border: 2px solid transparent;
-    cursor: pointer;
-    background: white;
-    color: var(--muted);
-    border-color: var(--border);
-    transition: all 0.2s;
-  }
-  .day-btn.man { border-color: #2196F3; }
-  .day-btn.lon { border-color: var(--green); }
-  .day-btn.travel { border-color: var(--amber); }
-  .day-btn.active { color: white; }
-  .day-btn.man.active { background: #2196F3; }
-  .day-btn.lon.active { background: var(--green); }
-  .day-btn.travel.active { background: var(--amber); color: var(--navy); }
+/* Progress bar */
+.prog-bar{background:var(--border);border-radius:10px;height:8px;margin:8px 0;}
+.prog-fill{background:var(--green);height:8px;border-radius:10px;transition:width .3s;}
 
-  .day-detail { display: none; }
-  .day-detail.active { display: block; }
+/* Weather */
+.wx-card{background:#fff;border-radius:10px;padding:12px;margin-bottom:8px;box-shadow:0 1px 4px rgba(0,0,0,.08);}
+.wx-city{font-weight:700;color:var(--navy);font-size:13px;}
+.wx-temp{font-size:22px;font-weight:700;color:var(--amber);}
+.wx-desc{font-size:11px;color:var(--muted);}
+
+/* Packing */
+.pack-day{background:#fff;border-radius:8px;padding:10px 12px;margin-bottom:8px;box-shadow:0 1px 3px rgba(0,0,0,.07);}
+.pack-day-title{font-weight:700;font-size:12px;color:var(--navy);margin-bottom:6px;}
+.pack-item{display:flex;align-items:center;gap:6px;font-size:12px;padding:3px 0;}
+.pack-item input[type=checkbox]{accent-color:var(--amber);}
 </style>
 </head>
 <body>
 
-<div class="app-header">
-  <h1>✈️ 2026 英國親子學術旅遊</h1>
-  <p>曼徹斯特 × 倫敦　｜　6/28–7/10　｜　2大+2孩（8歲、11歲）</p>
+<div class="hdr">
+  <h1>✈️ 2026 英國親子旅遊</h1>
+  <p>曼徹斯特 × 倫敦　6/28–7/10　2大+2孩（8歲、11歲）｜台灣時間 = 英國時間 +7小時</p>
 </div>
 
-<div class="tab-nav">
-  <button class="tab-btn active" onclick="showTab('overview')">📋 總覽</button>
-  <button class="tab-btn" onclick="showTab('itinerary')">🗓️ 行程</button>
-  <button class="tab-btn" onclick="showTab('hotels')">🏨 住宿</button>
-  <button class="tab-btn" onclick="showTab('transport')">🚇 交通</button>
-  <button class="tab-btn" onclick="showTab('checklist')">✅ Checklist</button>
-  <button class="tab-btn" onclick="showTab('costs')">💰 費用</button>
-  <button class="tab-btn" onclick="showTab('emergency')">🆘 緊急</button>
+<div class="tabs">
+  <button class="tab on" onclick="showTab('overview')">📋總覽</button>
+  <button class="tab" onclick="showTab('itinerary')">🗓️行程</button>
+  <button class="tab" onclick="showTab('hotels')">🏨住宿</button>
+  <button class="tab" onclick="showTab('transport')">🚇交通</button>
+  <button class="tab" onclick="showTab('checklist')">✅待辦</button>
+  <button class="tab" onclick="showTab('bookings')">📌預訂</button>
+  <button class="tab" onclick="showTab('costs')">💰費用</button>
+  <button class="tab" onclick="showTab('tools')">🛠️工具</button>
+  <button class="tab" onclick="showTab('emergency')">🆘緊急</button>
 </div>
 
 <!-- ══ 總覽 ══ -->
-<div id="tab-overview" class="tab-content active">
-
-  <div class="summary-grid">
-    <div class="summary-card">
-      <div class="s-num">13</div>
-      <div class="s-label">旅遊天數</div>
-    </div>
-    <div class="summary-card">
-      <div class="s-num">4</div>
-      <div class="s-label">旅遊人數</div>
-    </div>
-    <div class="summary-card">
-      <div class="s-num">2</div>
-      <div class="s-label">城市</div>
-    </div>
-    <div class="summary-card">
-      <div class="s-num">NT$139,904</div>
-      <div class="s-label">機票費用</div>
-    </div>
+<div id="tab-overview" class="panel on">
+  <div class="sum-grid">
+    <div class="sum-card"><div class="sn">13天</div><div class="sl">旅遊天數</div></div>
+    <div class="sum-card"><div class="sn">4人</div><div class="sl">2大+2孩</div></div>
+    <div class="sum-card"><div class="sn">2城市</div><div class="sl">曼城+倫敦</div></div>
+    <div class="sum-card"><div class="sn">NT$139,904</div><div class="sl">機票費用</div></div>
   </div>
 
-  <div class="section-header">✈️ 航班資訊</div>
+  <div class="card warn">
+    <div class="card-title">⏰ 時差提醒</div>
+    <div style="font-size:12px">英國夏令時間（BST）比台灣<strong>慢 7 小時</strong><br>
+    台灣 21:45 出發 = 英國當地時間 14:45<br>
+    與家人聯絡時請注意時差！</div>
+  </div>
+
+  <div class="sec">✈️ 航班資訊</div>
   <div class="card">
-    <div style="margin-bottom:10px">
-      <div class="card-title">去程</div>
-      <div style="font-size:13px"><strong>土耳其航空 TK</strong></div>
-      <div style="font-size:12px;color:var(--muted)">6/28 21:45 TPE T2 → 伊斯坦堡（4h45m）→ 6/29 12:05 MAN T2</div>
-      <div class="tag-row">
-        <span class="tag warn-tag">⚠️ 不可退票</span>
-        <span class="tag tip-tag">✅ 行李直掛30KG/人</span>
-        <span class="tag tip-tag">✅ 過境免簽</span>
-      </div>
+    <div class="card-title">去程</div>
+    <div style="font-size:12px"><strong>土耳其航空 TK</strong>　6/28 21:45 TPE T2 出發</div>
+    <div style="font-size:11px;color:var(--muted)">→ 伊斯坦堡 IST（停留 4h45m）→ 6/29 12:05 MAN T2</div>
+    <div class="tags" style="margin-top:6px">
+      <span class="tag ok">✅ 過境免簽</span>
+      <span class="tag ok">✅ 行李直掛 30KG</span>
+      <span class="tag w">⚠️ 不可退票</span>
     </div>
-    <hr style="border:none;border-top:1px solid var(--border);margin:10px 0">
-    <div>
-      <div class="card-title">回程</div>
-      <div style="font-size:13px"><strong>TK1986 → TK024</strong></div>
-      <div style="font-size:12px;color:var(--muted)">7/9 16:45 LHR T2 → 伊斯坦堡（2h55m）→ 7/10 17:55 TPE T2</div>
-      <div class="tag-row">
-        <span class="tag warn-tag">⚠️ T2B登機閘口走30分</span>
-        <span class="tag tip-tag">✅ 行李直掛</span>
-      </div>
+  </div>
+  <div class="card">
+    <div class="card-title">回程</div>
+    <div style="font-size:12px"><strong>TK1986 → TK024</strong>　7/9 16:45 LHR T2 出發</div>
+    <div style="font-size:11px;color:var(--muted)">→ 伊斯坦堡（停留 2h55m）→ 7/10 17:55 TPE T2</div>
+    <div class="tags" style="margin-top:6px">
+      <span class="tag w">⚠️ T2B 閘口走 30 分</span>
+      <span class="tag ok">✅ 行李直掛</span>
     </div>
   </div>
 
-  <div class="section-header">📅 行程總覽</div>
-  <div id="overview-days"></div>
+  <div class="sec">🚕 出發日接送</div>
+  <div class="card tip">
+    <div class="card-title">匯豐輕旅卡 × 全峰汽車七人座</div>
+    <div style="font-size:12px;line-height:2">
+      🗓️ 出發：6/28（週日）　建議乘車時間：<strong>19:00–19:30</strong><br>
+      📍 台中住家 → 桃園機場 T2<br>
+      🚐 車型：<strong>七人商務座（加價 NT$500）</strong><br>
+      ⚠️ 預約截止：最晚 <strong>6/24（週三）</strong> 前完成<br>
+      📞 匯豐客服：<a href="tel:0280006929">0800-860-929 #2</a><br>
+      💡 預約流程：先登入 HSBC App 完成兌換 → 等 2 工作天 → 致電全峰確認
+    </div>
+  </div>
 
+  <div class="sec">📅 行程總覽</div>
+  <div id="overview-list"></div>
 </div>
 
 <!-- ══ 行程 ══ -->
-<div id="tab-itinerary" class="tab-content">
-  <div class="day-selector" id="day-selector"></div>
+<div id="tab-itinerary" class="panel">
+  <div class="day-sel" id="day-sel"></div>
   <div id="day-details"></div>
 </div>
 
 <!-- ══ 住宿 ══ -->
-<div id="tab-hotels" class="tab-content">
-
+<div id="tab-hotels" class="panel">
   <div class="hotel-grid">
     <div class="hotel-card">
       <div class="hotel-name">🏙️ 曼徹斯特</div>
       <div class="hotel-price">NT$5,624/晚</div>
       <span class="hotel-rating">9.0 太棒了</span>
-      <div class="hotel-info" style="margin-top:8px">
-        <strong>Residence Inn by Marriott Manchester Piccadilly</strong><br>
-        ★★★★ 4星<br>
-        6/29–7/4（5晚）NT$28,120<br>
+      <div class="hotel-info" style="margin-top:6px">
+        Residence Inn by Marriott<br>Manchester Piccadilly<br>
+        ★★★★ 4星　6/29–7/4（5晚）<br>
         地址：Great Ancoats St, M1 2JZ<br>
-        ✅ 免費早餐（06:30）<br>
+        ✅ 免費早餐（06:30 起）<br>
         ✅ 套房含廚房+客廳<br>
-        ✅ 24H自助洗衣機<br>
-        ✅ 健身房24H<br>
-        Piccadilly站步行10分
+        ✅ 24H 自助洗衣機<br>
+        Piccadilly 站步行 10 分
       </div>
-      <a href="https://maps.google.com/maps?q=Residence+Inn+Manchester+Piccadilly" target="_blank" class="map-link">📍 Google Maps</a>
+      <a href="https://maps.google.com/maps?q=Residence+Inn+Manchester+Piccadilly" target="_blank" class="maplink">📍 Google Maps</a>
     </div>
-
-    <div class="hotel-card london">
+    <div class="hotel-card lon">
       <div class="hotel-name">🏙️ 倫敦</div>
       <div class="hotel-price">NT$7,343/晚</div>
       <span class="hotel-rating">8.5 超棒</span>
-      <div class="hotel-info" style="margin-top:8px">
-        <strong>Premier Inn London Hammersmith Talgarth Road</strong><br>
+      <div class="hotel-info" style="margin-top:6px">
+        Premier Inn London<br>Hammersmith Talgarth Road<br>
         ★★★ 3星　2024全新建築<br>
-        7/4–7/9（5晚）NT$36,715<br>
+        7/4–7/9（5晚）<br>
         地址：181 Talgarth Rd, W6 8DN<br>
         ✅ Family Quadruple Room<br>
         ✅ Piccadilly Line直達Heathrow<br>
-        ✅ Hammersmith三線交匯<br>
-        地鐵站步行5分
+        Hammersmith 站步行 5 分
       </div>
-      <a href="https://maps.google.com/maps?q=Premier+Inn+Hammersmith+Talgarth+Road" target="_blank" class="map-link">📍 Google Maps</a>
+      <a href="https://maps.google.com/maps?q=Premier+Inn+Hammersmith+Talgarth+Road" target="_blank" class="maplink">📍 Google Maps</a>
     </div>
   </div>
 
-  <div class="section-header">⚠️ 訂房注意事項</div>
-  <div class="card warning">
+  <div class="sec">⚠️ 訂房注意</div>
+  <div class="card warn">
     <div style="font-size:12px;line-height:2">
-      📌 <strong>曼城飯店</strong>訂房備註：「quiet room away from building noise」<br>
-      📌 <strong>倫敦飯店</strong>訂房備註：「full window room preferred」<br>
-      📌 曼城飯店城市稅：£1.20/晚×5晚=£6，需現場繳交<br>
-      📌 曼城飯店押金：£50（退房後退還）<br>
-      📌 <strong>倫敦飯店退款截止：6/28前可全額退款</strong>
+      📌 曼城備註：「quiet room away from noise」<br>
+      📌 倫敦備註：「full window room preferred」<br>
+      📌 曼城城市稅：£1.20/晚 × 5晚 = £6，現場繳<br>
+      📌 曼城押金：£50（退房後退還）<br>
+      📌 <strong>倫敦退款截止：6/28 前可全額退款</strong>
     </div>
   </div>
 
-  <div class="section-header">🚻 廁所資訊</div>
+  <div class="sec">🚻 廁所備案</div>
   <div class="card">
-    <div style="font-size:13px;font-weight:700;margin-bottom:8px">倫敦主要景點廁所位置</div>
-    <div class="toilet-item"><span class="t-icon">🚻</span><div><strong>海德公園</strong><br>Lido Café廁所（Diana噴泉旁，免費）<br><a href="https://maps.google.com/maps?q=Lido+Cafe+Hyde+Park+Toilets" style="color:var(--blue);font-size:11px">📍 Google Maps</a></div></div>
-    <div class="toilet-item"><span class="t-icon">🚻</span><div><strong>格林威治公園</strong><br>公園主入口附近公廁（免費）<br><a href="https://maps.google.com/maps?q=Greenwich+Park+Toilets" style="color:var(--blue);font-size:11px">📍 Google Maps</a></div></div>
-    <div class="toilet-item"><span class="t-icon">🚻</span><div><strong>倫敦塔周邊</strong><br>塔橋南側Tower Hamlets公廁<br><a href="https://maps.google.com/maps?q=Tower+Bridge+public+toilets" style="color:var(--blue);font-size:11px">📍 Google Maps</a></div></div>
-    <div class="toilet-item"><span class="t-icon">🚻</span><div><strong>Borough Market</strong><br>市集內設有免費廁所<br><a href="https://maps.google.com/maps?q=Borough+Market+toilets" style="color:var(--blue);font-size:11px">📍 Google Maps</a></div></div>
-    <div class="toilet-item"><span class="t-icon">💡</span><div><strong>緊急備案</strong>：各地McDonald's免費廁所，或Starbucks消費後使用</div></div>
+    <div style="font-size:12px;font-weight:700;margin-bottom:6px">倫敦主要戶外景點廁所</div>
+    <div class="toilet"><span>🚻</span><div><strong>海德公園</strong>：Lido Café廁所（Diana噴泉旁，免費）<br><a href="https://maps.google.com/maps?q=Hyde+Park+toilets+London">📍 Google Maps</a></div></div>
+    <div class="toilet"><span>🚻</span><div><strong>格林威治公園</strong>：公園入口旁公廁（免費）<br><a href="https://maps.google.com/maps?q=Greenwich+Park+toilets">📍 Google Maps</a></div></div>
+    <div class="toilet"><span>🚻</span><div><strong>Borough Market</strong>：市集內免費廁所<br><a href="https://maps.google.com/maps?q=Borough+Market+toilets">📍 Google Maps</a></div></div>
+    <div class="toilet"><span>🚻</span><div><strong>塔橋周邊</strong>：Tower Hamlets 公廁（塔橋南側）<br><a href="https://maps.google.com/maps?q=Tower+Bridge+public+toilets">📍 Google Maps</a></div></div>
+    <div class="toilet"><span>💡</span><div><strong>緊急備案</strong>：McDonald's（免費，全倫敦遍佈）</div></div>
   </div>
-
 </div>
 
 <!-- ══ 交通 ══ -->
-<div id="tab-transport" class="tab-content">
-
-  <div class="section-header">📱 必備 App（出發前下載）</div>
+<div id="tab-transport" class="panel">
+  <div class="sec">📱 必備 App（出發前下載）</div>
   <div class="card">
-    <table class="info-table">
-      <tr><th>App名稱</th><th>用途</th></tr>
-      <tr><td><strong>Thames Clippers Tickets</strong></td><td>Uber Boat即時船隻追蹤+班次查詢</td></tr>
-      <tr><td><strong>Citymapper</strong></td><td>整合所有倫敦交通，備用路線查詢</td></tr>
+    <table class="tbl">
+      <tr><th>App</th><th>用途</th></tr>
+      <tr><td><strong>Thames Clippers Tickets</strong></td><td>Uber Boat即時船隻追蹤+班次</td></tr>
+      <tr><td><strong>Citymapper</strong></td><td>整合倫敦所有交通，備用路線</td></tr>
       <tr><td><strong>Avanti West Coast</strong></td><td>火車電子票+即時動態</td></tr>
-      <tr><td><strong>Bee Network（曼城）</strong></td><td>Metroshuttle免費巴士班次追蹤</td></tr>
+      <tr><td><strong>Bee Network（曼城）</strong></td><td>免費 Metroshuttle 班次追蹤</td></tr>
       <tr><td><strong>Uber</strong></td><td>緊急計程車備用</td></tr>
+      <tr><td><strong>HSBC 信用卡 App</strong></td><td>機場接送兌換+權益查詢</td></tr>
     </table>
   </div>
 
-  <div class="section-header">🚌 曼徹斯特免費巴士 Metroshuttle</div>
+  <div class="sec">🚌 曼徹斯特 Metroshuttle 免費巴士</div>
   <div class="card tip">
     <div style="font-size:12px;line-height:2">
-      <strong>Route 1（橘線）</strong>：Piccadilly站 → 中國城 → MOSI → Spinningfields → Deansgate<br>
-      <strong>Route 2（綠線）</strong>：Piccadilly站 → Oxford Road站 → 曼博物館 → AMBS<br>
-      ⏰ 每10分鐘一班　💰 完全免費　📍 上車地點：Piccadilly火車站前（步行10分）
+      <strong>上車地點：Manchester Piccadilly 火車站（Station Approach 出口）</strong><br>
+      ⚠️ 不是 Piccadilly Gardens！那裡是付費公車站<br>
+      <strong>Route 1（橘線）</strong>：Piccadilly站→中國城→MOSI→Spinningfields→Deansgate<br>
+      <strong>Route 2（綠線）</strong>：Piccadilly站→Oxford Road→曼博物館→AMBS<br>
+      ⏰ 每 10 分鐘一班　💰 完全免費<br>
+      📍 飯店步行 10 分至 Piccadilly 站即可搭乘
     </div>
   </div>
 
-  <div class="section-header">🚂 火車資訊</div>
+  <div class="sec">🚂 火車訂票資訊</div>
   <div class="card">
-    <table class="info-table">
+    <table class="tbl">
       <tr><th>路線</th><th>天次</th><th>費用</th><th>時間</th></tr>
       <tr><td>MAN→Liverpool</td><td>Day 3（6/30）</td><td>£25-30/4人</td><td>35分</td></tr>
       <tr><td>MAN→Chester</td><td>Day 5（7/2）</td><td>£35-45/4人</td><td>55分</td></tr>
-      <tr><td>MAN→London Euston</td><td>Day 7（7/4）已訂</td><td>£65/4人✅</td><td>2h25m</td></tr>
+      <tr><td>MAN→London Euston</td><td>Day 7（7/4）✅已訂</td><td>£65/4人</td><td>2h25m</td></tr>
     </table>
-    <div class="tag-row" style="margin-top:8px">
-      <span class="tag tip-tag">✅ Avanti火車已訂：12:14出發，Coach E，E17-20</span>
+    <div class="tags" style="margin-top:8px">
+      <span class="tag ok">✅ Avanti 12:14 Coach E，E17-E20 桌位已訂</span>
     </div>
   </div>
 
-  <div class="section-header">🚇 倫敦交通</div>
+  <div class="sec">🚇 倫敦交通重點</div>
   <div class="card">
     <div style="font-size:12px;line-height:2">
-      💳 <strong>付款方式</strong>：感應信用卡/Apple Pay直接刷地鐵（與Oyster Card費率相同）<br>
-      🔑 <strong>機場交通</strong>：Piccadilly Line直達Heathrow T2/T3（35-40分，無需換車）<br>
-      🚢 <strong>Thames Clipper</strong>：格林威治來回£9/人，Hammersmith Pier步行12分<br>
-      📍 <strong>Hammersmith站</strong>：飯店步行5分，含Piccadilly+District+H&C三線
+      💳 <strong>付款</strong>：感應信用卡/Apple Pay（費率與 Oyster 相同）<br>
+      ✈️ <strong>機場</strong>：Piccadilly Line 直達 Heathrow T2（35-40分，0換乘）<br>
+      🚢 <strong>格林威治</strong>：Hammersmith Pier 步行 12 分，Thames Clipper £9/人<br>
+      🚇 <strong>飯店→景點</strong>：District Line 串接西倫敦所有景點<br>
+      🚕 <strong>夜間</strong>：Uber 備用，10-20 分鐘叫到車
     </div>
   </div>
 
+  <div class="sec">📋 每日出發/返回路線</div>
+  <div id="transport-days"></div>
 </div>
 
-<!-- ══ Checklist ══ -->
-<div id="tab-checklist" class="tab-content">
-  <div class="section-header">🔴 立刻辦理</div>
-  <div id="checklist-red"></div>
-  <div class="section-header">🟡 出發前4–6週</div>
-  <div id="checklist-amber"></div>
-  <div class="section-header">🟢 出發前1–2週</div>
-  <div id="checklist-green"></div>
-  <div style="text-align:center;padding:12px;font-size:12px;color:var(--muted)" id="checklist-progress"></div>
+<!-- ══ 待辦 ══ -->
+<div id="tab-checklist" class="panel">
+  <div style="padding:4px 0 10px">
+    <div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+    <div style="text-align:center;font-size:12px;color:var(--muted)" id="prog-text">完成進度：0 / 0</div>
+  </div>
+  <div class="sec">🔴 立刻辦理</div>
+  <div id="cl-red"></div>
+  <div class="sec">🟡 出發前 4–6 週</div>
+  <div id="cl-amber"></div>
+  <div class="sec">🟢 出發前 1–2 週</div>
+  <div id="cl-green"></div>
+</div>
+
+<!-- ══ 預訂確認 ══ -->
+<div id="tab-bookings" class="panel">
+  <div class="sec">✈️ 航班</div>
+  <div class="card">
+    <div class="bk-item"><div><div class="bk-name">去程 土耳其航空 TK</div><div class="bk-detail">6/28 21:45 TPE T2 → 6/29 12:05 MAN</div></div><div class="bk-num">已購票</div></div>
+    <div class="bk-item"><div><div class="bk-name">回程 TK1986 + TK024</div><div class="bk-detail">7/9 16:45 LHR T2 → 7/10 17:55 TPE</div></div><div class="bk-num">已購票</div></div>
+  </div>
+
+  <div class="sec">🚂 火車</div>
+  <div class="card">
+    <div class="bk-item"><div><div class="bk-name">Avanti Manchester→London</div><div class="bk-detail">7/4 12:14 Coach E，E17-E20 桌位</div></div><div class="bk-num" style="color:var(--green)">✅已訂<br>£65</div></div>
+    <div class="bk-item"><div><div class="bk-name">曼城↔利物浦（6/30）</div><div class="bk-detail">Manchester Piccadilly → Liverpool Lime Street</div></div><div class="bk-num" style="color:var(--red)">待訂</div></div>
+    <div class="bk-item"><div><div class="bk-name">曼城↔Chester（7/2）</div><div class="bk-detail">Manchester Piccadilly → Chester</div></div><div class="bk-num" style="color:var(--red)">待訂</div></div>
+  </div>
+
+  <div class="sec">🏨 住宿</div>
+  <div class="card">
+    <div class="bk-item"><div><div class="bk-name">Residence Inn Manchester</div><div class="bk-detail">6/29–7/4（5晚）NT$28,120</div></div><div class="bk-num" id="man-hotel-status" style="color:var(--red)">待訂</div></div>
+    <div class="bk-item"><div><div class="bk-name">Premier Inn Hammersmith</div><div class="bk-detail">7/4–7/9（5晚）NT$36,715</div></div><div class="bk-num" id="lon-hotel-status" style="color:var(--red)">待訂</div></div>
+  </div>
+
+  <div class="sec">🏛️ 景點預約</div>
+  <div class="card">
+    <div class="bk-item"><div><div class="bk-name">倫敦塔（7/6，14:00）</div><div class="bk-detail">2大+2孩，£107.40 | hrp.org.uk</div></div><div class="bk-num" style="color:var(--red)">待訂</div></div>
+    <div class="bk-item"><div><div class="bk-name">自然歷史博物館（7/7，10:00）</div><div class="bk-detail">免費，需預約 | nhm.ac.uk</div></div><div class="bk-num" style="color:var(--red)">待訂</div></div>
+    <div class="bk-item"><div><div class="bk-name">大英博物館（7/8，09:30）</div><div class="bk-detail">免費，需預約 | britishmuseum.org</div></div><div class="bk-num" style="color:var(--red)">待訂</div></div>
+  </div>
+
+  <div class="sec">🍽️ 餐廳訂位</div>
+  <div class="card">
+    <div class="bk-item"><div><div class="bk-name">Hawksmoor Manchester（7/1）</div><div class="bk-detail">thehawksmoor.com/manchester</div></div><div class="bk-num" style="color:var(--red)">待訂</div></div>
+    <div class="bk-item"><div><div class="bk-name">Dishoom 柯芬園（7/6，19:30）</div><div class="bk-detail">dishoom.com/covent-garden</div></div><div class="bk-num" style="color:var(--red)">待訂</div></div>
+  </div>
+
+  <div class="sec">🚕 機場接送</div>
+  <div class="card tip">
+    <div class="bk-item"><div><div class="bk-name">匯豐輕旅卡 × 全峰汽車（6/28）</div><div class="bk-detail">台中→桃園T2，七人座+NT$500<br>⚠️ 今天登入 HSBC App 完成兌換！</div></div><div class="bk-num" style="color:var(--red)">待預約</div></div>
+  </div>
+
+  <div style="text-align:center;padding:10px;font-size:11px;color:var(--muted)">
+    點擊各項目的狀態可標記為已完成
+  </div>
 </div>
 
 <!-- ══ 費用 ══ -->
-<div id="tab-costs" class="tab-content">
-
-  <div class="cost-section">
-    <div class="cost-section-title">✈️ 機票</div>
-    <div class="cost-row"><span>土耳其航空（成人×2）</span><span class="cost-amount">NT$78,070</span></div>
-    <div class="cost-row"><span>土耳其航空（孩童×2）</span><span class="cost-amount">NT$61,834</span></div>
-    <div class="cost-row total"><span>機票合計</span><span class="cost-amount">NT$139,904</span></div>
+<div id="tab-costs" class="panel">
+  <div class="cost-sec">
+    <div class="cost-hdr">✈️ 機票</div>
+    <div class="cost-row"><span>土耳其航空（成人×2）</span><span class="cost-amt">NT$78,070</span></div>
+    <div class="cost-row"><span>土耳其航空（孩童×2）</span><span class="cost-amt">NT$61,834</span></div>
+    <div class="cost-row total"><span>機票合計</span><span class="cost-amt">NT$139,904</span></div>
   </div>
-
-  <div class="cost-section">
-    <div class="cost-section-title">🏨 住宿</div>
-    <div class="cost-row"><span>Residence Inn Manchester（5晚）</span><span class="cost-amount">NT$28,120</span></div>
-    <div class="cost-row"><span>Premier Inn Hammersmith（5晚）</span><span class="cost-amount">NT$36,715</span></div>
-    <div class="cost-row total"><span>住宿合計（10晚）</span><span class="cost-amount">NT$64,835</span></div>
+  <div class="cost-sec">
+    <div class="cost-hdr">🏨 住宿</div>
+    <div class="cost-row"><span>Residence Inn Manchester（5晚）</span><span class="cost-amt">NT$28,120</span></div>
+    <div class="cost-row"><span>Premier Inn Hammersmith（5晚）</span><span class="cost-amt">NT$36,715</span></div>
+    <div class="cost-row total"><span>住宿合計（10晚）</span><span class="cost-amt">NT$64,835</span></div>
   </div>
-
-  <div class="cost-section">
-    <div class="cost-section-title">🚂 交通</div>
-    <div class="cost-row"><span>Family & Friends Railcard</span><span class="cost-amount">£30（NT$1,200）</span></div>
-    <div class="cost-row"><span>Avanti 曼城→倫敦（已訂）</span><span class="cost-amount">£65（NT$2,600）✅</span></div>
-    <div class="cost-row"><span>曼城↔利物浦火車（6/30）</span><span class="cost-amount">£27（NT$1,080）</span></div>
-    <div class="cost-row"><span>曼城↔Chester火車（7/2）</span><span class="cost-amount">£40（NT$1,600）</span></div>
-    <div class="cost-row"><span>Thames Clipper格林威治來回</span><span class="cost-amount">£36（NT$1,440）</span></div>
-    <div class="cost-row"><span>計程車/Uber（估算）</span><span class="cost-amount">£80（NT$3,200）</span></div>
+  <div class="cost-sec">
+    <div class="cost-hdr">🚂 交通</div>
+    <div class="cost-row"><span>Family & Friends Railcard</span><span class="cost-amt">£30（NT$1,200）</span></div>
+    <div class="cost-row"><span>Avanti 曼城→倫敦 ✅已訂</span><span class="cost-amt">£65（NT$2,600）</span></div>
+    <div class="cost-row"><span>曼城↔利物浦火車（6/30）</span><span class="cost-amt">£27（NT$1,080）</span></div>
+    <div class="cost-row"><span>曼城↔Chester火車（7/2）</span><span class="cost-amt">£40（NT$1,600）</span></div>
+    <div class="cost-row"><span>Thames Clipper格林威治來回</span><span class="cost-amt">£36（NT$1,440）</span></div>
+    <div class="cost-row"><span>計程車/Uber（估算）</span><span class="cost-amt">£80（NT$3,200）</span></div>
+    <div class="cost-row"><span>機場接送七人座升級費</span><span class="cost-amt">NT$500</span></div>
   </div>
-
-  <div class="cost-section">
-    <div class="cost-section-title">🏛️ 景點</div>
-    <div class="cost-row"><span>倫敦塔（2大+2孩）</span><span class="cost-amount">£107（NT$4,280）</span></div>
-    <div class="cost-row"><span>Mersey Ferry利物浦</span><span class="cost-amount">£36（NT$1,440）</span></div>
-    <div class="cost-row"><span>英國ETA（4人）</span><span class="cost-amount">£80（NT$3,200）</span></div>
+  <div class="cost-sec">
+    <div class="cost-hdr">🏛️ 景點</div>
+    <div class="cost-row"><span>倫敦塔（2大+2孩）</span><span class="cost-amt">£107（NT$4,280）</span></div>
+    <div class="cost-row"><span>Mersey Ferry利物浦</span><span class="cost-amt">£36（NT$1,440）</span></div>
+    <div class="cost-row"><span>英國ETA（4人）</span><span class="cost-amt">£80（NT$3,200）</span></div>
   </div>
-
-  <div class="cost-section">
-    <div class="cost-section-title">🍽️ 餐飲（估算）</div>
-    <div class="cost-row"><span>曼城段（5天×£40/天）</span><span class="cost-amount">£200（NT$8,000）</span></div>
-    <div class="cost-row"><span>倫敦段（5天×£50/天）</span><span class="cost-amount">£250（NT$10,000）</span></div>
+  <div class="cost-sec">
+    <div class="cost-hdr">🍽️ 餐飲（估算）</div>
+    <div class="cost-row"><span>曼城段（5天）</span><span class="cost-amt">£200（NT$8,000）</span></div>
+    <div class="cost-row"><span>倫敦段（5天）</span><span class="cost-amt">£250（NT$10,000）</span></div>
   </div>
-
-  <div class="cost-section">
-    <div class="cost-section-title">💳 其他</div>
-    <div class="cost-row"><span>旅遊保險（4人）</span><span class="cost-amount">£80（NT$3,200）</span></div>
-    <div class="cost-row"><span>eSIM上網卡</span><span class="cost-amount">£20（NT$800）</span></div>
-    <div class="cost-row total"><span>⭐ 旅遊總費用估算（含機票）</span><span class="cost-amount">約NT$250,000</span></div>
+  <div class="cost-sec">
+    <div class="cost-hdr">💳 其他</div>
+    <div class="cost-row"><span>旅遊保險（4人）</span><span class="cost-amt">NT$3,200</span></div>
+    <div class="cost-row"><span>eSIM上網卡</span><span class="cost-amt">NT$800</span></div>
+    <div class="cost-row total"><span>⭐ 旅遊總費用估算</span><span class="cost-amt">約 NT$250,000</span></div>
   </div>
-
 </div>
 
-<!-- ══ 緊急 ══ -->
-<div id="tab-emergency" class="tab-content">
+<!-- ══ 工具 ══ -->
+<div id="tab-tools" class="panel">
 
-  <div class="card warning" style="margin-bottom:12px">
-    <div class="card-title">🚨 緊急電話（英國）</div>
-    <div style="font-size:24px;font-weight:700;color:var(--red);text-align:center;padding:10px 0">
-      999 報警/救護/消防<br>
-      <span style="font-size:16px">111 NHS非緊急醫療</span>
-    </div>
+  <div class="sec">💱 匯率換算</div>
+  <div class="converter">
+    <div style="font-size:12px;color:var(--muted);text-align:center;margin-bottom:4px">英鎊 → 新台幣</div>
+    <input type="number" id="gbp-in" placeholder="輸入英鎊金額（£）" oninput="calcGBP()">
+    <div class="result" id="gbp-result">= NT$ 0</div>
+    <div class="rate">參考匯率：1 £ = NT$ 40　｜　實際匯率以銀行為準</div>
+    <button class="btn-swap" onclick="swapCurrency()">⇅ 換算方向</button>
+    <div style="font-size:12px;color:var(--muted);text-align:center;margin-top:4px" id="swap-label">目前：£ → NT$</div>
   </div>
 
-  <div class="section-header">重要聯絡資訊</div>
-
-  <div class="emergency-item">
-    <span class="e-icon">🇹🇼</span>
-    <div>
-      <div class="e-label">台灣駐英辦事處</div>
-      <div class="e-value"><a href="tel:+442078812650">+44-20-7881-2650</a></div>
-    </div>
+  <div class="sec">🌤️ 天氣參考</div>
+  <div class="wx-card">
+    <div class="wx-city">🏙️ 曼徹斯特（6/29–7/4）</div>
+    <div class="wx-temp">平均 19°C</div>
+    <div class="wx-desc">多雨，建議攜帶雨傘和薄外套<br>早晚溫差大，孩子注意保暖<br>
+    <a href="https://www.bbc.co.uk/weather/2643123" target="_blank">📡 BBC天氣預報（曼徹斯特）</a></div>
   </div>
-  <div class="emergency-item">
-    <span class="e-icon">✈️</span>
-    <div>
-      <div class="e-label">土耳其航空台灣客服</div>
-      <div class="e-value"><a href="tel:+886225471881">+886-2-2547-1881</a></div>
-    </div>
+  <div class="wx-card">
+    <div class="wx-city">🏙️ 倫敦（7/4–7/9）</div>
+    <div class="wx-temp">平均 22–25°C</div>
+    <div class="wx-desc">偶有高溫 30°C+，11:00–14:00 最熱<br>高溫時段排室內景點，戶外安排早晨或傍晚<br>
+    <a href="https://www.bbc.co.uk/weather/2643743" target="_blank">📡 BBC天氣預報（倫敦）</a></div>
   </div>
-  <div class="emergency-item">
-    <span class="e-icon">🏨</span>
-    <div>
-      <div class="e-label">Residence Inn Manchester</div>
-      <div class="e-value"><a href="https://www.marriott.com/manri">marriott.com/manri</a></div>
-    </div>
-  </div>
-  <div class="emergency-item">
-    <span class="e-icon">🏨</span>
-    <div>
-      <div class="e-label">Premier Inn Hammersmith</div>
-      <div class="e-value"><a href="tel:+443333219338">+44-333-321-9338</a></div>
-    </div>
-  </div>
-  <div class="emergency-item">
-    <span class="e-icon">🚂</span>
-    <div>
-      <div class="e-label">Avanti West Coast客服</div>
-      <div class="e-value"><a href="https://www.avantiwestcoast.co.uk">0345 528 0253</a></div>
+  <div class="card warn">
+    <div class="card-title">☔ 雨天備案景點（室內）</div>
+    <div style="font-size:12px;line-height:2">
+      🏛️ 曼博物館（免費，Oxford Road）<br>
+      🏛️ MOSI 科學工業博物館（免費）<br>
+      🏛️ Manchester Art Gallery（免費）<br>
+      🏛️ 約翰萊蘭茲圖書館（免費）<br>
+      🏛️ 自然歷史博物館（免費，倫敦）<br>
+      🏛️ 大英博物館（免費，倫敦）<br>
+      🏛️ Harrods 美食大廳（免費入場）
     </div>
   </div>
 
-  <div class="section-header">🔗 重要確認網址</div>
+  <div class="sec">🎒 每日攜帶物品提醒</div>
+  <div id="packing-list"></div>
+
+  <div class="sec">🗣️ 英國常用會話</div>
   <div class="card">
-    <table class="info-table">
-      <tr><th>事項</th><th>網址</th></tr>
-      <tr><td>衛兵交接確認</td><td><a href="https://www.changing-guard.com">changing-guard.com</a></td></tr>
-      <tr><td>倫敦塔預約</td><td><a href="https://www.hrp.org.uk/tower-of-london/visit/">hrp.org.uk</a></td></tr>
-      <tr><td>自然歷史博物館預約</td><td><a href="https://www.nhm.ac.uk/visit.html">nhm.ac.uk/visit</a></td></tr>
-      <tr><td>大英博物館預約</td><td><a href="https://www.britishmuseum.org/visit">britishmuseum.org/visit</a></td></tr>
-      <tr><td>空中花園確認</td><td><a href="https://www.nationaltrust.org.uk/visit/cheshire-greater-manchester/castlefield-viaduct">nationaltrust.org.uk</a></td></tr>
-      <tr><td>Diana遊樂場確認</td><td><a href="https://www.royalparks.org.uk/visit/parks/kensington-gardens/diana-memorial-playground">royalparks.org.uk</a></td></tr>
-      <tr><td>英國ETA申請</td><td><a href="https://www.gov.uk/eta">gov.uk/eta</a></td></tr>
+    <div class="phrase-item"><span class="phrase-zh">廁所在哪裡？</span><span class="phrase-en">Where is the toilet?</span></div>
+    <div class="phrase-item"><span class="phrase-zh">多少錢？</span><span class="phrase-en">How much is it?</span></div>
+    <div class="phrase-item"><span class="phrase-zh">謝謝。</span><span class="phrase-en">Thank you.</span></div>
+    <div class="phrase-item"><span class="phrase-zh">不客氣。</span><span class="phrase-en">You're welcome.</span></div>
+    <div class="phrase-item"><span class="phrase-zh">對不起/借過。</span><span class="phrase-en">Excuse me.</span></div>
+    <div class="phrase-item"><span class="phrase-zh">我迷路了。</span><span class="phrase-en">I'm lost.</span></div>
+    <div class="phrase-item"><span class="phrase-zh">我不舒服。</span><span class="phrase-en">I don't feel well.</span></div>
+    <div class="phrase-item"><span class="phrase-zh">可以幫我拍照嗎？</span><span class="phrase-en">Could you take a photo for us?</span></div>
+    <div class="phrase-item"><span class="phrase-zh">請問這班車到___嗎？</span><span class="phrase-en">Does this go to ___?</span></div>
+    <div class="phrase-item"><span class="phrase-zh">我需要醫生。</span><span class="phrase-en">I need a doctor.</span></div>
+  </div>
+
+  <div class="sec">💷 小費指南</div>
+  <div class="card">
+    <table class="tbl">
+      <tr><th>場合</th><th>建議金額</th></tr>
+      <tr><td>餐廳（無服務費）</td><td>帳單 10–15%</td></tr>
+      <tr><td>計程車</td><td>四捨五入至整數</td></tr>
+      <tr><td>飯店行李服務</td><td>£1–2/件</td></tr>
+      <tr><td>導覽人員</td><td>£2–5/人</td></tr>
+      <tr><td>免費博物館</td><td>自由捐獻（建議 £1–2）</td></tr>
     </table>
   </div>
 
+  <div class="sec">🏥 醫療資訊</div>
+  <div class="card">
+    <div style="font-size:12px;line-height:2;font-weight:600;color:var(--navy);margin-bottom:6px">常備藥清單</div>
+    <div id="medicine-list"></div>
+    <div style="font-size:12px;line-height:2;font-weight:600;color:var(--navy);margin:10px 0 4px">英國就醫流程</div>
+    <div style="font-size:12px;line-height:2">
+      💊 <strong>輕症</strong>：Boots / Superdrug 藥局購藥<br>
+      📞 <strong>中症</strong>：撥打 <a href="tel:111"><strong>111</strong></a>（NHS 非緊急諮詢）<br>
+      🚑 <strong>重症</strong>：撥打 <a href="tel:999"><strong>999</strong></a>（緊急救護）
+    </div>
+  </div>
+
+  <div class="sec">📄 重要文件備份</div>
+  <div class="card tip">
+    <div style="font-size:12px;line-height:2">
+      ✅ 護照（4人）拍照存入手機相簿<br>
+      ✅ ETA 電子授權截圖備份<br>
+      ✅ 機票電子票截圖<br>
+      ✅ 旅遊保險單截圖<br>
+      ✅ 各訂房/訂票確認信截圖<br>
+      ✅ 上傳至 Google Drive 雲端備份<br>
+      💡 建議列印一份紙本放行李箱備用
+    </div>
+  </div>
+
+  <div class="sec">⚖️ 行李重量追蹤</div>
+  <div class="converter">
+    <div style="font-size:12px;color:var(--muted);text-align:center;margin-bottom:4px">去程行李（每人限 30KG）</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+      <div><div style="font-size:11px;color:var(--muted);text-align:center">大人1行李(KG)</div><input type="number" id="bag1" placeholder="0" oninput="calcBags()" style="text-align:center;padding:8px;width:100%;border:2px solid var(--border);border-radius:8px;font-size:16px;"></div>
+      <div><div style="font-size:11px;color:var(--muted);text-align:center">大人2行李(KG)</div><input type="number" id="bag2" placeholder="0" oninput="calcBags()" style="text-align:center;padding:8px;width:100%;border:2px solid var(--border);border-radius:8px;font-size:16px;"></div>
+      <div><div style="font-size:11px;color:var(--muted);text-align:center">孩子1行李(KG)</div><input type="number" id="bag3" placeholder="0" oninput="calcBags()" style="text-align:center;padding:8px;width:100%;border:2px solid var(--border);border-radius:8px;font-size:16px;"></div>
+      <div><div style="font-size:11px;color:var(--muted);text-align:center">孩子2行李(KG)</div><input type="number" id="bag4" placeholder="0" oninput="calcBags()" style="text-align:center;padding:8px;width:100%;border:2px solid var(--border);border-radius:8px;font-size:16px;"></div>
+    </div>
+    <div class="result" id="bag-result">總重量：0 KG / 限制 120 KG</div>
+    <div class="rate" id="bag-warn"></div>
+  </div>
+</div>
+
+<!-- ══ 緊急 ══ -->
+<div id="tab-emergency" class="panel">
+  <div class="card warn" style="margin-bottom:12px;text-align:center">
+    <div style="font-size:28px;font-weight:700;color:var(--red);padding:8px 0">
+      <a href="tel:999" style="color:var(--red)">999</a>
+    </div>
+    <div style="font-size:13px;font-weight:700">報警 / 救護 / 消防</div>
+    <div style="font-size:16px;font-weight:700;color:var(--navy);margin-top:8px">
+      <a href="tel:111">111</a>
+    </div>
+    <div style="font-size:12px">NHS 非緊急醫療諮詢</div>
+  </div>
+
+  <div class="sec">📞 重要聯絡</div>
+  <div class="card">
+    <div class="em-item"><span class="em-icon">🇹🇼</span><div><div class="em-label">台灣駐英辦事處</div><div class="em-value"><a href="tel:+442078812650">+44-20-7881-2650</a></div></div></div>
+    <div class="em-item"><span class="em-icon">✈️</span><div><div class="em-label">土耳其航空台灣客服</div><div class="em-value"><a href="tel:+886225471881">+886-2-2547-1881</a></div></div></div>
+    <div class="em-item"><span class="em-icon">🏨</span><div><div class="em-label">Residence Inn Manchester</div><div class="em-value"><a href="https://www.marriott.com/manri" target="_blank">marriott.com/manri</a></div></div></div>
+    <div class="em-item"><span class="em-icon">🏨</span><div><div class="em-label">Premier Inn Hammersmith</div><div class="em-value"><a href="tel:+443333219338">+44-333-321-9338</a></div></div></div>
+    <div class="em-item"><span class="em-icon">🚂</span><div><div class="em-label">Avanti West Coast</div><div class="em-value"><a href="tel:03455280253">0345 528 0253</a></div></div></div>
+    <div class="em-item"><span class="em-icon">🏦</span><div><div class="em-label">匯豐信用卡客服</div><div class="em-value"><a href="tel:0800860929">0800-860-929 #2</a></div></div></div>
+    <div class="em-item"><span class="em-icon">🚕</span><div><div class="em-label">全峰汽車（機場接送）</div><div class="em-value">透過 HSBC App 查詢</div></div></div>
+  </div>
+
+  <div class="sec">🔗 重要確認網址</div>
+  <div class="card">
+    <table class="tbl">
+      <tr><th>事項</th><th>網址</th></tr>
+      <tr><td>英國ETA申請</td><td><a href="https://www.gov.uk/eta" target="_blank">gov.uk/eta</a></td></tr>
+      <tr><td>衛兵交接確認</td><td><a href="https://www.changing-guard.com" target="_blank">changing-guard.com</a></td></tr>
+      <tr><td>倫敦塔預約</td><td><a href="https://www.hrp.org.uk/tower-of-london/visit/" target="_blank">hrp.org.uk</a></td></tr>
+      <tr><td>自然歷史博物館</td><td><a href="https://www.nhm.ac.uk/visit.html" target="_blank">nhm.ac.uk/visit</a></td></tr>
+      <tr><td>大英博物館</td><td><a href="https://www.britishmuseum.org/visit" target="_blank">britishmuseum.org/visit</a></td></tr>
+      <tr><td>空中花園確認</td><td><a href="https://www.nationaltrust.org.uk/visit/cheshire-greater-manchester/castlefield-viaduct" target="_blank">nationaltrust.org.uk</a></td></tr>
+      <tr><td>Diana遊樂場確認</td><td><a href="https://www.royalparks.org.uk/visit/parks/kensington-gardens/diana-memorial-playground" target="_blank">royalparks.org.uk</a></td></tr>
+      <tr><td>Dishoom訂位</td><td><a href="https://www.dishoom.com/covent-garden/" target="_blank">dishoom.com</a></td></tr>
+      <tr><td>Hawksmoor訂位</td><td><a href="https://thehawksmoor.com/locations/manchester/" target="_blank">thehawksmoor.com</a></td></tr>
+    </table>
+  </div>
 </div>
 
 <script>
-// ── Tab 切換 ──
-function showTab(id) {
-  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-  document.getElementById('tab-' + id).classList.add('active');
-  event.target.classList.add('active');
+// ══ Tab 切換 ══
+function showTab(id){
+  document.querySelectorAll('.panel').forEach(e=>e.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(e=>e.classList.remove('on'));
+  document.getElementById('tab-'+id).classList.add('on');
+  event.target.classList.add('on');
 }
 
-// ── 行程資料 ──
-const days = [
-  { num: 'D1', date: '6/28', title: '出發', type: 'travel', items: [
-    { time: '19:00', title: '桃園機場 T2', desc: '提前2.5小時辦理登機', type: 'normal',
-      transport: '自駕/計程車', food: '欣葉台灣料理（送行）',
-      warn: '確認護照+ETA+行李重量（每人30KG）',
-      maps: 'https://maps.google.com/maps?q=台灣桃園國際機場T2', indoor: true },
-    { time: '21:45', title: '✈️ 起飛 TPE→IST', desc: '土耳其航空，轉機伊斯坦堡（4h45m）', type: 'normal',
-      transport: '飛機', warn: '伊斯坦堡過境免簽，不出機場' },
+// ══ 行程資料 ══
+const DAYS=[
+  {n:'D1',date:'6/28',title:'出發日',type:'tr',
+   depart:{from:'台中住家',how:'🚕 全峰汽車七人座（匯豐輕旅卡）',time:'19:00–19:30'},
+   items:[
+    {time:'19:00',title:'桃園機場 T2 辦理登機',desc:'提前 2.5 小時辦理，行李托運+安檢',type:'n',
+     maps:'https://maps.google.com/maps/dir//台灣桃園國際機場T2',
+     food:'欣葉台灣料理（最後一餐）',warn:'確認護照+ETA+每人行李≤30KG'},
+    {time:'21:45',title:'✈️ 起飛 TPE→IST',desc:'土耳其航空，轉機伊斯坦堡（4h45m）',type:'n',
+     tip:'備妥頸枕、耳機、孩子平板、零食'},
   ]},
-  { num: 'D2', date: '6/29', title: '抵達曼城', type: 'man', items: [
-    { time: '12:05', title: '抵達 MAN 機場', desc: '入境英國，護照+ETA查驗', type: 'normal',
-      transport: '🚕 計程車直達飯店（£25-35）', alt: 'Metrolink輕軌',
-      warn: '有行李建議計程車，孩子疲勞',
-      maps: 'https://maps.google.com/maps?q=Manchester+Airport+T2' },
-    { time: '14:30', title: 'Residence Inn 入住', desc: '辦理Check-in，整理行李休息',
-      type: 'normal', maps: 'https://maps.google.com/maps?q=Residence+Inn+Manchester+Piccadilly',
-      indoor: true },
-    { time: '16:00', title: 'Northern Quarter', desc: 'Tib St壁畫→Church St→Oldham St獨立書店', type: 'outdoor',
-      transport: '🚌 免費巴士Route 1', alt: '步行', maps: 'https://maps.google.com/maps?q=Northern+Quarter+Manchester' },
-    { time: '18:30', title: '🍽️ Corn Exchange晚餐', desc: '維多利亞式美食廣場', type: 'food',
-      food: 'Almost Famous漢堡£14 / 兒童£8', transport: '🚌 免費巴士Route 1',
-      maps: 'https://maps.google.com/maps?q=Corn+Exchange+Manchester', indoor: true },
+  {n:'D2',date:'6/29',title:'抵達曼城',type:'man',
+   depart:{from:'飯店（16:00）',how:'🚌 免費巴士 Route 1（Piccadilly站上車）',time:'16:00'},
+   ret:{to:'飯店',how:'🚌 免費巴士 Route 1',time:'21:00前'},
+   items:[
+    {time:'12:05',title:'抵達 MAN 機場',desc:'入境英國，護照+ETA查驗',type:'n',
+     maps:'https://maps.google.com/maps/dir//Manchester+Airport+Terminal+2',
+     warn:'計程車直達飯店（有行李）£25-35'},
+    {time:'14:30',title:'Residence Inn Check-in',desc:'辦理入住，整理休息',type:'n',
+     maps:'https://maps.google.com/maps/dir//Residence+Inn+Manchester+Piccadilly',indoor:true},
+    {time:'15:30',title:'⭐ 踩點：AMBS + Whitworth Gallery',desc:'研討會場地勘查路線\nPiccadilly站→免費巴士Route 2→Oxford Road→AMBS→Whitworth Gallery',type:'star',
+     maps:'https://maps.google.com/maps/dir//Alliance+Manchester+Business+School',
+     tip:'確認AMBS入口、Route 2站牌位置、Whitworth Gallery位置',
+     toilet:'AMBS附近公廁'},
+    {time:'18:30',title:'Northern Quarter 散步',desc:'Tib St壁畫→Church St→Oldham St',type:'n',
+     maps:'https://maps.google.com/maps/dir//Northern+Quarter+Manchester',outdoor:true},
+    {time:'19:30',title:'🍽️ Corn Exchange 晚餐',desc:'維多利亞式美食廣場',type:'food',
+     maps:'https://maps.google.com/maps/dir//Corn+Exchange+Manchester',
+     food:'Almost Famous漢堡£14 / Bundobust印式£6',indoor:true,
+     toilet:'Corn Exchange 內（免費）'},
   ]},
-  { num: 'D3', date: '6/30', title: '利物浦', type: 'man', items: [
-    { time: '09:00', title: '出發至Piccadilly站', desc: '步行10分至火車站', type: 'normal',
-      transport: '🚌 免費巴士Route 1', maps: 'https://maps.google.com/maps?q=Manchester+Piccadilly+Railway+Station' },
-    { time: '09:30', title: '🚂 火車→利物浦', desc: '35分直達Liverpool Lime Street',
-      type: 'normal', transport: '🚂 TransPennine（£25-30/4人）', tip: 'Family Railcard省1/3' },
-    { time: '10:15', title: 'Pier Head / Three Graces', desc: '三棟宏偉建築+Beatles銅像',
-      type: 'outdoor', transport: '🚌 公車10/10A', alt: '步行15分',
-      maps: 'https://maps.google.com/maps?q=Pier+Head+Liverpool' },
-    { time: '11:00', title: '⭐ Mersey Ferry', desc: '跨越默西河遊覽，Beatles名曲場景', type: 'star',
-      transport: '🚢 渡輪（£9/人）', warn: '確認班次 merseyferries.co.uk',
-      maps: 'https://maps.google.com/maps?q=Mersey+Ferry+Terminal+Liverpool' },
-    { time: '12:30', title: '🍽️ Albert Dock午餐', desc: '19世紀倉庫改建餐廳', type: 'food',
-      food: 'Pump House £13 / Gusto義式 £15',
-      maps: 'https://maps.google.com/maps?q=Albert+Dock+Liverpool', outdoor: true },
-    { time: '13:00', title: 'Museum of Liverpool', desc: '全英最大城市博物館（完全免費）AHOY!兒童廳', type: 'indoor',
-      transport: '步行5分', tip: '免費，無需預約，10:00-17:00',
-      maps: 'https://maps.google.com/maps?q=Museum+of+Liverpool', indoor: true,
-      toilet: '館內一樓廁所（親子廁所✅）' },
-    { time: '15:30', title: '返回曼徹斯特', desc: 'Liverpool→Manchester 35分', type: 'normal',
-      transport: '🚂 火車', tip: '搭17:00前班次，晚上有休息時間' },
-    { time: '19:00', title: '🍽️ 中國城晚餐', desc: 'Yang Sing港式或Samsi日式', type: 'food',
-      food: '港點每籠£4-6，4人約£50', transport: '🚌 免費巴士Route 1',
-      maps: 'https://maps.google.com/maps?q=Chinatown+Manchester', indoor: true },
+  {n:'D3',date:'6/30',title:'利物浦',type:'man',
+   depart:{from:'飯店（09:00）→Piccadilly站',how:'🚌 免費巴士 Route 1',time:'09:00'},
+   ret:{to:'飯店',how:'🚌 免費巴士 Route 1（Piccadilly站下車）',time:'21:00前'},
+   items:[
+    {time:'09:00',title:'飯店→Piccadilly 火車站',desc:'',type:'n',
+     maps:'https://maps.google.com/maps/dir//Manchester+Piccadilly+Railway+Station'},
+    {time:'09:30',title:'🚂 Manchester→Liverpool',desc:'35分直達 Liverpool Lime Street',type:'n',
+     tip:'Family Railcard省1/3，£25-30/4人'},
+    {time:'10:15',title:'Three Graces + Pier Head',desc:'皇家利物大廈、Beatles銅像',type:'n',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Pier+Head+Liverpool',
+     transport:'🚌 公車10/10A（5分）'},
+    {time:'11:00',title:'⭐ Mersey Ferry 渡輪',desc:'跨越默西河，Beatles名曲場景',type:'star',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Mersey+Ferry+Terminal+Liverpool',
+     warn:'確認班次 merseyferries.co.uk　£9/人'},
+    {time:'12:30',title:'🍽️ Albert Dock 午餐',desc:'19世紀倉庫改建餐廳',type:'food',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Albert+Dock+Liverpool',
+     food:'Pump House £13 / Gusto義式 £15',
+     toilet:'Albert Dock 內公廁'},
+    {time:'13:30',title:'Museum of Liverpool（免費）',desc:'AHOY!兒童互動廳，免費，10:00-17:00',type:'n',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Museum+of+Liverpool',
+     toilet:'館內一樓（親子廁所✅）'},
+    {time:'15:30',title:'返回曼徹斯特',desc:'Liverpool→Manchester 35分',type:'n',
+     transport:'🚂 火車'},
+    {time:'19:00',title:'🍽️ 中國城晚餐',desc:'George Street一帶，港式/日式',type:'food',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Chinatown+Manchester',
+     food:'Yang Sing港點£4-6/籠 / Samsi日式'},
   ]},
-  { num: 'D4', date: '7/1', title: '曼博物館', type: 'man', items: [
-    { time: '09:30', title: '⭐ 曼徹斯特博物館', desc: 'Stan T-Rex、木乃伊、世界傳統服飾（免費）', type: 'indoor',
-      transport: '🚌 免費巴士Route 2→Oxford Road', tip: '免費，10:00開館，無需預約',
-      maps: 'https://maps.google.com/maps?q=Manchester+Museum', indoor: true,
-      toilet: '館內各樓層均有，親子廁所✅' },
-    { time: '12:30', title: '🍽️ Earth Café午餐', desc: '蔬食健康咖啡廳', type: 'food',
-      food: '蔬菜咖哩 £9，蛋糕 £4', transport: '步行5分',
-      maps: 'https://maps.google.com/maps?q=Earth+Cafe+Manchester', indoor: true },
-    { time: '13:30', title: 'Manchester Art Gallery', desc: '兒童藝術工作坊，前拉斐爾派畫作', type: 'indoor',
-      transport: '🚌 免費巴士Route 2→Peter Street', tip: '免費，10:00-17:00',
-      maps: 'https://maps.google.com/maps?q=Manchester+Art+Gallery', indoor: true,
-      toilet: '一樓入口旁廁所（親子廁所✅）' },
-    { time: '15:30', title: '⭐ 飯店休息', desc: '孩子體力補充，自由活動', type: 'normal',
-      tip: '重要！讓孩子補充體力再出發', transport: '🚌 免費巴士Route 1返回' },
-    { time: '19:00', title: '🍽️ Hawksmoor晚餐', desc: '英國知名牛排館，學術慶功', type: 'food',
-      food: 'Porterhouse牛排£65，兒童薯條£6',
-      transport: '🚌 免費巴士Route 1', warn: '提前2-3週訂位 thehawksmoor.com',
-      maps: 'https://maps.google.com/maps?q=Hawksmoor+Manchester', indoor: true },
+  {n:'D4',date:'7/1',title:'曼博物館',type:'man',
+   depart:{from:'飯店（09:30）',how:'🚌 免費巴士 Route 2→Oxford Road（10分）',time:'09:30'},
+   ret:{to:'飯店',how:'🚕 Uber（夜間省力）',time:'21:00前'},
+   items:[
+    {time:'10:00',title:'⭐ 曼徹斯特博物館（免費）',desc:'Stan T-Rex化石、木乃伊、世界傳統服飾\n10:00-17:00，週一公休',type:'star',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Manchester+Museum',
+     toilet:'館內各樓層（親子廁所✅）'},
+    {time:'12:30',title:'🍽️ Earth Café 午餐',desc:'蔬食健康咖啡廳',type:'food',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Earth+Cafe+Manchester',
+     food:'蔬菜咖哩£9，蛋糕£4'},
+    {time:'13:30',title:'Manchester Art Gallery（免費）',desc:'兒童藝術工作坊，Pre-Raphaelite名畫',type:'n',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Manchester+Art+Gallery',
+     transport:'🚌 免費巴士 Route 2→Peter Street',
+     toilet:'一樓入口旁（親子廁所✅）'},
+    {time:'19:00',title:'🍽️ Hawksmoor 晚餐',desc:'英國知名牛排館，學術慶功晚宴',type:'food',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Hawksmoor+Manchester',
+     food:'Porterhouse牛排£65，兒童薯條£6',
+     warn:'⚠️ 提前2-3週訂位 thehawksmoor.com',
+     transport:'🚌 免費巴士 Route 1→Deansgate'},
   ]},
-  { num: 'D5', date: '7/2', title: 'Chester', type: 'man', items: [
-    { time: '09:30', title: '🚂 火車→Chester', desc: '55分直達', type: 'normal',
-      transport: '🚂 TransPennine（£35-45/4人）' },
-    { time: '10:30', title: 'Chester Eastgate Clock城牆', desc: '西元70年羅馬城牆，全球最完整', type: 'outdoor',
-      transport: '🚕 計程車（車站→城牆，£4）', alt: '步行10分', tip: '免費入場，全程平坦',
-      maps: 'https://maps.google.com/maps?q=Eastgate+Clock+Chester' },
-    { time: '12:00', title: '🍽️ Chester Cathedral午餐', desc: '哥德式大教堂，The Refectory餐廳', type: 'food',
-      food: '炸魚薯條£14，兒童套餐£7', warn: '高溫時段室內用餐首選',
-      maps: 'https://maps.google.com/maps?q=Chester+Cathedral', indoor: true,
-      toilet: '大教堂內廁所（免費）' },
-    { time: '13:30', title: '⭐ Cheshire Oaks Outlet', desc: '英國最大Outlet，160+品牌', type: 'indoor',
-      transport: '🚌 X1公車（20分）', warn: '確認班次 arrivabus.co.uk',
-      maps: 'https://maps.google.com/maps?q=Cheshire+Oaks+Designer+Outlet', indoor: true },
-    { time: '17:00', title: '返回曼徹斯特', desc: 'Chester→Manchester 55分', type: 'normal',
-      transport: '🚂 火車', alt: '🚕 Uber' },
-    { time: '19:30', title: '🍽️ 飯店附近輕食', desc: '今日行程多，輕食早休息', type: 'food',
-      food: 'Döner Haus £8-12 或外送',
-      transport: '步行', tip: '22:00前就寢' },
+  {n:'D5',date:'7/2',title:'Chester',type:'man',
+   depart:{from:'飯店（09:00）→Piccadilly站',how:'🚌 免費巴士 Route 1',time:'09:00'},
+   ret:{to:'飯店',how:'🚌 免費巴士 Route 1（Piccadilly站）',time:'21:00前'},
+   items:[
+    {time:'09:30',title:'🚂 Manchester→Chester',desc:'55分直達',type:'n',
+     tip:'£35-45/4人，Family Railcard折扣'},
+    {time:'10:30',title:'Chester 城牆漫步（免費）',desc:'西元70年羅馬城牆\nEastgate Clock→King Charles Tower→The Rows',type:'n',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Eastgate+Clock+Chester',
+     transport:'🚕 計程車（車站→城牆，£4）',
+     warn:'全程平坦，下雨城牆濕滑'},
+    {time:'12:00',title:'🍽️ Chester Cathedral The Refectory',desc:'哥德式大教堂內午餐',type:'food',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Chester+Cathedral',
+     food:'炸魚薯條£14，兒童套餐£7',
+     toilet:'大教堂內（免費）'},
+    {time:'13:30',title:'Cheshire Oaks Designer Outlet',desc:'英國最大Outlet，160+品牌',type:'n',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Cheshire+Oaks+Designer+Outlet',
+     transport:'🚌 X1公車（20分）',
+     warn:'確認班次 arrivabus.co.uk'},
+    {time:'17:00',title:'返回曼徹斯特',desc:'Chester→Manchester 55分',type:'n',
+     transport:'🚂 火車'},
+    {time:'19:30',title:'🍽️ 飯店附近輕食',desc:'今日行程多，輕食早休息',type:'food',
+     food:'Döner Haus £8-12 / Deliveroo外送'},
   ]},
-  { num: 'D6', date: '7/3', title: '⭐AIB研討會', type: 'man', items: [
-    { time: '09:00', title: '⭐ AIB研討會 09:30-10:45', desc: 'Alliance Manchester Business School', type: 'star',
-      transport: '🚌 免費巴士Route 2→Oxford Road', warn: '09:00出門，09:30準時到場',
-      maps: 'https://maps.google.com/maps?q=Alliance+Manchester+Business+School' },
-    { time: '09:00', title: '【孩子】Whitworth Art Gallery', desc: '免費，10:00開館，兒童藝術工作坊', type: 'indoor',
-      transport: '🚌 免費巴士Route 2（同方向）',
-      maps: 'https://maps.google.com/maps?q=Whitworth+Art+Gallery+Manchester', indoor: true },
-    { time: '11:15', title: 'MOSI科學工業博物館', desc: '蒸汽引擎可操作、航空廳（免費）', type: 'indoor',
-      transport: '🚌 免費巴士Route 1→Deansgate', tip: '免費，10:00-17:00',
-      maps: 'https://maps.google.com/maps?q=Science+and+Industry+Museum+Manchester', indoor: true },
-    { time: '13:00', title: '🍽️ Dukes 92午餐', desc: '運河邊老磨坊，戶外露台', type: 'food',
-      food: '披薩£12，兒童套餐£8',
-      maps: 'https://maps.google.com/maps?q=Dukes+92+Manchester', outdoor: true },
-    { time: '14:00', title: 'Castlefield運河串接', desc: 'Bowl→Merchants Bridge→羅馬堡壘（免費）', type: 'outdoor',
-      tip: '全程平坦免費，景點緊鄰',
-      maps: 'https://maps.google.com/maps?q=Castlefield+Manchester' },
-    { time: '15:30', title: '空中花園 Castlefield Viaduct', desc: '高架橋上植物裝置藝術', type: 'outdoor',
-      warn: '⚠️ 目前關閉維修，出發前確認 nationaltrust.org.uk/castlefield-viaduct',
-      maps: 'https://maps.google.com/maps?q=Castlefield+Viaduct+Manchester' },
-    { time: '16:30', title: '約翰萊蘭茲圖書館', desc: '全球最美圖書館，Harry Potter場景感', type: 'indoor',
-      transport: '🚌 免費巴士Route 1→Peter Street', warn: '16:50前入館，17:00關閉',
-      maps: 'https://maps.google.com/maps?q=John+Rylands+Library+Manchester', indoor: true },
-    { time: '17:00', title: '⭐ 飯店休息', desc: '孩子體力補充1.5小時，重要！', type: 'normal',
-      transport: '🚌 免費巴士Route 2返回', tip: '18:30再出發晚餐' },
-    { time: '18:30', title: '🍽️ Spinningfields晚餐', desc: '曼城金融區，現代玻璃建築河畔', type: 'food',
-      food: 'Tattu現代中式，人均£20-25',
-      transport: '🚌 免費巴士Route 1→Deansgate',
-      maps: 'https://maps.google.com/maps?q=Spinningfields+Manchester', indoor: true },
+  {n:'D6',date:'7/3',title:'⭐AIB+MOSI',type:'man',
+   depart:{from:'飯店（09:00）',how:'🚌 免費巴士 Route 2→Oxford Road（10分）→步行10分至AMBS',time:'09:00'},
+   ret:{to:'飯店',how:'🚌 免費巴士 Route 1→Piccadilly（10分）',time:'21:00前'},
+   items:[
+    {time:'09:00',title:'【大人】⭐ AIB 研討會 09:30-10:45',desc:'Alliance Manchester Business School, Booth Street West, M15 6PB',type:'star',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Alliance+Manchester+Business+School',
+     warn:'09:00出門，09:30準時到場'},
+    {time:'09:00',title:'【孩子】Whitworth Art Gallery',desc:'免費，10:00開館，兒童藝術工作坊',type:'n',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Whitworth+Art+Gallery+Manchester',
+     transport:'🚌 免費巴士 Route 2（同方向）'},
+    {time:'11:15',title:'MOSI 科學工業博物館（免費）',desc:'蒸汽引擎可操作、航空廳、紡織廳',type:'n',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Science+and+Industry+Museum+Manchester',
+     transport:'🚌 免費巴士 Route 1→Deansgate',
+     toilet:'館內各層（親子廁所✅）'},
+    {time:'13:00',title:'🍽️ Dukes 92 午餐',desc:'運河邊老磨坊，戶外露台',type:'food',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Dukes+92+Manchester',
+     food:'披薩£12，兒童套餐£8'},
+    {time:'14:00',title:'Castlefield 運河串接（免費）',desc:'Bowl→Merchants Bridge→羅馬堡壘→Roman Gardens',type:'n',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Castlefield+Manchester'},
+    {time:'15:30',title:'空中花園 Castlefield Viaduct',desc:'高架橋植物藝術，俯瞰Castlefield',type:'n',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Castlefield+Viaduct+Manchester',
+     warn:'⚠️確認是否重開 nationaltrust.org.uk/castlefield-viaduct'},
+    {time:'16:30',title:'約翰萊蘭茲圖書館（免費）',desc:'全球最美圖書館，Harry Potter場景',type:'n',indoor:true,
+     maps:'https://maps.google.com/maps/dir//John+Rylands+Library+Manchester',
+     transport:'🚌 免費巴士 Route 1→Peter Street',
+     warn:'16:45前入館，17:00關閉'},
+    {time:'16:45',title:'⭐ People\'s History Museum（免費）',desc:'英國民主歷史博物館，互動展覽\n週二休館，7/3週五正常開放',type:'star',indoor:true,
+     maps:'https://maps.google.com/maps/dir//People\'s+History+Museum+Manchester',
+     transport:'步行2分（圖書館旁）',
+     warn:'17:00關閉，16:45前入館',
+     toilet:'館內（親子廁所✅）'},
+    {time:'18:30',title:'🍽️ Spinningfields 晚餐',desc:'曼城金融區，現代河畔餐廳',type:'food',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Spinningfields+Manchester',
+     food:'Tattu現代中式£20-25 / El Gato Negro西班牙£20',
+     transport:'步行2分（PHM旁）'},
   ]},
-  { num: 'D7', date: '7/4', title: '移動→倫敦', type: 'travel', items: [
-    { time: '11:00', title: '退房 Residence Inn', desc: '曼城最後早餐，辦理退房', type: 'normal',
-      warn: '確認所有行李，退房備註取消城市稅' },
-    { time: '11:05', title: '出發Piccadilly站', desc: '搭Uber至車站，M&S採購午餐', type: 'normal',
-      transport: '🚕 Uber直達（£5，有行李首選）', alt: '步行10分',
-      maps: 'https://maps.google.com/maps?q=Manchester+Piccadilly+Railway+Station' },
-    { time: '12:14', title: '⭐ Avanti列車→倫敦', desc: 'Coach E，E17-E20桌位，火車上午餐', type: 'star',
-      transport: '🚂 Avanti（2h25m，£65/4人）✅已訂', tip: 'Forwards Facing座位，孩子不暈車' },
-    { time: '14:39', title: '抵達London Euston', desc: '地鐵至Hammersmith飯店', type: 'normal',
-      transport: '🚇 H&C Line直達Hammersmith（25分）', alt: '🚕 Uber £20-25',
-      maps: 'https://maps.google.com/maps?q=London+Euston+Station' },
-    { time: '16:00', title: '海德公園路線', desc: '義大利花園→彼得潘銅像→Diana噴泉（可涉水）', type: 'outdoor',
-      transport: '🚇 District Line', tip: '備毛巾和備用衣物！Diana噴泉必濕',
-      warn: '確認Diana遊樂場開放 royalparks.org.uk',
-      maps: 'https://maps.google.com/maps?q=Hyde+Park+London',
-      toilet: 'Lido Café廁所（Diana噴泉旁，免費）' },
-    { time: '19:00', title: '🍽️ Kensington晚餐', desc: 'High Street Kensington餐廳區', type: 'food',
-      food: 'Patara泰式£16 / Byron Burger兒童£9',
-      transport: '步行', maps: 'https://maps.google.com/maps?q=High+Street+Kensington+restaurants', indoor: true },
+  {n:'D7',date:'7/4',title:'移動→倫敦',type:'tr',
+   depart:{from:'飯店（11:00退房）',how:'🚕 Uber直達（有行李，£5）',time:'11:00退房'},
+   ret:{to:'Premier Inn Hammersmith',how:'🚇 H&C Line→Hammersmith（25分）',time:'入住後出發海德公園'},
+   items:[
+    {time:'08:00',title:'最後早餐+辦理退房',desc:'11:00退房，確認行李無遺漏',type:'n'},
+    {time:'11:00',title:'退房→Piccadilly 火車站',desc:'Uber直達（有行李首選）',type:'n',
+     maps:'https://maps.google.com/maps/dir//Manchester+Piccadilly+Railway+Station',
+     transport:'🚕 Uber（£5，5分）'},
+    {time:'11:30',title:'M&S Food 採購火車午餐',desc:'站內M&S，自備上車食用',type:'food',
+     food:'三明治套餐£6-8'},
+    {time:'12:14',title:'⭐ Avanti 列車→倫敦',desc:'Coach E，E17-E20 桌位，2h25m',type:'star',
+     tip:'Forwards Facing，孩子不暈車　✅已訂'},
+    {time:'14:39',title:'抵達 London Euston',desc:'',type:'n',
+     maps:'https://maps.google.com/maps/dir//London+Euston+Station',
+     transport:'🚇 H&C Line→Hammersmith（25分）'},
+    {time:'15:30',title:'Premier Inn Hammersmith Check-in',desc:'行李寄存後出發海德公園',type:'n',
+     maps:'https://maps.google.com/maps/dir//Premier+Inn+Hammersmith+Talgarth+Road'},
+    {time:'16:00',title:'海德公園路線',desc:'義大利花園→彼得潘銅像→Serpentine Bridge→Diana噴泉（可涉水）→Diana遊樂場',type:'n',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Hyde+Park+London',
+     transport:'🚇 District Line→High Street Kensington（2站）',
+     warn:'備毛巾和備用衣物！確認Diana遊樂場開放 royalparks.org.uk',
+     toilet:'Lido Café廁所（Diana噴泉旁，免費）'},
+    {time:'19:00',title:'🍽️ Kensington High Street 晚餐',desc:'',type:'food',indoor:true,
+     maps:'https://maps.google.com/maps/dir//High+Street+Kensington+restaurants',
+     food:'Patara泰式£16 / Byron Burger兒童£9'},
   ]},
-  { num: 'D8', date: '7/5', title: '格林威治', type: 'lon', items: [
-    { time: '09:00', title: '步行至Hammersmith Pier', desc: '飯店步行12分至碼頭', type: 'normal',
-      warn: '開啟Thames Clippers Tickets App確認09:30班次',
-      maps: 'https://maps.google.com/maps?q=Hammersmith+Pier+Thames+Clippers' },
-    { time: '09:30', title: '⭐ Thames Clipper→格林威治', desc: '55分全程河景，Tower Bridge、Canary Wharf', type: 'star',
-      transport: '🚢 Thames Clipper（£9/人）', alt: '🚇 District→DLR（40分）',
-      tip: '全程河景，不可錯過！' },
-    { time: '10:30', title: '國家海事博物館', desc: '全球最大海事博物館，AHOY!兒童廳（免費）', type: 'indoor',
-      tip: '免費，10:00-17:00，無需預約',
-      maps: 'https://maps.google.com/maps?q=National+Maritime+Museum+Greenwich', indoor: true,
-      toilet: '館內各樓層廁所（親子廁所✅）' },
-    { time: '12:00', title: '🍽️ 格林威治市集午餐', desc: '各國街頭美食（現金備用）', type: 'food',
-      food: '人均£8-12', warn: '部分攤位僅收現金',
-      maps: 'https://maps.google.com/maps?q=Greenwich+Market' },
-    { time: '13:00', title: 'Cutty Sark外觀', desc: '1869年茶葉飛剪船外觀（免費）', type: 'outdoor',
-      maps: 'https://maps.google.com/maps?q=Cutty+Sark+Greenwich' },
-    { time: '13:30', title: 'Greenwich Park山坡', desc: 'Wolfe雕像全景→鹿苑（建議14:00前完成）', type: 'outdoor',
-      warn: '14:00後高溫，建議涼爽時段完成',
-      maps: 'https://maps.google.com/maps?q=Greenwich+Park+London',
-      toilet: '公園入口附近公廁（免費）' },
-    { time: '14:30', title: '皇家天文台外牆', desc: '本初子午線外牆免費拍照，東西半球各踩一腳', type: 'outdoor',
-      maps: 'https://maps.google.com/maps?q=Royal+Observatory+Greenwich',
-      toilet: '天文台旁公廁' },
-    { time: '15:30', title: 'Old Royal Naval College外觀', desc: 'Wren設計，電影場景（免費）', type: 'outdoor',
-      maps: 'https://maps.google.com/maps?q=Old+Royal+Naval+College+Greenwich' },
-    { time: '16:00', title: '⭐ Thames Clipper返回倫敦', desc: '黃昏天際線，The Shard最美', type: 'star',
-      transport: '🚢 Thames Clipper', alt: '🚇 DLR→Jubilee' },
-    { time: '19:00', title: '🍽️ Hammersmith晚餐', desc: 'Wagamama / Franco Manca / Nando\'s', type: 'food',
-      food: 'Wagamama拉麵£13 / Nando\'s烤雞£10',
-      maps: 'https://maps.google.com/maps?q=Wagamama+Hammersmith', indoor: true },
+  {n:'D8',date:'7/5',title:'格林威治',type:'lon',
+   depart:{from:'飯店→步行12分→Hammersmith Pier',how:'🚶 步行12分',time:'09:00出發'},
+   ret:{to:'飯店',how:'🚇 District Line→Hammersmith（25分）',time:'21:00前'},
+   items:[
+    {time:'09:00',title:'步行至 Hammersmith Pier（12分）',desc:'',type:'n',
+     maps:'https://maps.google.com/maps/dir//Hammersmith+Pier+Thames+Clippers',
+     warn:'開啟 Thames Clippers Tickets App 確認09:30班次'},
+    {time:'09:30',title:'⭐ Thames Clipper→格林威治（55分）',desc:'全程河景：Battersea、Tower Bridge、Canary Wharf',type:'star',outdoor:true,
+     transport:'🚢 Thames Clipper（£9/人）',alt:'🚇 District→DLR（40分）'},
+    {time:'10:30',title:'國家海事博物館 AHOY!（免費）',desc:'兒童互動廳，6-12歲最愛',type:'n',indoor:true,
+     maps:'https://maps.google.com/maps/dir//National+Maritime+Museum+Greenwich',
+     toilet:'館內各層（親子廁所✅）'},
+    {time:'12:00',title:'🍽️ 格林威治市集午餐',desc:'各國街頭美食（現金備用）',type:'food',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Greenwich+Market',
+     food:'人均£8-12',warn:'部分攤位現金'},
+    {time:'13:00',title:'Cutty Sark 外觀（免費）',desc:'1869年茶葉飛剪船外觀拍照',type:'n',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Cutty+Sark+Greenwich'},
+    {time:'13:30',title:'Greenwich Park 山坡（建議14:00前完成）',desc:'Wolfe雕像全景→鹿苑',type:'n',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Greenwich+Park+London',
+     warn:'14:00後高溫，建議涼爽時段完成',
+     toilet:'公園入口附近公廁（免費）'},
+    {time:'14:30',title:'皇家天文台外牆（免費）',desc:'本初子午線外牆拍照，東西半球各踩一腳',type:'n',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Royal+Observatory+Greenwich',
+     toilet:'天文台旁公廁'},
+    {time:'15:30',title:'Old Royal Naval College 外觀（免費）',desc:'Wren設計，電影《雷神索爾》場景',type:'n',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Old+Royal+Naval+College+Greenwich'},
+    {time:'16:00',title:'⭐ Thames Clipper 返回倫敦',desc:'黃昏天際線The Shard+Tower Bridge最美',type:'star',outdoor:true,
+     transport:'🚢 Thames Clipper',alt:'🚇 DLR→Jubilee'},
+    {time:'19:00',title:'🍽️ Hammersmith 附近晚餐',desc:'',type:'food',indoor:true,
+     food:'Wagamama拉麵£13 / Nando\'s烤雞£10'},
   ]},
-  { num: 'D9', date: '7/6', title: '皇室歷史', type: 'lon', items: [
-    { time: '09:30', title: '⭐ 衛兵交接', desc: '白金漢宮（免費），11:00開始，10:30前到場', type: 'star',
-      transport: '🚇 District Line→St. James\'s Park站',
-      warn: '⚠️ 出門前確認 changing-guard.com',
-      maps: 'https://maps.google.com/maps?q=Buckingham+Palace+London',
-      toilet: 'St. James\'s Park廁所（免費）' },
-    { time: '11:15', title: 'St. James\'s Park Blue Bridge', desc: '向西拍白金漢宮，向東拍倫敦眼', type: 'outdoor',
-      maps: 'https://maps.google.com/maps?q=St+James+Park+Blue+Bridge' },
-    { time: '11:45', title: '🍽️ Borough Market午餐', desc: 'Kappacasein起司吐司+Bread Ahead甜甜圈', type: 'food',
-      food: '4人預算£35-50，現金備用',
-      transport: '🚇 Jubilee Line→London Bridge（15分）',
-      warn: '部分攤位現金', maps: 'https://maps.google.com/maps?q=Borough+Market+London',
-      toilet: '市集內免費廁所' },
-    { time: '13:30', title: '步行至倫敦塔', desc: '沿途可見塔橋', type: 'normal',
-      transport: '步行12分', alt: '🚢 Uber Boat London Bridge→Tower Pier（5分）' },
-    { time: '14:00', title: '⭐ 倫敦塔（2大+2孩全家！）', desc: 'Crown Jewels→White Tower→渡鴉\n入場後立即前往Crown Jewels（排隊最長）', type: 'star',
-      transport: '步行（景點內）', warn: '⚠️ hrp.org.uk預約14:00時段，£107.40/4人',
-      tip: '🏛️室內，高溫首選',
-      maps: 'https://maps.google.com/maps?q=Tower+of+London', indoor: true,
-      toilet: '塔內廁所（各展廳旁）' },
-    { time: '16:30', title: '塔橋免費橋面步行', desc: '倫敦塔橋橋面（免費外觀體驗）', type: 'outdoor',
-      maps: 'https://maps.google.com/maps?q=Tower+Bridge+London',
-      toilet: '塔橋南側Tower Hamlets公廁' },
-    { time: '17:00', title: '南岸Southbank散步', desc: 'HMS Belfast→莎士比亞環球劇場外觀→Millennium Bridge', type: 'outdoor',
-      maps: 'https://maps.google.com/maps?q=Southbank+London' },
-    { time: '18:30', title: '柯芬園', desc: 'West Piazza街頭表演→Neal\'s Yard彩虹庭院→Benjamin Pollock\'s', type: 'outdoor',
-      transport: '🚇 District→Circle→Covent Garden', warn: '19:00前到，多數店19:00關',
-      maps: 'https://maps.google.com/maps?q=Covent+Garden+London',
-      toilet: '柯芬園內公廁（免費）' },
-    { time: '19:30', title: '🍽️ 柯芬園晚餐', desc: 'Dishoom（必訂位）或Maxwell\'s', type: 'food',
-      food: 'Dishoom黑豆咖哩£10 / Maxwell\'s漢堡£16',
-      warn: '⚠️ Dishoom需提前2-3週訂位 dishoom.com',
-      maps: 'https://maps.google.com/maps?q=Dishoom+Covent+Garden', indoor: true },
+  {n:'D9',date:'7/6',title:'皇室歷史',type:'lon',
+   depart:{from:'飯店（09:30）',how:'🚇 District/Circle→St. James\'s Park（15分）',time:'09:30'},
+   ret:{to:'飯店',how:'🚇 Piccadilly→District→Hammersmith（30分）',time:'21:30前'},
+   items:[
+    {time:'10:30',title:'⭐ 衛兵交接（免費）',desc:'白金漢宮，11:00開始，10:30前到場',type:'star',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Buckingham+Palace+London',
+     warn:'⚠️ 出門前確認 changing-guard.com（週一場次）',
+     toilet:'St. James\'s Park廁所（免費）'},
+    {time:'11:15',title:'St. James\'s Park Blue Bridge',desc:'向西拍白金漢宮，向東拍倫敦眼',type:'n',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//St+James+Park+Blue+Bridge+London'},
+    {time:'11:45',title:'🍽️ Borough Market 午餐',desc:'Kappacasein起司吐司+Bread Ahead甜甜圈',type:'food',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Borough+Market+London',
+     food:'4人預算£35-50，現金備用',
+     warn:'部分攤位現金',
+     transport:'🚇 Jubilee Line→London Bridge（15分）',
+     toilet:'市集內免費廁所'},
+    {time:'13:30',title:'步行至倫敦塔（12分）',desc:'沿途可見塔橋',type:'n',
+     transport:'步行12分',alt:'🚢 Uber Boat London Bridge→Tower Pier（5分）'},
+    {time:'14:00',title:'⭐ 倫敦塔（2大+2孩！）',desc:'Crown Jewels→White Tower→渡鴉\n入場後立即前往Crown Jewels（排隊最長）',type:'star',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Tower+of+London',
+     warn:'⚠️hrp.org.uk預約14:00時段，£107.40/4人',
+     toilet:'塔內各展廳旁'},
+    {time:'16:30',title:'塔橋免費橋面步行',desc:'免費外觀體驗，俯視泰晤士河',type:'n',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Tower+Bridge+London',
+     toilet:'塔橋南側Tower Hamlets公廁'},
+    {time:'17:00',title:'南岸 Southbank 散步',desc:'HMS Belfast→莎士比亞環球劇場外觀→Millennium Bridge',type:'n',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Southbank+London'},
+    {time:'18:30',title:'柯芬園 + Neal\'s Yard + Pollock\'s',desc:'West Piazza街頭表演→彩虹庭院→玩具店',type:'n',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Covent+Garden+London',
+     transport:'🚇 District→Covent Garden',
+     warn:'19:00前到，多數店關',
+     toilet:'柯芬園內公廁（免費）'},
+    {time:'19:30',title:'🍽️ 柯芬園晚餐',desc:'Dishoom或Maxwell\'s',type:'food',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Dishoom+Covent+Garden',
+     food:'Dishoom黑豆咖哩£10（需提前訂位）\nMaxwell\'s漢堡£16',
+     warn:'⚠️Dishoom需提前2-3週訂位 dishoom.com'},
   ]},
-  { num: 'D10', date: '7/7', title: '博物館日', type: 'lon', items: [
-    { time: '10:00', title: '⭐ 自然歷史博物館', desc: 'Hope藍鯨→恐龍T-Rex（動態！）→地震模擬器', type: 'star',
-      transport: '🚇 District Line→South Kensington（地下道直通，雨天不淋雨）',
-      warn: '⚠️ nhm.ac.uk提前4-6週預約10:00場次，免費',
-      tip: '🏛️室內，高溫首選',
-      maps: 'https://maps.google.com/maps?q=Natural+History+Museum+London', indoor: true,
-      toilet: '館內各樓層廁所（親子廁所✅），育嬰室一樓' },
-    { time: '13:00', title: '🍽️ South Kensington午餐', desc: 'Exhibition Road附近', type: 'food',
-      food: 'The Dispatch輕食£8-12', maps: 'https://maps.google.com/maps?q=Exhibition+Road+London', indoor: true },
-    { time: '14:30', title: 'V&A博物館中庭戲水', desc: '夏天孩子玩水首選，淺水池', type: 'outdoor',
-      warn: '⚠️ 必備毛巾和備用衣物！', transport: '步行3分（NHM隔壁）',
-      maps: 'https://maps.google.com/maps?q=Victoria+and+Albert+Museum+London',
-      toilet: 'V&A館內廁所（步行入館免費）' },
-    { time: '16:00', title: '⭐ Harrods美食大廳', desc: '世界最奢華百貨（免費入場）\n巧克力廳、甜點廳超拍照', type: 'indoor',
-      transport: '🚇 Piccadilly Line→Knightsbridge（1站）', alt: '步行12分',
-      tip: '🏛️室內冷氣，高溫備案',
-      maps: 'https://maps.google.com/maps?q=Harrods+London', indoor: true,
-      toilet: 'Harrods館內廁所（需購物進入）\n備案：附近Starbucks' },
-    { time: '19:00', title: '🍽️ Daquise晚餐', desc: '1947年波蘭老字號，家庭友善', type: 'food',
-      food: 'Pierogi £12，兒童Schnitzel £13',
-      maps: 'https://maps.google.com/maps?q=Daquise+London', indoor: true },
+  {n:'D10',date:'7/7',title:'博物館日',type:'lon',
+   depart:{from:'飯店（09:30）',how:'🚇 District Line→South Kensington（地下道直通NHM）',time:'09:30'},
+   ret:{to:'飯店',how:'🚇 District Line→Hammersmith（8分）',time:'21:00前'},
+   items:[
+    {time:'10:00',title:'⭐ 自然歷史博物館（免費）',desc:'Hope藍鯨→恐龍T-Rex（動態！）→地震模擬器',type:'star',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Natural+History+Museum+London',
+     warn:'⚠️nhm.ac.uk提前預約10:00場次（免費）',
+     toilet:'館內各層（親子廁所✅，育嬰室一樓）'},
+    {time:'13:00',title:'🍽️ Exhibition Road 午餐',desc:'',type:'food',indoor:true,
+     food:'The Dispatch輕食£8-12'},
+    {time:'14:30',title:'V&A 博物館中庭戲水',desc:'夏天淺水池，孩子玩水首選',type:'n',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Victoria+and+Albert+Museum+London',
+     warn:'⚠️必備毛巾和備用衣物！孩子必濕',
+     toilet:'V&A館內廁所（步行入館免費）'},
+    {time:'16:00',title:'⭐ Harrods 美食大廳（免費入場）',desc:'巧克力廳、甜點廳，視覺震撼',type:'n',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Harrods+London',
+     transport:'🚇 Piccadilly Line→Knightsbridge（1站）',
+     tip:'高溫備案首選，冷氣充足'},
+    {time:'19:00',title:'🍽️ Daquise 晚餐',desc:'1947年波蘭老字號，家庭友善',type:'food',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Daquise+London',
+     food:'Pierogi£12，兒童Schnitzel£13'},
   ]},
-  { num: 'D11', date: '7/8', title: '大英博物館', type: 'lon', items: [
-    { time: '10:00', title: '⭐ 大英博物館', desc: '羅塞塔石碑→木乃伊→Lewis Chess Set（哈利波特巫師棋！）', type: 'star',
-      transport: '🚇 District→Central Line→Holborn', alt: '🚕 Uber £15',
-      warn: '⚠️ britishmuseum.org提前預約09:30場次，免費',
-      maps: 'https://maps.google.com/maps?q=British+Museum+London', indoor: true,
-      toilet: '館內各樓層廁所（親子廁所✅）' },
-    { time: '13:00', title: '🍽️ Bloomsbury午餐', desc: 'Museum Street一帶', type: 'food',
-      food: 'Museum Tavern Fish&Chips £14', maps: 'https://maps.google.com/maps?q=Museum+Tavern+London', indoor: true },
-    { time: '14:30', title: 'Southbank南岸', desc: '倫敦眼外觀→Tate Modern外觀→Globe外觀', type: 'outdoor',
-      transport: '🚇 Central→District→Embankment',
-      maps: 'https://maps.google.com/maps?q=Southbank+London',
-      toilet: 'Southbank Centre公廁（免費）' },
-    { time: '16:30', title: 'Hammersmith Bridge + Blue Anchor', desc: '1887年懸索橋+1722年老酒吧，在地收尾', type: 'outdoor',
-      transport: '🚇 District Line→Hammersmith',
-      maps: 'https://maps.google.com/maps?q=Hammersmith+Bridge+London' },
-    { time: '18:30', title: '🍽️ Hammersmith晚餐', desc: '最後一晚在地選擇', type: 'food',
-      food: 'Anglesea Arms英式酒吧 / Popeyes炸雞',
-      maps: 'https://maps.google.com/maps?q=Anglesea+Arms+Hammersmith', indoor: true,
-      tip: '⭐今晚整理行李，明日13:30出發' },
+  {n:'D11',date:'7/8',title:'大英博物館',type:'lon',
+   depart:{from:'飯店（09:30）',how:'🚇 District→Central Line→Holborn（30分）',time:'09:30'},
+   ret:{to:'飯店',how:'🚇 District Line→Hammersmith',time:'21:00前'},
+   items:[
+    {time:'10:00',title:'⭐ 大英博物館（免費）',desc:'羅塞塔石碑→木乃伊→Lewis Chess Set（哈利波特巫師棋！）',type:'star',indoor:true,
+     maps:'https://maps.google.com/maps/dir//British+Museum+London',
+     warn:'⚠️britishmuseum.org提前預約09:30場次',
+     toilet:'館內各層（親子廁所✅）'},
+    {time:'13:00',title:'🍽️ Bloomsbury 午餐',desc:'',type:'food',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Museum+Tavern+London',
+     food:'Museum Tavern炸魚薯條£14 / Côte法式£18'},
+    {time:'14:30',title:'Southbank 南岸',desc:'倫敦眼外觀→Tate Modern外觀→Globe外觀',type:'n',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Southbank+London',
+     transport:'🚇 Central→District→Embankment',
+     toilet:'Southbank Centre公廁（免費）'},
+    {time:'16:30',title:'⭐ Hammersmith Bridge + Blue Anchor',desc:'1887年懸索橋+1722年老酒吧，在地收尾',type:'star',outdoor:true,
+     maps:'https://maps.google.com/maps/dir//Hammersmith+Bridge+London'},
+    {time:'18:30',title:'🍽️ Hammersmith 晚餐',desc:'最後一晚在地選擇',type:'food',indoor:true,
+     food:'Anglesea Arms英式酒吧 / Popeyes炸雞',
+     tip:'⭐今晚整理行李，明日13:30出發'},
   ]},
-  { num: 'D12', date: '7/9', title: '返程', type: 'travel', items: [
-    { time: '08:00', title: '飯店早餐+退房', desc: '最後早餐，告知13:00取行李', type: 'normal' },
-    { time: '10:00', title: '自由活動', desc: 'Ravenscourt Park公園 / Westfield補買伴手禮', type: 'outdoor',
-      warn: '不要去太遠', maps: 'https://maps.google.com/maps?q=Ravenscourt+Park+London' },
-    { time: '12:30', title: '午餐+取行李', desc: '附近快速午餐，確認護照+機票TK1986', type: 'food',
-      food: 'Pret a Manger £6-8', warn: '確認護照效期、機票電子票' },
-    { time: '13:30', title: '⭐ 出發Heathrow T2', desc: 'Piccadilly Line直達（35-40分），務必準時！', type: 'star',
-      transport: '🚇 Piccadilly Line直達LHR T2/T3（無需換車）', alt: '🚕 計程車 £60-80',
-      warn: '⚠️ 13:30準時出發！T2B登機閘口從T2A走30分',
-      maps: 'https://maps.google.com/maps?q=Hammersmith+Underground+Station' },
-    { time: '14:15', title: 'Heathrow T2辦理登機', desc: 'T2A Check-in→安檢→免稅購物\nWhittard茶葉、M&S餅乾推薦', type: 'indoor',
-      warn: '⚠️ T2A→T2B步行30分，別在T2A逗留太久',
-      maps: 'https://maps.google.com/maps?q=Heathrow+Terminal+2', indoor: true },
-    { time: '16:45', title: '✈️ 起飛 LHR→IST→TPE', desc: 'TK1986，轉機2h55m行李直掛', type: 'normal',
-      tip: '7/10 17:55抵達桃園T2，歡迎回家！' },
+  {n:'D12',date:'7/9',title:'返程',type:'tr',
+   depart:{from:'飯店（退房後）→直接前往Heathrow',how:'🚇 Piccadilly Line直達LHR T2/T3（35-40分，0換乘）',time:'13:30出發'},
+   items:[
+    {time:'08:00',title:'飯店早餐+辦理退房',desc:'最後早餐，12:00退房',type:'n',
+     tip:'告知Concierge取行李時間'},
+    {time:'10:00',title:'Heathrow T2 免稅店逛街',desc:'退房後直接前往機場\n不需在飯店附近逛，機場選擇更多更省時',type:'n',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Heathrow+Terminal+2',
+     warn:'⚠️13:30準時從飯店出發！'},
+    {time:'13:30',title:'⭐ 出發 Heathrow T2',desc:'務必準時！Piccadilly Line 35-40分',type:'star',
+     transport:'🚇 Piccadilly Line直達（0換乘）',alt:'🚕 計程車£60-80',
+     warn:'⚠️13:30準時出發，不能晚！'},
+    {time:'14:15',title:'抵達 T2，辦理Check-in',desc:'T2A辦理→安檢→出境後逛免稅店',type:'n',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Heathrow+Terminal+2'},
+    {time:'14:30',title:'⭐ T2 免稅店逛街（約1.5小時）',desc:'World Duty Free、Harrods、Jo Malone、MAC\nWhittard茶葉、M&S餅乾推薦',type:'star',indoor:true,
+     tip:'免稅價格，部分商品省20%'},
+    {time:'13:00',title:'🍽️ 機場午餐',desc:'免稅區餐廳',type:'food',indoor:true,
+     food:'Wagamama拉麵£14 / Pret三明治£6-8'},
+    {time:'16:00',title:'前往 T2B 登機閘口',desc:'從T2A步行至T2B約30分鐘',type:'n',
+     warn:'⚠️T2A→T2B步行30分！別在T2A逗留太久'},
+    {time:'16:45',title:'✈️ 起飛 LHR→IST→TPE',desc:'TK1986，轉機2h55m行李直掛',type:'n',
+     tip:'7/10 17:55抵達桃園T2，歡迎回家！'},
   ]},
 ];
 
-const checklist = [
-  { pri: 'red', title: '英國ETA電子旅行授權（4人各申請）', desc: '每人£20，台灣護照必須申請，未申請無法登機', link: 'https://www.gov.uk/eta' },
-  { pri: 'red', title: '確認護照效期', desc: '所有人護照需有效至2027年1月以上', link: '' },
-  { pri: 'red', title: '確認機票', desc: 'TK：TPE 21:45→IST→MAN 12:05（6/28/29）\nTK1986：LHR T2 16:45→IST→TPE（7/9/10）', link: '' },
-  { pri: 'red', title: '購買旅遊保險', desc: '含醫療、行李遺失、班機延誤（轉機延誤保障尤重要）', link: '' },
-  { pri: 'amber', title: 'Family & Friends Railcard購買', desc: '£30，火車票省1/3', link: 'https://www.railcard.co.uk/railcards/family-and-friends-railcard/' },
-  { pri: 'amber', title: '曼城↔利物浦火車（6/30）', desc: '4人來回約£25-30', link: 'https://www.nationalrail.co.uk' },
-  { pri: 'amber', title: '曼城↔Chester火車（7/2）', desc: '4人來回約£35-45', link: 'https://www.nationalrail.co.uk' },
-  { pri: 'amber', title: '自然歷史博物館預約（7/7，10:00）', desc: '免費但需預約，7月旺季早訂', link: 'https://www.nhm.ac.uk/visit.html' },
-  { pri: 'amber', title: '大英博物館預約（7/8，09:30）', desc: '免費但需預約時段', link: 'https://www.britishmuseum.org/visit' },
-  { pri: 'amber', title: '倫敦塔預約（7/6，14:00）', desc: '2大+2孩，£107.40，提前預約', link: 'https://www.hrp.org.uk/tower-of-london/visit/' },
-  { pri: 'amber', title: '曼城飯店訂房（Residence Inn Marriott）', desc: 'NT$5,624/晚×5晚，6/28前可退款', link: 'https://www.marriott.com/manri' },
-  { pri: 'amber', title: '倫敦飯店訂房（Premier Inn Hammersmith）', desc: 'NT$7,343/晚×5晚', link: 'https://www.premierinn.com/gb/en/hotels/england/greater-london/london/london-hammersmith-hotel.html' },
-  { pri: 'amber', title: 'Dishoom柯芬園訂位（7/6，19:30）', desc: '7月旺季必須提前2-3週訂位', link: 'https://www.dishoom.com/covent-garden/' },
-  { pri: 'amber', title: 'Hawksmoor Manchester訂位（7/1）', desc: '熱門餐廳，建議提前訂位', link: 'https://thehawksmoor.com/locations/manchester/' },
-  { pri: 'amber', title: '英國eSIM上網卡', desc: '台灣出發前購買，抵達即啟用', link: 'https://www.kkday.com' },
-  { pri: 'green', title: '下載 Thames Clippers Tickets App', desc: '即時追蹤船隻位置+班次查詢', link: '' },
-  { pri: 'green', title: '下載 Citymapper App', desc: '整合倫敦所有交通，備用路線查詢', link: '' },
-  { pri: 'green', title: '下載 Avanti West Coast App', desc: '火車電子票+即時動態+月台資訊', link: '' },
-  { pri: 'green', title: '下載 Bee Network App（曼城）', desc: '免費Metroshuttle班次追蹤', link: '' },
-  { pri: 'green', title: '衛兵交接確認（7/6週一）', desc: '夏季通常週一有，出發前確認', link: 'https://www.changing-guard.com/times-buckingham-palace.html' },
-  { pri: 'green', title: 'Diana遊樂場開放確認（7/4）', desc: '翻修後預計2026夏季重開，需確認', link: 'https://www.royalparks.org.uk/visit/parks/kensington-gardens/diana-memorial-playground' },
-  { pri: 'green', title: '空中花園開放確認（7/3）', desc: '⚠️ 目前關閉維修中', link: 'https://www.nationaltrust.org.uk/visit/cheshire-greater-manchester/castlefield-viaduct' },
-  { pri: 'green', title: '行李整備', desc: '涼鞋、雨衣、行動電源、三孔轉接頭\n常備藥：退燒、腸胃、暈車', link: '' },
+// ══ 交通路線資料 ══
+const TRANSPORT_DAYS=[
+  {day:'D2 6/29',depart:'飯店→🚌Route 1→Piccadilly站（上車）→Northern Quarter',ret:'Corn Exchange→🚌Route 1→Piccadilly站→步行10分→飯店'},
+  {day:'D3 6/30',depart:'飯店→🚌Route 1→Piccadilly站→🚂利物浦（35分）',ret:'Liverpool→🚂→Piccadilly站→🚌Route 1→飯店'},
+  {day:'D4 7/1',depart:'飯店→🚌Route 2→Oxford Road站→曼博物館',ret:'Hawksmoor→🚕Uber（£5）→飯店'},
+  {day:'D5 7/2',depart:'飯店→🚌Route 1→Piccadilly站→🚂Chester（55分）',ret:'Chester→🚂→Piccadilly站→🚌Route 1→飯店'},
+  {day:'D6 7/3',depart:'飯店→🚌Route 2→Oxford Road→步行10分→AMBS/Whitworth',ret:'Spinningfields→🚌Route 1→Piccadilly站→步行10分→飯店'},
+  {day:'D7 7/4',depart:'飯店退房→🚕Uber（£5，有行李）→Piccadilly站→🚂倫敦（2h25m）',ret:'Euston→🚇H&C Line→Hammersmith→步行5分→Premier Inn'},
+  {day:'D8 7/5',depart:'飯店→步行12分→Hammersmith Pier→🚢Thames Clipper（55分）→格林威治',ret:'格林威治→🚢Thames Clipper→Embankment→🚇District→Hammersmith→步行5分→飯店'},
+  {day:'D9 7/6',depart:'飯店→步行5分→Hammersmith站→🚇District/Circle→St. James\'s Park站（15分）',ret:'柯芬園→🚇Piccadilly→District→Hammersmith→步行5分→飯店（約30分）'},
+  {day:'D10 7/7',depart:'飯店→步行5分→Hammersmith站→🚇District→South Kensington（8分，地下道直通NHM）',ret:'South Kensington→🚇District→Hammersmith→步行5分→飯店（8分）'},
+  {day:'D11 7/8',depart:'飯店→步行5分→Hammersmith站→🚇District→Earl\'s Court→Piccadilly→Holborn（30分）',ret:'Hammersmith Bridge→步行5分→飯店'},
+  {day:'D12 7/9',depart:'飯店退房→步行5分→Hammersmith站→🚇Piccadilly Line直達Heathrow T2（35-40分）',ret:'✈️ 起飛，歸途！'},
 ];
 
-// ── 渲染總覽 ──
-function renderOverview() {
-  const container = document.getElementById('overview-days');
-  days.forEach(day => {
-    const div = document.createElement('div');
-    div.className = `card ${day.type}`;
-    div.innerHTML = `
-      <div class="card-title">
-        <span class="badge ${day.type}">${day.num}</span>
-        ${day.date}（${day.title}）
-      </div>
-      <div style="font-size:12px;color:var(--muted)">
-        ${day.items.map(i => i.title.replace(/[⭐🍽️]/g, '')).filter(t => !t.includes('休息')).slice(0,3).join('　→　')}
-      </div>
-    `;
-    div.onclick = () => { showTab('itinerary'); selectDay(day.num); };
-    div.style.cursor = 'pointer';
-    container.appendChild(div);
+// ══ Checklist ══
+const CL=[
+  {p:'red',t:'英國ETA電子旅行授權（4人各申請）',d:'每人£20，台灣護照必須申請，未申請無法登機',l:'https://www.gov.uk/eta'},
+  {p:'red',t:'確認護照效期（2027/01以上）',d:'所有人護照需有效至2027年1月以上',l:''},
+  {p:'red',t:'確認機票（去回程）',d:'TK：TPE 21:45→IST→MAN；TK1986：LHR T2 16:45→IST→TPE',l:''},
+  {p:'red',t:'購買旅遊保險',d:'含醫療、行李遺失、班機延誤（轉機延誤保障尤重要）',l:''},
+  {p:'red',t:'⭐ 今天！匯豐輕旅卡機場接送兌換',d:'登入HSBC App→信用卡權益→機場接送兌換→等2工作天→致電全峰確認七人座',l:'https://www.hsbc.com.tw'},
+  {p:'amber',t:'Family & Friends Railcard購買',d:'£30，火車票省1/3',l:'https://www.railcard.co.uk'},
+  {p:'amber',t:'Avanti火車票（7/4）✅已訂',d:'12:14 MAN→EUS，Coach E，E17-E20，£65/4人',l:''},
+  {p:'amber',t:'曼城↔利物浦火車（6/30）',d:'4人來回約£25-30',l:'https://www.nationalrail.co.uk'},
+  {p:'amber',t:'曼城↔Chester火車（7/2）',d:'4人來回約£35-45',l:'https://www.nationalrail.co.uk'},
+  {p:'amber',t:'Residence Inn Manchester 訂房',d:'NT$5,624/晚×5晚=NT$28,120',l:'https://www.marriott.com/manri'},
+  {p:'amber',t:'Premier Inn Hammersmith 訂房',d:'NT$7,343/晚×5晚=NT$36,715，6/28前可退款',l:'https://www.premierinn.com'},
+  {p:'amber',t:'自然歷史博物館預約（7/7，10:00）',d:'免費但需預約，7月旺季早訂',l:'https://www.nhm.ac.uk/visit.html'},
+  {p:'amber',t:'大英博物館預約（7/8，09:30）',d:'免費但需預約時段',l:'https://www.britishmuseum.org/visit'},
+  {p:'amber',t:'倫敦塔預約（7/6，14:00）',d:'2大+2孩，£107.40',l:'https://www.hrp.org.uk/tower-of-london/visit/'},
+  {p:'amber',t:'Dishoom柯芬園訂位（7/6，19:30）',d:'7月旺季必須提前2-3週訂位',l:'https://www.dishoom.com/covent-garden/'},
+  {p:'amber',t:'Hawksmoor Manchester訂位（7/1）',d:'熱門餐廳，建議提前訂位',l:'https://thehawksmoor.com/locations/manchester/'},
+  {p:'amber',t:'英國eSIM上網卡購買',d:'台灣出發前購買，抵達即啟用',l:'https://www.kkday.com'},
+  {p:'green',t:'下載 Thames Clippers Tickets App',d:'Uber Boat即時船隻追蹤+班次查詢',l:''},
+  {p:'green',t:'下載 Citymapper App',d:'整合倫敦所有交通，備用路線查詢',l:''},
+  {p:'green',t:'下載 Avanti West Coast App',d:'火車電子票+即時動態+月台資訊',l:''},
+  {p:'green',t:'下載 Bee Network App（曼城）',d:'免費Metroshuttle Route 1/2班次追蹤',l:''},
+  {p:'green',t:'下載 HSBC 信用卡 App',d:'機場接送兌換+確認預約狀態',l:''},
+  {p:'green',t:'衛兵交接確認（7/6週一）',d:'夏季通常週一有，出發前確認',l:'https://www.changing-guard.com'},
+  {p:'green',t:'Diana遊樂場開放確認（7/4）',d:'翻修後預計2026夏季重開',l:'https://www.royalparks.org.uk/visit/parks/kensington-gardens/diana-memorial-playground'},
+  {p:'green',t:'空中花園開放確認（7/3）',d:'⚠️ 目前關閉維修中',l:'https://www.nationaltrust.org.uk/visit/cheshire-greater-manchester/castlefield-viaduct'},
+  {p:'green',t:'重要文件備份至Google Drive',d:'護照、ETA、機票、保險單、訂房確認信'},
+  {p:'green',t:'行李整備',d:'涼鞋、雨傘、薄外套、行動電源、英規三孔轉接頭\n常備藥：退燒、腸胃、暈車、OK繃',l:''},
+];
+
+// ══ 每日攜帶物品 ══
+const PACKING=[
+  {day:'D3 6/30 利物浦',items:['現金（Mersey Ferry + 市集）','Railcard','Family Railcard']},
+  {day:'D5 7/2 Chester',items:['防滑鞋（城牆）','雨衣備用','X1公車時刻表截圖']},
+  {day:'D7 7/4 移動日',items:['Avanti電子票截圖','全部行李','M&S午餐自備']},
+  {day:'D8 7/5 格林威治',items:['現金（格林威治市集）','Thames Clippers App確認']},
+  {day:'D9 7/6 倫敦塔',items:['現金（Borough Market）','倫敦塔預約截圖','Dishoom訂位截圖']},
+  {day:'D10 7/7 博物館',items:['毛巾+備用衣物（V&A戲水！）','NHM預約截圖']},
+  {day:'D11 7/8 大英博物館',items:['大英博物館預約截圖','整理行李（今晚）']},
+  {day:'D12 7/9 返程',items:['護照（4本）','TK1986機票截圖','所有行李']},
+];
+
+// ══ 常備藥清單 ══
+const MEDS=['退燒藥（Calpol英國版或台灣自備）','腸胃藥（止瀉/整腸）','暈車藥','感冒藥','OK繃（各種尺寸）','防蚊液','止癢藥膏','眼藥水','喉嚨痛藥片','消毒濕紙巾'];
+
+// ══ 渲染總覽 ══
+function renderOverview(){
+  const c=document.getElementById('overview-list');
+  DAYS.forEach(d=>{
+    const div=document.createElement('div');
+    div.className=`card ${d.type}`;
+    div.style.cursor='pointer';
+    div.innerHTML=`<div class="card-title"><span class="badge ${d.type}">${d.n}</span>${d.date}（${d.title}）</div>
+    <div style="font-size:11px;color:var(--muted)">${d.items.filter(i=>i.title&&!i.title.includes('返回')&&!i.title.includes('步行至')).slice(0,3).map(i=>i.title.replace(/[⭐🍽️🚂]/g,'')).join(' → ')}</div>`;
+    div.onclick=()=>{showTab('itinerary');selectDay(d.n);};
+    c.appendChild(div);
   });
 }
 
-// ── 渲染行程 ──
-function renderItinerary() {
-  const selector = document.getElementById('day-selector');
-  const container = document.getElementById('day-details');
+// ══ 渲染行程 ══
+function renderItinerary(){
+  const sel=document.getElementById('day-sel');
+  const det=document.getElementById('day-details');
+  DAYS.forEach((d,i)=>{
+    const btn=document.createElement('button');
+    btn.className=`day-btn ${d.type}${i===0?' on':''}`;
+    btn.textContent=`${d.n} ${d.date}`;
+    btn.id=`btn-${d.n}`;
+    btn.onclick=()=>selectDay(d.n);
+    sel.appendChild(btn);
 
-  days.forEach((day, idx) => {
-    const btn = document.createElement('button');
-    btn.className = `day-btn ${day.type}${idx === 0 ? ' active' : ''}`;
-    btn.textContent = `${day.num} ${day.date}`;
-    btn.onclick = () => selectDay(day.num);
-    btn.id = `btn-${day.num}`;
-    selector.appendChild(btn);
+    const div=document.createElement('div');
+    div.className=`day-detail${i===0?' on':''}`;
+    div.id=`det-${d.n}`;
 
-    const detail = document.createElement('div');
-    detail.className = `day-detail${idx === 0 ? ' active' : ''}`;
-    detail.id = `detail-${day.num}`;
+    let h=`<div class="day-hdr"><div><div class="dn">${d.n} ${d.date}</div><div class="dd">${d.title}</div></div><span class="badge ${d.type}">${d.type==='man'?'曼徹斯特':d.type==='lon'?'倫敦':'移動日'}</span></div>`;
 
-    let html = `<div class="day-header">
-      <div>
-        <div class="day-num">${day.num} ${day.date}</div>
-        <div class="day-date">${day.title}</div>
-      </div>
-      <span class="badge ${day.type}">${day.type === 'man' ? '曼徹斯特' : day.type === 'lon' ? '倫敦' : '移動日'}</span>
-    </div>`;
+    // 出發/返回路線
+    if(d.depart){
+      h+=`<div class="dr-box"><div class="dr-title">🚦 飯店出發路線</div>
+      <div class="dr-row"><span class="dr-icon">📍</span><span style="font-size:12px">${d.depart.from}</span></div>
+      <div class="dr-row"><span class="dr-icon">🕘</span><span style="font-size:12px">${d.depart.time}</span></div>
+      <div class="dr-row"><span class="dr-icon">🚌</span><span style="font-size:12px">${d.depart.how}</span></div>
+      ${d.ret?`<div style="margin-top:6px;padding-top:6px;border-top:1px solid rgba(0,0,0,.1)"><div class="dr-title">🔙 返回飯店路線</div>
+      <div class="dr-row"><span class="dr-icon">🕘</span><span style="font-size:12px">${d.ret.time||'21:00前'}</span></div>
+      <div class="dr-row"><span class="dr-icon">🚌</span><span style="font-size:12px">${d.ret.how}</span></div></div>`:''}
+      </div>`;
+    }
 
-    day.items.forEach(item => {
-      const dotClass = item.type === 'food' ? 'food' : item.type === 'star' ? 'star' : item.type === 'normal' || item.type === 'outdoor' || item.type === 'indoor' ? '' : '';
-      html += `<div class="timeline-item">
-        <div class="time-col">${item.time}</div>
-        <div class="dot ${dotClass}"></div>
-        <div class="item-body">
-          <div class="item-title">${item.title}</div>
-          <div class="item-desc">${item.desc}</div>`;
-
-      if (item.maps) {
-        html += `<a href="${item.maps}" target="_blank" class="map-link">📍 Google Maps</a>`;
-      }
-
-      html += `<div class="tag-row">`;
-      if (item.indoor) html += `<span class="tag indoor">🏛️ 室內</span>`;
-      if (item.outdoor) html += `<span class="tag outdoor">🌤️ 戶外</span>`;
-      if (item.transport) html += `<span class="tag transport">🚦 ${item.transport}</span>`;
-      if (item.alt) html += `<span class="tag alt">🔄 ${item.alt}</span>`;
-      if (item.food) html += `<span class="tag food-tag">🍽️ ${item.food}</span>`;
-      if (item.warn) html += `<span class="tag warn-tag">⚠️ ${item.warn}</span>`;
-      if (item.tip) html += `<span class="tag tip-tag">✅ ${item.tip}</span>`;
-      html += `</div>`;
-
-      if (item.toilet) {
-        html += `<div class="toilet-item" style="margin-top:4px"><span class="t-icon">🚻</span><div style="font-size:11px">${item.toilet}</div></div>`;
-      }
-
-      html += `</div></div>`;
+    d.items.forEach(item=>{
+      const dc=item.type==='food'?'food':item.type==='star'?'star':'';
+      h+=`<div class="tl">
+        <div class="tl-time">${item.time}</div>
+        <div class="tl-dot ${dc}"></div>
+        <div class="tl-body">
+          <div class="tl-title">${item.title}</div>
+          <div class="tl-desc">${item.desc.replace(/\n/g,'<br>')}</div>`;
+      if(item.maps) h+=`<a href="${item.maps}" target="_blank" class="maplink">📍 Google Maps（導航）</a>`;
+      h+=`<div class="tags">`;
+      if(item.indoor) h+=`<span class="tag in">🏛️室內</span>`;
+      if(item.outdoor) h+=`<span class="tag out">🌤️戶外</span>`;
+      if(item.transport) h+=`<span class="tag tr">🚦${item.transport}</span>`;
+      if(item.alt) h+=`<span class="tag alt">🔄${item.alt}</span>`;
+      if(item.food) h+=`<span class="tag food">🍽️${item.food}</span>`;
+      if(item.warn) h+=`<span class="tag w">⚠️${item.warn}</span>`;
+      if(item.tip) h+=`<span class="tag ok">✅${item.tip}</span>`;
+      h+=`</div>`;
+      if(item.toilet) h+=`<div class="toilet"><span>🚻</span><div style="font-size:11px">${item.toilet}</div></div>`;
+      h+=`</div></div>`;
     });
 
-    detail.innerHTML = html;
-    container.appendChild(detail);
+    div.innerHTML=h;
+    det.appendChild(div);
   });
 }
 
-function selectDay(num) {
-  document.querySelectorAll('.day-detail').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.day-btn').forEach(el => el.classList.remove('active'));
-  document.getElementById(`detail-${num}`).classList.add('active');
-  const btn = document.getElementById(`btn-${num}`);
-  btn.classList.add('active');
-  btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+function selectDay(n){
+  document.querySelectorAll('.day-detail').forEach(e=>e.classList.remove('on'));
+  document.querySelectorAll('.day-btn').forEach(e=>e.classList.remove('on'));
+  document.getElementById(`det-${n}`).classList.add('on');
+  const btn=document.getElementById(`btn-${n}`);
+  btn.classList.add('on');
+  btn.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// ── 渲染 Checklist ──
-function renderChecklist() {
-  const sections = { red: 'checklist-red', amber: 'checklist-amber', green: 'checklist-green' };
-  const saved = JSON.parse(localStorage.getItem('checklist') || '{}');
-
-  checklist.forEach((item, idx) => {
-    const container = document.getElementById(sections[item.pri]);
-    const div = document.createElement('div');
-    div.className = `check-item${saved[idx] ? ' done' : ''}`;
-    div.innerHTML = `
-      <input type="checkbox" id="chk-${idx}" ${saved[idx] ? 'checked' : ''} onchange="toggleCheck(${idx})">
-      <div class="check-text">
-        <div class="check-title">${item.title}</div>
-        <div class="check-desc">${item.desc}</div>
-        ${item.link ? `<a href="${item.link}" target="_blank" class="check-link">${item.link}</a>` : ''}
-      </div>
-      <span class="priority-badge p-${item.pri}">${item.pri === 'red' ? '🔴' : item.pri === 'amber' ? '🟡' : '🟢'}</span>
-    `;
-    container.appendChild(div);
+// ══ 渲染交通 ══
+function renderTransport(){
+  const c=document.getElementById('transport-days');
+  TRANSPORT_DAYS.forEach(t=>{
+    const div=document.createElement('div');
+    div.className='card';
+    div.innerHTML=`<div class="card-title">${t.day}</div>
+    <div style="font-size:12px;line-height:2">
+    <strong>出發：</strong>${t.depart}<br>
+    <strong>返回：</strong>${t.ret}
+    </div>`;
+    c.appendChild(div);
   });
-  updateProgress();
 }
 
-function toggleCheck(idx) {
-  const saved = JSON.parse(localStorage.getItem('checklist') || '{}');
-  saved[idx] = document.getElementById(`chk-${idx}`).checked;
-  localStorage.setItem('checklist', JSON.stringify(saved));
-  const item = document.getElementById(`chk-${idx}`).closest('.check-item');
-  item.classList.toggle('done', saved[idx]);
-  updateProgress();
+// ══ 渲染 Checklist ══
+function renderChecklist(){
+  const saved=JSON.parse(localStorage.getItem('cl')||'{}');
+  ['red','amber','green'].forEach(p=>{
+    const c=document.getElementById(`cl-${p}`);
+    CL.filter(i=>i.p===p).forEach((item,idx)=>{
+      const key=p+'_'+idx;
+      const div=document.createElement('div');
+      div.className=`chk-item${saved[key]?' done':''}`;
+      div.innerHTML=`
+        <input type="checkbox" id="c-${key}" ${saved[key]?'checked':''} onchange="toggleCL('${key}')">
+        <div class="chk-text">
+          <div class="chk-title">${item.t}</div>
+          <div class="chk-desc">${item.d}</div>
+          ${item.l?`<a href="${item.l}" target="_blank" class="chk-link">${item.l}</a>`:''}
+        </div>
+        <span class="pbadge p${p[0]}">${p==='red'?'🔴':p==='amber'?'🟡':'🟢'}</span>`;
+      c.appendChild(div);
+    });
+  });
+  updateProg();
 }
 
-function updateProgress() {
-  const saved = JSON.parse(localStorage.getItem('checklist') || '{}');
-  const done = Object.values(saved).filter(Boolean).length;
-  document.getElementById('checklist-progress').textContent =
-    `完成進度：${done} / ${checklist.length} 項　（${Math.round(done/checklist.length*100)}%）`;
+function toggleCL(key){
+  const saved=JSON.parse(localStorage.getItem('cl')||'{}');
+  saved[key]=document.getElementById(`c-${key}`).checked;
+  localStorage.setItem('cl',JSON.stringify(saved));
+  document.getElementById(`c-${key}`).closest('.chk-item').classList.toggle('done',saved[key]);
+  updateProg();
 }
 
-// ── Init ──
+function updateProg(){
+  const saved=JSON.parse(localStorage.getItem('cl')||'{}');
+  const done=Object.values(saved).filter(Boolean).length;
+  const total=CL.length;
+  const pct=Math.round(done/total*100);
+  document.getElementById('prog-fill').style.width=pct+'%';
+  document.getElementById('prog-text').textContent=`完成進度：${done} / ${total} 項（${pct}%）`;
+}
+
+// ══ 渲染每日攜帶 ══
+function renderPacking(){
+  const c=document.getElementById('packing-list');
+  PACKING.forEach(p=>{
+    const div=document.createElement('div');
+    div.className='pack-day';
+    div.innerHTML=`<div class="pack-day-title">${p.day}</div>`+
+      p.items.map((item,i)=>`<div class="pack-item"><input type="checkbox" id="pk-${p.day}-${i}" onchange="savePack(this,'pk-${p.day}-${i}')"><label for="pk-${p.day}-${i}" style="cursor:pointer">${item}</label></div>`).join('');
+    c.appendChild(div);
+  });
+  // 讀取儲存
+  const saved=JSON.parse(localStorage.getItem('packing')||'{}');
+  Object.keys(saved).forEach(k=>{const el=document.getElementById(k);if(el)el.checked=saved[k];});
+}
+
+function savePack(el,key){
+  const saved=JSON.parse(localStorage.getItem('packing')||'{}');
+  saved[key]=el.checked;
+  localStorage.setItem('packing',JSON.stringify(saved));
+}
+
+// ══ 渲染常備藥 ══
+function renderMeds(){
+  const c=document.getElementById('medicine-list');
+  c.innerHTML=MEDS.map((m,i)=>`<div class="pack-item"><input type="checkbox" id="med-${i}" onchange="savePack(this,'med-${i}')"><label for="med-${i}" style="cursor:pointer;font-size:12px">${m}</label></div>`).join('');
+  const saved=JSON.parse(localStorage.getItem('packing')||'{}');
+  MEDS.forEach((_,i)=>{const el=document.getElementById(`med-${i}`);if(el)el.checked=saved[`med-${i}`]||false;});
+}
+
+// ══ 匯率換算 ══
+let swapDir=true; // true=GBP→NTD
+function calcGBP(){
+  const v=parseFloat(document.getElementById('gbp-in').value)||0;
+  const rate=40;
+  if(swapDir){
+    document.getElementById('gbp-result').textContent=`= NT$ ${(v*rate).toLocaleString()}`;
+  } else {
+    document.getElementById('gbp-result').textContent=`= £ ${(v/rate).toFixed(2)}`;
+  }
+}
+function swapCurrency(){
+  swapDir=!swapDir;
+  const inp=document.getElementById('gbp-in');
+  inp.placeholder=swapDir?'輸入英鎊金額（£）':'輸入台幣金額（NT$）';
+  document.getElementById('swap-label').textContent=swapDir?'目前：£ → NT$':'目前：NT$ → £';
+  document.querySelector('.converter div:first-child').textContent=swapDir?'英鎊 → 新台幣':'新台幣 → 英鎊';
+  inp.value='';
+  document.getElementById('gbp-result').textContent=swapDir?'= NT$ 0':'= £ 0';
+}
+
+// ══ 行李計算 ══
+function calcBags(){
+  const ids=['bag1','bag2','bag3','bag4'];
+  const total=ids.reduce((s,id)=>s+(parseFloat(document.getElementById(id).value)||0),0);
+  const limit=120;
+  document.getElementById('bag-result').textContent=`總重量：${total} KG / 限制 ${limit} KG`;
+  const w=document.getElementById('bag-warn');
+  if(total>limit){w.textContent='⚠️ 超重！請減輕行李';w.style.color='var(--red)';}
+  else if(total>limit*0.9){w.textContent='⚠️ 接近上限，注意購物後重量';w.style.color='var(--amber)';}
+  else{w.textContent='✅ 行李重量正常';w.style.color='var(--green)';}
+}
+
+// ══ Init ══
 renderOverview();
 renderItinerary();
+renderTransport();
 renderChecklist();
+renderPacking();
+renderMeds();
 </script>
 </body>
 </html>
