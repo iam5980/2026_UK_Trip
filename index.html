@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
@@ -19,50 +20,50 @@ a{color:var(--blue);text-decoration:none;}
 a:hover{text-decoration:underline;}
 
 /* Header */
-.hdr{background:linear-gradient(135deg,var(--navy),#2E5090);color:#fff;padding:16px;position:sticky;top:0;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,.3);}
+.hdr{background:linear-gradient(135deg,var(–navy),#2E5090);color:#fff;padding:16px;position:sticky;top:0;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,.3);}
 .hdr h1{font-size:17px;font-weight:700;}
 .hdr p{font-size:11px;opacity:.85;margin-top:2px;}
 
 /* Tab Nav */
-.tabs{display:flex;overflow-x:auto;background:#fff;border-bottom:2px solid var(--border);-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:68px;z-index:100;}
+.tabs{display:flex;overflow-x:auto;background:#fff;border-bottom:2px solid var(–border);-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:68px;z-index:100;}
 .tabs::-webkit-scrollbar{display:none;}
-.tab{flex:0 0 auto;padding:10px 13px;font-size:12px;font-weight:500;color:var(--muted);background:none;border:none;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap;}
-.tab.on{color:var(--blue);border-bottom-color:var(--blue);font-weight:700;}
+.tab{flex:0 0 auto;padding:10px 13px;font-size:12px;font-weight:500;color:var(–muted);background:none;border:none;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap;}
+.tab.on{color:var(–blue);border-bottom-color:var(–blue);font-weight:700;}
 
 /* Panels */
 .panel{display:none;padding:12px;}
 .panel.on{display:block;}
 
 /* Cards */
-.card{background:#fff;border-radius:12px;padding:14px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-left:4px solid var(--blue);}
+.card{background:#fff;border-radius:12px;padding:14px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-left:4px solid var(–blue);}
 .card.man{border-left-color:#2196F3;}
-.card.lon{border-left-color:var(--green);}
-.card.tr{border-left-color:var(--amber);}
-.card.warn{border-left-color:var(--red);background:var(--redbg);}
-.card.tip{border-left-color:var(--green);background:var(--greenbg);}
-.card-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+.card.lon{border-left-color:var(–green);}
+.card.tr{border-left-color:var(–amber);}
+.card.warn{border-left-color:var(–red);background:var(–redbg);}
+.card.tip{border-left-color:var(–green);background:var(–greenbg);}
+.card-title{font-size:14px;font-weight:700;color:var(–navy);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
 
 /* Badge */
-.badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700;background:var(--navy);color:#fff;}
+.badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700;background:var(–navy);color:#fff;}
 .badge.man{background:#2196F3;}
-.badge.lon{background:var(--green);}
-.badge.tr{background:var(--amber);color:var(--navy);}
+.badge.lon{background:var(–green);}
+.badge.tr{background:var(–amber);color:var(–navy);}
 
 /* Section header */
-.sec{font-size:13px;font-weight:700;color:var(--navy);background:var(--sky);padding:7px 12px;border-radius:6px;margin:12px 0 8px;display:flex;align-items:center;gap:5px;}
+.sec{font-size:13px;font-weight:700;color:var(–navy);background:var(–sky);padding:7px 12px;border-radius:6px;margin:12px 0 8px;display:flex;align-items:center;gap:5px;}
 
 /* Timeline */
 .tl{display:flex;gap:8px;margin-bottom:10px;position:relative;}
-.tl::before{content:'';position:absolute;left:32px;top:24px;bottom:-10px;width:2px;background:var(--border);}
+.tl::before{content:’’;position:absolute;left:32px;top:24px;bottom:-10px;width:2px;background:var(–border);}
 .tl:last-child::before{display:none;}
-.tl-time{flex:0 0 46px;font-size:11px;font-weight:700;color:var(--blue);text-align:right;padding-top:2px;}
-.tl-dot{flex:0 0 14px;width:14px;height:14px;border-radius:50%;background:var(--blue);margin-top:4px;z-index:1;flex-shrink:0;}
-.tl-dot.food{background:var(--amber);}
+.tl-time{flex:0 0 46px;font-size:11px;font-weight:700;color:var(–blue);text-align:right;padding-top:2px;}
+.tl-dot{flex:0 0 14px;width:14px;height:14px;border-radius:50%;background:var(–blue);margin-top:4px;z-index:1;flex-shrink:0;}
+.tl-dot.food{background:var(–amber);}
 .tl-dot.star{background:#9C27B0;}
-.tl-dot.warn{background:var(--red);}
+.tl-dot.warn{background:var(–red);}
 .tl-body{flex:1;}
-.tl-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px;}
-.tl-desc{font-size:11px;color:var(--muted);margin-bottom:3px;}
+.tl-title{font-size:13px;font-weight:700;color:var(–text);margin-bottom:2px;}
+.tl-desc{font-size:11px;color:var(–muted);margin-bottom:3px;}
 
 /* Tags */
 .tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;}
@@ -70,125 +71,151 @@ a:hover{text-decoration:underline;}
 .tag.tr{background:#E3F2FD;color:#1565C0;}
 .tag.alt{background:#FFF3E0;color:#E65100;}
 .tag.food{background:#FFF8E1;color:#F57F17;}
-.tag.w{background:var(--redbg);color:var(--red);}
-.tag.ok{background:var(--greenbg);color:var(--green);}
+.tag.w{background:var(–redbg);color:var(–red);}
+.tag.ok{background:var(–greenbg);color:var(–green);}
 .tag.in{background:#EDE7F6;color:#4527A0;}
 .tag.out{background:#E0F2F1;color:#00695C;}
 .tag.fr{background:#E8F5E9;color:#2E7D32;}
 
 /* Map link */
-.maplink{display:inline-flex;align-items:center;gap:3px;color:var(--blue);font-size:11px;padding:3px 8px;background:var(--sky);border-radius:10px;margin-top:3px;}
+.maplink{display:inline-flex;align-items:center;gap:3px;color:var(–blue);font-size:11px;padding:3px 8px;background:var(–sky);border-radius:10px;margin-top:3px;}
 
 /* Toilet */
 .toilet{background:#E3F2FD;border-radius:8px;padding:7px 10px;margin:4px 0;font-size:11px;display:flex;align-items:flex-start;gap:5px;}
 
 /* Day selector */
 .day-sel{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;}
-.day-btn{padding:5px 9px;border-radius:14px;font-size:11px;font-weight:600;border:2px solid var(--border);cursor:pointer;background:#fff;color:var(--muted);}
+.day-btn{padding:5px 9px;border-radius:14px;font-size:11px;font-weight:600;border:2px solid var(–border);cursor:pointer;background:#fff;color:var(–muted);}
 .day-btn.man{border-color:#2196F3;}
-.day-btn.lon{border-color:var(--green);}
-.day-btn.tr{border-color:var(--amber);}
+.day-btn.lon{border-color:var(–green);}
+.day-btn.tr{border-color:var(–amber);}
 .day-btn.on.man{background:#2196F3;color:#fff;}
-.day-btn.on.lon{background:var(--green);color:#fff;}
-.day-btn.on.tr{background:var(--amber);color:var(--navy);}
+.day-btn.on.lon{background:var(–green);color:#fff;}
+.day-btn.on.tr{background:var(–amber);color:var(–navy);}
 .day-detail{display:none;}
 .day-detail.on{display:block;}
 
 /* Day header */
-.day-hdr{background:var(--navy);color:#fff;padding:10px 12px;border-radius:8px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;}
+.day-hdr{background:var(–navy);color:#fff;padding:10px 12px;border-radius:8px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;}
 .day-hdr .dn{font-size:17px;font-weight:700;}
 .day-hdr .dd{font-size:11px;opacity:.85;}
 
 /* Depart/Return box */
-.dr-box{background:var(--sky);border-radius:8px;padding:8px 12px;margin-bottom:10px;font-size:12px;}
-.dr-box .dr-title{font-weight:700;color:var(--navy);margin-bottom:4px;font-size:12px;}
+.dr-box{background:var(–sky);border-radius:8px;padding:8px 12px;margin-bottom:10px;font-size:12px;}
+.dr-box .dr-title{font-weight:700;color:var(–navy);margin-bottom:4px;font-size:12px;}
 .dr-row{display:flex;align-items:flex-start;gap:6px;margin-top:3px;}
 .dr-icon{font-size:14px;flex-shrink:0;}
 
 /* Table */
 .tbl{width:100%;border-collapse:collapse;font-size:12px;}
-.tbl th{background:var(--navy);color:#fff;padding:7px 9px;text-align:left;font-weight:600;}
-.tbl td{padding:7px 9px;border-bottom:1px solid var(--border);vertical-align:top;}
-.tbl tr:nth-child(even) td{background:var(--gray);}
+.tbl th{background:var(–navy);color:#fff;padding:7px 9px;text-align:left;font-weight:600;}
+.tbl td{padding:7px 9px;border-bottom:1px solid var(–border);vertical-align:top;}
+.tbl tr:nth-child(even) td{background:var(–gray);}
 
 /* Checklist */
-.chk-item{display:flex;align-items:flex-start;gap:8px;padding:9px 12px;border-bottom:1px solid var(--border);cursor:pointer;}
-.chk-item:hover{background:var(--gray);}
-.chk-item input[type=checkbox]{flex-shrink:0;width:18px;height:18px;margin-top:2px;accent-color:var(--green);}
-.chk-item.done .chk-title{text-decoration:line-through;color:var(--muted);}
+.chk-item{display:flex;align-items:flex-start;gap:8px;padding:9px 12px;border-bottom:1px solid var(–border);cursor:pointer;}
+.chk-item:hover{background:var(–gray);}
+.chk-item input[type=checkbox]{flex-shrink:0;width:18px;height:18px;margin-top:2px;accent-color:var(–green);}
+.chk-item.done .chk-title{text-decoration:line-through;color:var(–muted);}
 .chk-text{flex:1;}
 .chk-title{font-weight:600;font-size:13px;}
-.chk-desc{font-size:11px;color:var(--muted);margin-top:2px;}
-.chk-link{font-size:11px;color:var(--blue);word-break:break-all;}
+.chk-desc{font-size:11px;color:var(–muted);margin-top:2px;}
+.chk-link{font-size:11px;color:var(–blue);word-break:break-all;}
 .pbadge{flex-shrink:0;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:700;}
-.pr{background:var(--redbg);color:var(--red);}
-.pa{background:var(--amberbg);color:#7B5E00;}
-.pg{background:var(--greenbg);color:var(--green);}
+.pr{background:var(–redbg);color:var(–red);}
+.pa{background:var(–amberbg);color:#7B5E00;}
+.pg{background:var(–greenbg);color:var(–green);}
 
 /* Cost */
 .cost-sec{margin-bottom:14px;}
-.cost-hdr{font-size:12px;font-weight:700;color:#fff;background:var(--navy);padding:6px 12px;border-radius:6px 6px 0 0;}
-.cost-row{display:flex;justify-content:space-between;padding:7px 12px;border-bottom:1px solid var(--border);font-size:12px;}
-.cost-row:nth-child(even){background:var(--gray);}
-.cost-row.total{background:var(--amberbg);font-weight:700;font-size:13px;}
-.cost-amt{font-weight:600;color:var(--navy);}
+.cost-hdr{font-size:12px;font-weight:700;color:#fff;background:var(–navy);padding:6px 12px;border-radius:6px 6px 0 0;}
+.cost-row{display:flex;justify-content:space-between;padding:7px 12px;border-bottom:1px solid var(–border);font-size:12px;}
+.cost-row:nth-child(even){background:var(–gray);}
+.cost-row.total{background:var(–amberbg);font-weight:700;font-size:13px;}
+.cost-amt{font-weight:600;color:var(–navy);}
 
 /* Currency converter */
 .converter{background:#fff;border-radius:10px;padding:14px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,.08);}
-.converter input{width:100%;padding:10px;border:2px solid var(--border);border-radius:8px;font-size:16px;text-align:center;margin:6px 0;}
-.converter .result{font-size:20px;font-weight:700;color:var(--navy);text-align:center;padding:8px;}
-.converter .rate{font-size:11px;color:var(--muted);text-align:center;}
-.btn-swap{width:100%;padding:8px;background:var(--sky);border:none;border-radius:8px;color:var(--navy);font-weight:700;cursor:pointer;margin:4px 0;}
+.converter input{width:100%;padding:10px;border:2px solid var(–border);border-radius:8px;font-size:16px;text-align:center;margin:6px 0;}
+.converter .result{font-size:20px;font-weight:700;color:var(–navy);text-align:center;padding:8px;}
+.converter .rate{font-size:11px;color:var(–muted);text-align:center;}
+.btn-swap{width:100%;padding:8px;background:var(–sky);border:none;border-radius:8px;color:var(–navy);font-weight:700;cursor:pointer;margin:4px 0;}
 
 /* Summary grid */
 .sum-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px;}
 .sum-card{background:#fff;border-radius:10px;padding:12px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.08);}
-.sum-card .sn{font-size:20px;font-weight:700;color:var(--navy);}
-.sum-card .sl{font-size:11px;color:var(--muted);margin-top:2px;}
+.sum-card .sn{font-size:20px;font-weight:700;color:var(–navy);}
+.sum-card .sl{font-size:11px;color:var(–muted);margin-top:2px;}
 
 /* Hotel grid */
 .hotel-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;}
 @media(max-width:400px){.hotel-grid{grid-template-columns:1fr;}}
-.hotel-card{background:#fff;border-radius:10px;padding:12px;box-shadow:0 1px 4px rgba(0,0,0,.1);border-top:4px solid var(--blue);}
-.hotel-card.lon{border-top-color:var(--green);}
-.hotel-name{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:5px;}
-.hotel-info{font-size:10px;color:var(--muted);line-height:1.9;}
-.hotel-price{font-size:15px;font-weight:700;color:var(--amber);margin:6px 0 3px;}
-.hotel-rating{display:inline-block;background:var(--green);color:#fff;font-size:11px;font-weight:700;padding:2px 7px;border-radius:5px;}
+.hotel-card{background:#fff;border-radius:10px;padding:12px;box-shadow:0 1px 4px rgba(0,0,0,.1);border-top:4px solid var(–blue);}
+.hotel-card.lon{border-top-color:var(–green);}
+.hotel-name{font-size:12px;font-weight:700;color:var(–navy);margin-bottom:5px;}
+.hotel-info{font-size:10px;color:var(–muted);line-height:1.9;}
+.hotel-price{font-size:15px;font-weight:700;color:var(–amber);margin:6px 0 3px;}
+.hotel-rating{display:inline-block;background:var(–green);color:#fff;font-size:11px;font-weight:700;padding:2px 7px;border-radius:5px;}
 
 /* Emergency */
-.em-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid var(--border);}
+.em-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid var(–border);}
 .em-icon{font-size:22px;flex-shrink:0;}
-.em-label{font-size:11px;color:var(--muted);}
+.em-label{font-size:11px;color:var(–muted);}
 .em-value{font-size:13px;font-weight:600;}
 
 /* Booking list */
-.bk-item{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 12px;border-bottom:1px solid var(--border);font-size:12px;}
-.bk-name{font-weight:600;color:var(--navy);}
-.bk-detail{font-size:11px;color:var(--muted);margin-top:2px;}
-.bk-num{font-size:13px;font-weight:700;color:var(--amber);text-align:right;min-width:80px;}
+.bk-item{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 12px;border-bottom:1px solid var(–border);font-size:12px;}
+.bk-name{font-weight:600;color:var(–navy);}
+.bk-detail{font-size:11px;color:var(–muted);margin-top:2px;}
+.bk-num{font-size:13px;font-weight:700;color:var(–amber);text-align:right;min-width:80px;}
 
 /* Phrase */
-.phrase-item{display:flex;justify-content:space-between;padding:9px 12px;border-bottom:1px solid var(--border);font-size:12px;}
-.phrase-zh{color:var(--navy);font-weight:600;}
-.phrase-en{color:var(--muted);}
+.phrase-item{display:flex;justify-content:space-between;padding:9px 12px;border-bottom:1px solid var(–border);font-size:12px;}
+.phrase-zh{color:var(–navy);font-weight:600;}
+.phrase-en{color:var(–muted);}
 
 /* Progress bar */
-.prog-bar{background:var(--border);border-radius:10px;height:8px;margin:8px 0;}
-.prog-fill{background:var(--green);height:8px;border-radius:10px;transition:width .3s;}
+.prog-bar{background:var(–border);border-radius:10px;height:8px;margin:8px 0;}
+.prog-fill{background:var(–green);height:8px;border-radius:10px;transition:width .3s;}
 
 /* Weather */
 .wx-card{background:#fff;border-radius:10px;padding:12px;margin-bottom:8px;box-shadow:0 1px 4px rgba(0,0,0,.08);}
-.wx-city{font-weight:700;color:var(--navy);font-size:13px;}
-.wx-temp{font-size:22px;font-weight:700;color:var(--amber);}
-.wx-desc{font-size:11px;color:var(--muted);}
+.wx-city{font-weight:700;color:var(–navy);font-size:13px;}
+.wx-temp{font-size:22px;font-weight:700;color:var(–amber);}
+.wx-desc{font-size:11px;color:var(–muted);}
 
 /* Packing */
 .pack-day{background:#fff;border-radius:8px;padding:10px 12px;margin-bottom:8px;box-shadow:0 1px 3px rgba(0,0,0,.07);}
-.pack-day-title{font-weight:700;font-size:12px;color:var(--navy);margin-bottom:6px;}
+.pack-day-title{font-weight:700;font-size:12px;color:var(–navy);margin-bottom:6px;}
 .pack-item{display:flex;align-items:center;gap:6px;font-size:12px;padding:3px 0;}
-.pack-item input[type=checkbox]{accent-color:var(--amber);}
+.pack-item input[type=checkbox]{accent-color:var(–amber);}
+
+/* ── 行程備註 ── */
+.note-btn{
+display:inline-flex;align-items:center;gap:3px;
+padding:3px 8px;background:#FFF8E1;color:#F57F17;
+border:1px solid #FFE082;border-radius:10px;
+font-size:10px;font-weight:600;cursor:pointer;
+margin-top:4px;
+}
+.note-btn:hover{background:#FFE082;}
+.note-box{
+margin-top:6px;width:100%;
+padding:7px 10px;
+border:1.5px solid var(–amber);
+border-radius:8px;
+font-size:12px;
+font-family:inherit;
+background:#FFFDE7;
+color:var(–text);
+resize:vertical;
+min-height:60px;
+line-height:1.6;
+}
+.note-box:focus{outline:none;border-color:var(–blue);background:#fff;}
+.note-saved{font-size:10px;color:var(–green);margin-top:2px;}
 </style>
+
 </head>
 <body>
 
@@ -211,6 +238,7 @@ a:hover{text-decoration:underline;}
 </div>
 
 <!-- ══ 總覽 ══ -->
+
 <div id="tab-overview" class="panel on">
   <div class="sum-grid">
     <div class="sum-card"><div class="sn">13天</div><div class="sl">旅遊天數</div></div>
@@ -274,12 +302,14 @@ a:hover{text-decoration:underline;}
 </div>
 
 <!-- ══ 行程 ══ -->
+
 <div id="tab-itinerary" class="panel">
   <div class="day-sel" id="day-sel"></div>
   <div id="day-details"></div>
 </div>
 
 <!-- ══ 住宿 ══ -->
+
 <div id="tab-hotels" class="panel">
   <div class="hotel-grid">
     <div class="hotel-card">
@@ -337,6 +367,7 @@ a:hover{text-decoration:underline;}
 </div>
 
 <!-- ══ 交通 ══ -->
+
 <div id="tab-transport" class="panel">
   <div class="sec">📱 必備 App（出發前下載）</div>
   <div class="card">
@@ -392,6 +423,7 @@ a:hover{text-decoration:underline;}
 </div>
 
 <!-- ══ 待辦 ══ -->
+
 <div id="tab-checklist" class="panel">
   <div style="padding:4px 0 10px">
     <div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
@@ -406,6 +438,7 @@ a:hover{text-decoration:underline;}
 </div>
 
 <!-- ══ 預訂確認 ══ -->
+
 <div id="tab-bookings" class="panel">
   <div style="font-size:11px;color:var(--muted);text-align:center;padding:6px 0 10px">
     點擊任一項目可切換「待訂 / ✅已完成」狀態，狀態自動儲存
@@ -415,6 +448,7 @@ a:hover{text-decoration:underline;}
 </div>
 
 <!-- ══ 費用 ══ -->
+
 <div id="tab-costs" class="panel">
 
 <style>
@@ -490,14 +524,16 @@ a:hover{text-decoration:underline;}
 <button class="cost-reset" onclick="resetCosts()">↺ 還原預設金額</button>
 
 <!-- 機票 -->
+
 <div class="cost-hdr">✈️ 機票</div>
 <div class="card" style="padding:0;margin-bottom:10px">
-  <div class="cost-edit-row"><span class="c-label">土耳其航空（成人×2）</span><input class="c-input" id="c1" type="number" value="78070" oninput="calcCosts()"></div>
-  <div class="cost-edit-row"><span class="c-label">土耳其航空（孩童×2）</span><input class="c-input" id="c2" type="number" value="61834" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">土耳其航空（成人×2，NT$39,705/人）</span><input class="c-input" id="c1" type="number" value="79410" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">土耳其航空（孩童×2，NT$31,596/人）</span><input class="c-input" id="c2" type="number" value="63192" oninput="calcCosts()"></div>
   <div class="cost-subtotal"><span>機票合計</span><span id="s-flight">NT$139,904</span></div>
 </div>
 
 <!-- 住宿 -->
+
 <div class="cost-hdr">🏨 住宿</div>
 <div class="card" style="padding:0;margin-bottom:10px">
   <div class="cost-edit-row"><span class="c-label">Residence Inn Manchester（5晚）</span><input class="c-input" id="c3" type="number" value="32667" oninput="calcCosts()"></div>
@@ -509,6 +545,7 @@ a:hover{text-decoration:underline;}
 </div>
 
 <!-- 交通 -->
+
 <div class="cost-hdr">🚂 交通</div>
 <div class="card" style="padding:0;margin-bottom:10px">
   <div class="cost-edit-row"><span class="c-label">Family & Friends Railcard</span><input class="c-input" id="c8" type="number" value="1200" oninput="calcCosts()"></div>
@@ -522,6 +559,7 @@ a:hover{text-decoration:underline;}
 </div>
 
 <!-- 景點 -->
+
 <div class="cost-hdr">🏛️ 景點</div>
 <div class="card" style="padding:0;margin-bottom:10px">
   <div class="cost-edit-row"><span class="c-label">倫敦塔（2大+2孩，£107.40）</span><input class="c-input" id="c15" type="number" value="4296" oninput="calcCosts()"></div>
@@ -531,6 +569,7 @@ a:hover{text-decoration:underline;}
 </div>
 
 <!-- 餐飲 -->
+
 <div class="cost-hdr">🍽️ 餐飲（估算）</div>
 <div class="card" style="padding:0;margin-bottom:10px">
   <div class="cost-edit-row"><span class="c-label">曼城段餐飲（5天）</span><input class="c-input" id="c18" type="number" value="8000" oninput="calcCosts()"></div>
@@ -539,15 +578,17 @@ a:hover{text-decoration:underline;}
 </div>
 
 <!-- 其他 -->
+
 <div class="cost-hdr">💳 其他</div>
 <div class="card" style="padding:0;margin-bottom:10px">
-  <div class="cost-edit-row"><span class="c-label">旅遊保險（4人）</span><input class="c-input" id="c20" type="number" value="3200" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">旅遊保險（4人合計）</span><input class="c-input" id="c20" type="number" value="8258" oninput="calcCosts()"></div>
   <div class="cost-edit-row"><span class="c-label">英國eSIM上網卡</span><input class="c-input" id="c21" type="number" value="800" oninput="calcCosts()"></div>
   <div class="cost-edit-row"><span class="c-label">零用錢/購物預算</span><input class="c-input" id="c22" type="number" value="10000" oninput="calcCosts()"></div>
   <div class="cost-subtotal"><span>其他合計</span><span id="s-other">NT$14,000</span></div>
 </div>
 
 <!-- 總計 -->
+
 <div class="cost-grand">
   <span>⭐ 旅遊總費用</span>
   <span id="grand-total">NT$288,423</span>
@@ -557,6 +598,7 @@ a:hover{text-decoration:underline;}
 </div>
 
 <!-- ══ 工具 ══ -->
+
 <div id="tab-tools" class="panel">
 
   <div class="sec">💱 匯率換算</div>
@@ -679,6 +721,7 @@ a:hover{text-decoration:underline;}
 </div>
 
 <!-- ══ 緊急 ══ -->
+
 <div id="tab-emergency" class="panel">
   <div class="card warn" style="margin-bottom:12px;text-align:center">
     <div style="font-size:28px;font-weight:700;color:var(--red);padding:8px 0">
@@ -1148,7 +1191,7 @@ function renderItinerary(){
       </div>`;
     }
 
-    d.items.forEach(item=>{
+    d.items.forEach((item, idx)=>{
       const dc=item.type==='food'?'food':item.type==='star'?'star':'';
       h+=`<div class="tl">
         <div class="tl-time">${item.time}</div>
@@ -1167,431 +1210,469 @@ function renderItinerary(){
       if(item.tip) h+=`<span class="tag ok">✅${item.tip}</span>`;
       h+=`</div>`;
       if(item.toilet) h+=`<div class="toilet"><span>🚻</span><div style="font-size:11px">${item.toilet}</div></div>`;
-      h+=`</div></div>`;
-    });
+      // 備註功能
+      const noteKey = `note_${d.n}_${idx}`;
+      const noteVal = getNoteVal(noteKey);
+      h+=`<div>
+        <button class="note-btn" onclick="toggleNote('${noteKey}')">
+          ✏️ ${noteVal ? '查看備註' : '新增備註'}
+        </button>
+        <div id="note-area-${noteKey}" style="display:${noteVal?'block':'none'}">
+          <textarea class="note-box" id="note-${noteKey}"
+            placeholder="輸入備註、提醒或修改事項..."
+            oninput="saveNote('${noteKey}')">${noteVal}</textarea>
 
-    div.innerHTML=h;
-    det.appendChild(div);
-  });
+```
+      <div class="note-saved" id="note-status-${noteKey}"></div>
+    </div>
+  </div>`;
+  h+=`</div></div>`;
+});
+
+div.innerHTML=h;
+det.appendChild(div);
+```
+
+});
 }
 
 function selectDay(n){
-  document.querySelectorAll('.day-detail').forEach(e=>e.classList.remove('on'));
-  document.querySelectorAll('.day-btn').forEach(e=>e.classList.remove('on'));
-  document.getElementById(`det-${n}`).classList.add('on');
-  const btn=document.getElementById(`btn-${n}`);
-  btn.classList.add('on');
-  btn.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
-  window.scrollTo({top:0,behavior:'smooth'});
+document.querySelectorAll(’.day-detail’).forEach(e=>e.classList.remove(‘on’));
+document.querySelectorAll(’.day-btn’).forEach(e=>e.classList.remove(‘on’));
+document.getElementById(`det-${n}`).classList.add(‘on’);
+const btn=document.getElementById(`btn-${n}`);
+btn.classList.add(‘on’);
+btn.scrollIntoView({behavior:‘smooth’,block:‘nearest’,inline:‘center’});
+window.scrollTo({top:0,behavior:‘smooth’});
 }
 
 // ══ 渲染交通 ══
 function renderTransport(){
-  const c=document.getElementById('transport-days');
-  TRANSPORT_DAYS.forEach(t=>{
-    const div=document.createElement('div');
-    div.className='card';
-    div.innerHTML=`<div class="card-title">${t.day}</div>
-    <div style="font-size:12px;line-height:2">
-    <strong>出發：</strong>${t.depart}<br>
-    <strong>返回：</strong>${t.ret}
-    </div>`;
-    c.appendChild(div);
-  });
+const c=document.getElementById(‘transport-days’);
+TRANSPORT_DAYS.forEach(t=>{
+const div=document.createElement(‘div’);
+div.className=‘card’;
+div.innerHTML=`<div class="card-title">${t.day}</div> <div style="font-size:12px;line-height:2"> <strong>出發：</strong>${t.depart}<br> <strong>返回：</strong>${t.ret} </div>`;
+c.appendChild(div);
+});
 }
 
 // ══ 渲染 Checklist ══
 function renderChecklist(){
-  const saved=getSaved('cl');
-  ['red','amber','green'].forEach(p=>{
-    const c=document.getElementById(`cl-${p}`);
-    CL.filter(i=>i.p===p).forEach((item,idx)=>{
-      const key=p+'_'+idx;
-      const div=document.createElement('div');
-      div.className=`chk-item${saved[key]?' done':''}`;
-      div.innerHTML=`
-        <input type="checkbox" id="c-${key}" ${saved[key]?'checked':''} onchange="toggleCL('${key}')">
-        <div class="chk-text">
-          <div class="chk-title">${item.t}</div>
-          <div class="chk-desc">${item.d}</div>
-          ${item.l?`<a href="${item.l}" target="_blank" class="chk-link">${item.l}</a>`:''}
-        </div>
-        <span class="pbadge p${p[0]}">${p==='red'?'🔴':p==='amber'?'🟡':'🟢'}</span>`;
-      c.appendChild(div);
-    });
-  });
-  updateProg();
+const saved=getSaved(‘cl’);
+[‘red’,‘amber’,‘green’].forEach(p=>{
+const c=document.getElementById(`cl-${p}`);
+CL.filter(i=>i.p===p).forEach((item,idx)=>{
+const key=p+’_’+idx;
+const div=document.createElement(‘div’);
+div.className=`chk-item${saved[key]?' done':''}`;
+div.innerHTML=` <input type="checkbox" id="c-${key}" ${saved[key]?'checked':''} onchange="toggleCL('${key}')"> <div class="chk-text"> <div class="chk-title">${item.t}</div> <div class="chk-desc">${item.d}</div> ${item.l?`<a href="${item.l}" target="_blank" class="chk-link">${item.l}</a>`:''} </div> <span class="pbadge p${p[0]}">${p==='red'?'🔴':p==='amber'?'🟡':'🟢'}</span>`;
+c.appendChild(div);
+});
+});
+updateProg();
 }
 
 function toggleCL(key){
-  const saved=getSaved('cl');
-  saved[key]=document.getElementById(`c-${key}`).checked;
-  localStorage.setItem('cl',JSON.stringify(saved));
-  document.getElementById(`c-${key}`).closest('.chk-item').classList.toggle('done',saved[key]);
-  updateProg();
+const saved=getSaved(‘cl’);
+saved[key]=document.getElementById(`c-${key}`).checked;
+setSaved(‘cl’, saved);  // ☁️ 同步雲端 + localStorage
+document.getElementById(`c-${key}`).closest(’.chk-item’).classList.toggle(‘done’,saved[key]);
+updateProg();
 }
 
 function updateProg(){
-  const saved=getSaved('cl');
-  const done=Object.values(saved).filter(Boolean).length;
-  const total=CL.length;
-  const pct=Math.round(done/total*100);
-  document.getElementById('prog-fill').style.width=pct+'%';
-  document.getElementById('prog-text').textContent=`完成進度：${done} / ${total} 項（${pct}%）`;
+const saved=getSaved(‘cl’);
+const done=Object.values(saved).filter(Boolean).length;
+const total=CL.length;
+const pct=Math.round(done/total*100);
+document.getElementById(‘prog-fill’).style.width=pct+’%’;
+document.getElementById(‘prog-text’).textContent=`完成進度：${done} / ${total} 項（${pct}%）`;
 }
 
 // ══ 渲染每日攜帶 ══
 function renderPacking(){
-  const c=document.getElementById('packing-list');
-  PACKING.forEach(p=>{
-    const div=document.createElement('div');
-    div.className='pack-day';
-    div.innerHTML=`<div class="pack-day-title">${p.day}</div>`+
-      p.items.map((item,i)=>`<div class="pack-item"><input type="checkbox" id="pk-${p.day}-${i}" onchange="savePack(this,'pk-${p.day}-${i}')"><label for="pk-${p.day}-${i}" style="cursor:pointer">${item}</label></div>`).join('');
-    c.appendChild(div);
-  });
-  // 讀取儲存
-  const saved=getSaved('packing');
-  Object.keys(saved).forEach(k=>{const el=document.getElementById(k);if(el)el.checked=saved[k];});
+const c=document.getElementById(‘packing-list’);
+PACKING.forEach(p=>{
+const div=document.createElement(‘div’);
+div.className=‘pack-day’;
+div.innerHTML=`<div class="pack-day-title">${p.day}</div>`+
+p.items.map((item,i)=>`<div class="pack-item"><input type="checkbox" id="pk-${p.day}-${i}" onchange="savePack(this,'pk-${p.day}-${i}')"><label for="pk-${p.day}-${i}" style="cursor:pointer">${item}</label></div>`).join(’’);
+c.appendChild(div);
+});
+// 讀取儲存
+const saved=getSaved(‘packing’);
+Object.keys(saved).forEach(k=>{const el=document.getElementById(k);if(el)el.checked=saved[k];});
 }
 
 function savePack(el,key){
-  const saved=getSaved('packing');
-  saved[key]=el.checked;
-  setSaved('packing',saved);
+const saved=getSaved(‘packing’);
+saved[key]=el.checked;
+setSaved(‘packing’,saved);
 }
 
 // ══ 渲染常備藥 ══
 function renderMeds(){
-  const c=document.getElementById('medicine-list');
-  c.innerHTML=MEDS.map((m,i)=>`<div class="pack-item"><input type="checkbox" id="med-${i}" onchange="savePack(this,'med-${i}')"><label for="med-${i}" style="cursor:pointer;font-size:12px">${m}</label></div>`).join('');
-  const saved=getSaved('packing');
-  MEDS.forEach((_,i)=>{const el=document.getElementById(`med-${i}`);if(el)el.checked=saved[`med-${i}`]||false;});
+const c=document.getElementById(‘medicine-list’);
+c.innerHTML=MEDS.map((m,i)=>`<div class="pack-item"><input type="checkbox" id="med-${i}" onchange="savePack(this,'med-${i}')"><label for="med-${i}" style="cursor:pointer;font-size:12px">${m}</label></div>`).join(’’);
+const saved=getSaved(‘packing’);
+MEDS.forEach((_,i)=>{const el=document.getElementById(`med-${i}`);if(el)el.checked=saved[`med-${i}`]||false;});
 }
 
 // ══ 匯率換算 ══
 let swapDir=true; // true=GBP→NTD
 function calcGBP(){
-  const v=parseFloat(document.getElementById('gbp-in').value)||0;
-  const rate=40;
-  if(swapDir){
-    document.getElementById('gbp-result').textContent=`= NT$ ${(v*rate).toLocaleString()}`;
-  } else {
-    document.getElementById('gbp-result').textContent=`= £ ${(v/rate).toFixed(2)}`;
-  }
+const v=parseFloat(document.getElementById(‘gbp-in’).value)||0;
+const rate=40;
+if(swapDir){
+document.getElementById(‘gbp-result’).textContent=`= NT$ ${(v*rate).toLocaleString()}`;
+} else {
+document.getElementById(‘gbp-result’).textContent=`= £ ${(v/rate).toFixed(2)}`;
+}
 }
 function swapCurrency(){
-  swapDir=!swapDir;
-  const inp=document.getElementById('gbp-in');
-  inp.placeholder=swapDir?'輸入英鎊金額（£）':'輸入台幣金額（NT$）';
-  document.getElementById('swap-label').textContent=swapDir?'目前：£ → NT$':'目前：NT$ → £';
-  document.querySelector('.converter div:first-child').textContent=swapDir?'英鎊 → 新台幣':'新台幣 → 英鎊';
-  inp.value='';
-  document.getElementById('gbp-result').textContent=swapDir?'= NT$ 0':'= £ 0';
+swapDir=!swapDir;
+const inp=document.getElementById(‘gbp-in’);
+inp.placeholder=swapDir?‘輸入英鎊金額（£）’:‘輸入台幣金額（NT$）’;
+document.getElementById(‘swap-label’).textContent=swapDir?‘目前：£ → NT$’:‘目前：NT$ → £’;
+document.querySelector(’.converter div:first-child’).textContent=swapDir?‘英鎊 → 新台幣’:‘新台幣 → 英鎊’;
+inp.value=’’;
+document.getElementById(‘gbp-result’).textContent=swapDir?’= NT$ 0’:’= £ 0’;
 }
 
 // ══ 行李計算 ══
 function calcBags(){
-  const ids=['bag1','bag2','bag3','bag4'];
-  const total=ids.reduce((s,id)=>s+(parseFloat(document.getElementById(id).value)||0),0);
-  const limit=120;
-  document.getElementById('bag-result').textContent=`總重量：${total} KG / 限制 ${limit} KG`;
-  const w=document.getElementById('bag-warn');
-  if(total>limit){w.textContent='⚠️ 超重！請減輕行李';w.style.color='var(--red)';}
-  else if(total>limit*0.9){w.textContent='⚠️ 接近上限，注意購物後重量';w.style.color='var(--amber)';}
-  else{w.textContent='✅ 行李重量正常';w.style.color='var(--green)';}
+const ids=[‘bag1’,‘bag2’,‘bag3’,‘bag4’];
+const total=ids.reduce((s,id)=>s+(parseFloat(document.getElementById(id).value)||0),0);
+const limit=120;
+document.getElementById(‘bag-result’).textContent=`總重量：${total} KG / 限制 ${limit} KG`;
+const w=document.getElementById(‘bag-warn’);
+if(total>limit){w.textContent=‘⚠️ 超重！請減輕行李’;w.style.color=‘var(–red)’;}
+else if(total>limit*0.9){w.textContent=‘⚠️ 接近上限，注意購物後重量’;w.style.color=‘var(–amber)’;}
+else{w.textContent=‘✅ 行李重量正常’;w.style.color=‘var(–green)’;}
 }
 
 // ══ 預訂確認資料 ══
 const BOOKINGS = [
-  {sec:'✈️ 航班', items:[
-    {id:'bk-f1', name:'去程 土耳其航空 TK', detail:'6/28 21:45 TPE T2 → 6/29 12:05 MAN', status:'done', note:'已購票'},
-    {id:'bk-f2', name:'回程 TK1986 + TK024', detail:'7/9 16:45 LHR T2 → 7/10 17:55 TPE', status:'done', note:'已購票'},
-  ]},
-  {sec:'🚂 火車', items:[
-    {id:'bk-t1', name:'Avanti Manchester→London（7/4）', detail:'12:14 Coach E，E17-E20，£65/4人', status:'done', note:'✅已訂 £65'},
-    {id:'bk-t2', name:'曼城↔利物浦火車（6/30）', detail:'Manchester Piccadilly → Liverpool Lime Street，£25-30/4人', status:'pending', note:'待訂'},
-    {id:'bk-t3', name:'曼城↔Chester火車（7/2）', detail:'Manchester Piccadilly → Chester，£35-45/4人', status:'pending', note:'待訂'},
-  ]},
-  {sec:'🏨 住宿', items:[
-    {id:'bk-h1', name:'Residence Inn Manchester', detail:'6/29–7/4（5晚）NT$28,120 | marriott.com/manri', status:'pending', note:'待訂'},
-    {id:'bk-h2', name:'Premier Inn Hammersmith', detail:'7/4–7/9（5晚）NT$36,715 | premierinn.com / Agoda', status:'pending', note:'待訂'},
-  ]},
-  {sec:'🏛️ 景點預約', items:[
-    {id:'bk-a1', name:'倫敦塔（7/6，14:00）', detail:'2大+2孩，£107.40 | hrp.org.uk', status:'pending', note:'待訂'},
-    {id:'bk-a2', name:'自然歷史博物館（7/7，10:15）', detail:'免費｜訂單：20260528-S16868060', status:'pending', note:'待訂'},
-    {id:'bk-a3', name:'大英博物館（7/8，10:30）', detail:'免費｜訂單：9832313', status:'pending', note:'待訂'},
-  ]},
-  {sec:'🍽️ 餐廳訂位', items:[
-    {id:'bk-r1', name:'Hawksmoor Manchester（7/1）', detail:'thehawksmoor.com/manchester', status:'pending', note:'待訂'},
-    {id:'bk-r2', name:'Dishoom 柯芬園（7/6，19:30）', detail:'dishoom.com/covent-garden', status:'pending', note:'待訂'},
-  ]},
-  {sec:'🚕 機場接送', items:[
-    {id:'bk-s1', name:'全峰汽車 去程送機（6/28）', detail:'太子天廈→桃園T2，七人座+NT$500，截止6/24', status:'pending', note:'待預約'},
-    {id:'bk-s2', name:'全峰汽車 回程接機（7/10）', detail:'桃園T2→太子天廈，七人座+NT$500，截止7/7', status:'pending', note:'待預約'},
-  ]},
+{sec:‘✈️ 航班’, items:[
+{id:‘bk-f1’, name:‘去程 土耳其航空 TK’, detail:‘6/28 21:45 TPE T2 → 6/29 12:05 MAN T2’, status:‘done’, note:‘✅ 已購票’},
+{id:‘bk-f2’, name:‘回程 TK1986 + TK024’, detail:‘7/9 16:45 LHR T2 → 7/10 17:55 TPE T2’, status:‘done’, note:‘✅ 已購票’},
+]},
+{sec:‘🚂 火車’, items:[
+{id:‘bk-t1’, name:‘Avanti Manchester→London（7/4）’, detail:‘12:14 Coach E，E17-E20，£65/4人’, status:‘done’, note:‘✅ 已訂 £65’},
+{id:‘bk-t2’, name:‘曼城↔利物浦火車（6/30）’, detail:‘Manchester Piccadilly → Liverpool Lime Street，£25-30/4人’, status:‘pending’, note:‘待訂’},
+{id:‘bk-t3’, name:‘曼城↔Chester火車（7/2）’, detail:‘Manchester Piccadilly → Chester，£35-45/4人’, status:‘pending’, note:‘待訂’},
+]},
+{sec:‘🏨 住宿’, items:[
+{id:‘bk-h1’, name:‘Residence Inn Manchester’, detail:‘6/29–7/4（5晚）NT$32,667｜訂單：1731300107｜7/1自動扣款’, status:‘done’, note:‘✅ 已確認’},
+{id:‘bk-h2’, name:‘Premier Inn Hammersmith（Klook）’, detail:‘7/4–7/9（5晚）含全家早餐｜訂單：RHN027751’, status:‘done’, note:‘✅ 已付款’},
+]},
+{sec:‘🏛️ 景點預約’, items:[
+{id:‘bk-a1’, name:‘倫敦塔（7/6，14:00）’, detail:‘2大+2孩，£107.40 | hrp.org.uk’, status:‘pending’, note:‘待訂’},
+{id:‘bk-a2’, name:‘自然歷史博物館（7/7，10:15）’, detail:‘免費｜訂單：20260528-S16868060’, status:‘done’, note:‘✅ 已預約’},
+{id:‘bk-a3’, name:‘大英博物館（7/8，10:30）’, detail:‘免費｜訂單：9832313’, status:‘done’, note:‘✅ 已預約’},
+]},
+{sec:‘🍽️ 餐廳訂位’, items:[
+{id:‘bk-r1’, name:‘Hawksmoor Manchester（7/1）’, detail:‘thehawksmoor.com/manchester’, status:‘pending’, note:‘待訂’},
+{id:‘bk-r2’, name:‘Dishoom 柯芬園（7/6，19:30）’, detail:‘dishoom.com/covent-garden’, status:‘pending’, note:‘待訂’},
+]},
+{sec:‘🚕 機場接送’, items:[
+{id:‘bk-s1’, name:‘全峰汽車 去程送機（6/28）’, detail:‘太子天廈→桃園T2，七人座+NT$500，截止6/24’, status:‘pending’, note:‘待預約’},
+{id:‘bk-s2’, name:‘全峰汽車 回程接機（7/10）’, detail:‘桃園T2→太子天廈，七人座+NT$500，截止7/7’, status:‘pending’, note:‘待預約’},
+]},
 ];
 
-// ══ 雲端同步核心（Firebase Realtime Database）══
-// 免費方案，真正跨裝置即時同步
 // ══ JSONBin.io 雲端同步 ══
-const JBIN_KEY = '$2a$10$DENhG4UAXGfyD6U6zsGMyevRagdqR/KKzEW1m8rDAu1BH0OPq1aum';
-const JBIN_ID  = '6a18024521f9ee59d29486a5';
-const JBIN_URL = 'https://api.jsonbin.io/v3/b/' + JBIN_ID;
-const JBIN_HDR = {'Content-Type':'application/json','X-Master-Key':JBIN_KEY,'X-Bin-Versioning':'false'};
+const JBIN_KEY = ‘$2a$10$DENhG4UAXGfyD6U6zsGMyevRagdqR/KKzEW1m8rDAu1BH0OPq1aum’;
+const JBIN_ID  = ‘6a18024521f9ee59d29486a5’;
+const JBIN_URL = ‘https://api.jsonbin.io/v3/b/’ + JBIN_ID;
+const JBIN_HDR = {‘Content-Type’:‘application/json’,‘X-Master-Key’:JBIN_KEY,‘X-Bin-Versioning’:‘false’};
 
 let _cloudData = {};
 let _syncTimer = null;
 
 async function loadFromCloud(){
-  const statusEl = document.getElementById('sync-status');
-  if(statusEl) statusEl.textContent = '⏳ 載入雲端資料...';
-  try {
-    const res = await fetch(JBIN_URL + '/latest', {headers:{'X-Master-Key':JBIN_KEY}});
-    if(res.ok){
-      const json = await res.json();
-      const data = json.record || {};
-      _cloudData = data;
-      // 同步到 localStorage 備份
-      Object.keys(data).forEach(k=>{
-        if(k!=='updated') try{ localStorage.setItem(k, JSON.stringify(data[k])); }catch(e){}
-      });
-      if(statusEl){
-        const t = data.updated ? new Date(data.updated).toLocaleString('zh-TW') : '首次使用';
-        statusEl.textContent = '☁️ 已同步｜' + t;
-      }
-    } else {
-      throw new Error('HTTP ' + res.status);
-    }
-  } catch(e){
-    // 退回 localStorage
-    _cloudData = {};
-    if(statusEl) statusEl.textContent = '💾 離線模式（本機備份）';
-    console.log('Cloud load failed:', e);
-  }
+const statusEl = document.getElementById(‘sync-status’);
+if(statusEl) statusEl.textContent = ‘⏳ 載入雲端資料…’;
+try {
+const res = await fetch(JBIN_URL + ‘/latest’, {headers:{‘X-Master-Key’:JBIN_KEY}});
+if(res.ok){
+const json = await res.json();
+const data = json.record || {};
+_cloudData = data;
+// 同步到 localStorage 備份
+Object.keys(data).forEach(k=>{
+if(k!==‘updated’) try{ localStorage.setItem(k, JSON.stringify(data[k])); }catch(e){}
+});
+if(statusEl){
+const t = data.updated ? new Date(data.updated).toLocaleString(‘zh-TW’) : ‘首次使用’;
+statusEl.textContent = ‘☁️ 已同步｜’ + t;
+}
+} else {
+throw new Error(’HTTP ’ + res.status);
+}
+} catch(e){
+// 退回 localStorage
+_cloudData = {};
+if(statusEl) statusEl.textContent = ‘💾 離線模式（本機備份）’;
+console.log(‘Cloud load failed:’, e);
+}
 }
 
 async function saveToCloud(key, val){
-  _cloudData[key] = val;
-  _cloudData.updated = new Date().toISOString();
-  // 先存 localStorage
-  try { localStorage.setItem(key, JSON.stringify(val)); } catch(e){}
-  // 防抖 800ms，避免快速操作時頻繁寫入
-  clearTimeout(_syncTimer);
-  _syncTimer = setTimeout(async ()=>{
-    const statusEl = document.getElementById('sync-status');
-    try {
-      if(statusEl) statusEl.textContent = '⏳ 同步中...';
-      const res = await fetch(JBIN_URL, {
-        method: 'PUT',
-        headers: JBIN_HDR,
-        body: JSON.stringify(_cloudData)
-      });
-      if(!res.ok) throw new Error('HTTP ' + res.status);
-      if(statusEl){
-        const t = new Date().toLocaleString('zh-TW');
-        statusEl.textContent = '☁️ 已同步｜' + t;
-      }
-    } catch(e){
-      if(statusEl) statusEl.textContent = '⚠️ 同步失敗，資料已存本機';
-      console.log('Cloud save failed:', e);
-    }
-  }, 800);
+_cloudData[key] = val;
+_cloudData.updated = new Date().toISOString();
+// 先存 localStorage
+try { localStorage.setItem(key, JSON.stringify(val)); } catch(e){}
+// 防抖 800ms，避免快速操作時頻繁寫入
+clearTimeout(_syncTimer);
+_syncTimer = setTimeout(async ()=>{
+const statusEl = document.getElementById(‘sync-status’);
+try {
+if(statusEl) statusEl.textContent = ‘⏳ 同步中…’;
+const res = await fetch(JBIN_URL, {
+method: ‘PUT’,
+headers: JBIN_HDR,
+body: JSON.stringify(_cloudData)
+});
+if(!res.ok) throw new Error(’HTTP ’ + res.status);
+if(statusEl){
+const t = new Date().toLocaleString(‘zh-TW’);
+statusEl.textContent = ‘☁️ 已同步｜’ + t;
+}
+} catch(e){
+if(statusEl) statusEl.textContent = ‘⚠️ 同步失敗，資料已存本機’;
+console.log(‘Cloud save failed:’, e);
+}
+}, 800);
 }
 
 function getSaved(key){
-  if(_cloudData[key] !== undefined) return _cloudData[key];
-  try { return JSON.parse(localStorage.getItem(key)||'{}'); } catch(e){ return {}; }
+if(_cloudData[key] !== undefined) return _cloudData[key];
+try { return JSON.parse(localStorage.getItem(key)||’{}’); } catch(e){ return {}; }
 }
 
 function setSaved(key, val){
-  saveToCloud(key, val);
+saveToCloud(key, val);
 }
 
 function renderBookings(){
-  const saved = getSaved('bookings');
-  const c = document.getElementById('bookings-container');
-  if(!c) return;
-  c.innerHTML = '';
+const saved = getSaved(‘bookings’);
+const c = document.getElementById(‘bookings-container’);
+if(!c) return;
+c.innerHTML = ‘’;
 
-  // 計算完成數
-  let total=0, done=0;
-  BOOKINGS.forEach(sec => sec.items.forEach(item => {
-    total++;
-    const st = saved[item.id] !== undefined ? saved[item.id] : item.status;
-    if(st === 'done') done++;
-  }));
+// 計算完成數
+let total=0, done=0;
+BOOKINGS.forEach(sec => sec.items.forEach(item => {
+total++;
+const st = saved[item.id] !== undefined ? saved[item.id] : item.status;
+if(st === ‘done’) done++;
+}));
 
-  // 進度條
-  const pct = Math.round(done/total*100);
-  c.innerHTML += `<div style="margin-bottom:10px">
-    <div class="prog-bar"><div class="prog-fill" style="width:${pct}%"></div></div>
-    <div style="text-align:center;font-size:11px;color:var(--muted)">預訂完成：${done} / ${total} 項（${pct}%）</div>
+// 進度條
+const pct = Math.round(done/total*100);
+c.innerHTML += `<div style="margin-bottom:10px">
+<div class="prog-bar"><div class="prog-fill" style="width:${pct}%"></div></div>
+<div style="text-align:center;font-size:11px;color:var(--muted)">預訂完成：${done} / ${total} 項（${pct}%）</div>
+
   </div>`;
 
-  BOOKINGS.forEach(sec => {
-    let html = `<div class="sec">${sec.sec}</div><div class="card" style="padding:0">`;
-    sec.items.forEach(item => {
-      const st = saved[item.id] !== undefined ? saved[item.id] : item.status;
-      const isDone = st === 'done';
-      const bg = isDone ? 'var(--greenbg)' : (item.status==='done' ? 'var(--greenbg)' : '#fff');
-      const statusColor = isDone ? 'var(--green)' : 'var(--red)';
-      const statusText = isDone ? '✅ 完成' : item.note;
-      const nameStyle = isDone ? 'text-decoration:line-through;color:var(--muted)' : '';
-      html += `<div class="bk-item" style="background:${bg};cursor:pointer" onclick="toggleBooking('${item.id}')">
-        <div style="flex:1">
-          <div class="bk-name" style="${nameStyle}">${item.name}</div>
-          <div class="bk-detail">${item.detail}</div>
-        </div>
-        <div style="text-align:right;min-width:70px">
-          <div style="font-size:13px;font-weight:700;color:${statusColor}">${statusText}</div>
-          <div style="font-size:10px;color:var(--muted);margin-top:2px">點擊切換</div>
-        </div>
-      </div>`;
-    });
-    html += '</div>';
-    c.innerHTML += html;
-  });
+BOOKINGS.forEach(sec => {
+let html = `<div class="sec">${sec.sec}</div><div class="card" style="padding:0">`;
+sec.items.forEach(item => {
+const st = saved[item.id] !== undefined ? saved[item.id] : item.status;
+const isDone = st === ‘done’;
+const bg = isDone ? ‘var(–greenbg)’ : (item.status===‘done’ ? ‘var(–greenbg)’ : ‘#fff’);
+const statusColor = isDone ? ‘var(–green)’ : ‘var(–red)’;
+const statusText = isDone ? ‘✅ 完成’ : item.note;
+const nameStyle = isDone ? ‘text-decoration:line-through;color:var(–muted)’ : ‘’;
+html += `<div class="bk-item" style="background:${bg};cursor:pointer" onclick="toggleBooking('${item.id}')"> <div style="flex:1"> <div class="bk-name" style="${nameStyle}">${item.name}</div> <div class="bk-detail">${item.detail}</div> </div> <div style="text-align:right;min-width:70px"> <div style="font-size:13px;font-weight:700;color:${statusColor}">${statusText}</div> <div style="font-size:10px;color:var(--muted);margin-top:2px">點擊切換</div> </div> </div>`;
+});
+html += ‘</div>’;
+c.innerHTML += html;
+});
 }
 
 function toggleBooking(id){
-  const saved = JSON.parse(localStorage.getItem('bookings')||'{}');
-  // 找到原始 status
-  let origStatus = 'pending';
-  BOOKINGS.forEach(sec => sec.items.forEach(item => {
-    if(item.id === id) origStatus = item.status;
-  }));
-  const current = saved[id] !== undefined ? saved[id] : origStatus;
-  saved[id] = current === 'done' ? 'pending' : 'done';
-  setSaved('bookings', saved);
-  renderBookings();
+const saved = JSON.parse(localStorage.getItem(‘bookings’)||’{}’);
+// 找到原始 status
+let origStatus = ‘pending’;
+BOOKINGS.forEach(sec => sec.items.forEach(item => {
+if(item.id === id) origStatus = item.status;
+}));
+const current = saved[id] !== undefined ? saved[id] : origStatus;
+saved[id] = current === ‘done’ ? ‘pending’ : ‘done’;
+setSaved(‘bookings’, saved);
+renderBookings();
 }
 
 // ══ 費用計算 ══
 const COST_DEFAULTS = {
-  c1:78070,c2:61834,c3:32667,c4:0,c5:212,
-  c6:44471,c7:0,c8:1200,c9:2600,c10:1080,
-  c11:1600,c12:1440,c13:3200,c14:1000,c15:4296,
-  c16:1440,c17:3200,c18:8000,c19:10000,
-  c20:3200,c21:800,c22:10000
+c1:79410,c2:63192,c3:32667,c4:0,c5:212,
+c6:44471,c7:0,c8:1200,c9:2600,c10:1080,
+c11:1600,c12:1440,c13:3200,c14:1000,c15:4296,
+c16:1440,c17:3200,c18:8000,c19:10000,
+c20:8258,c21:800,c22:10000
 };
 
 function getVal(id){ return parseFloat(document.getElementById(id)?.value)||0; }
-function fmt(n){ return 'NT$'+Math.round(n).toLocaleString(); }
+function fmt(n){ return ‘NT$’+Math.round(n).toLocaleString(); }
 
 function calcCosts(){
-  const flight = getVal('c1')+getVal('c2');
-  const hotel = getVal('c3')+getVal('c4')+getVal('c5')+getVal('c6')+getVal('c7');
-  const transport = getVal('c8')+getVal('c9')+getVal('c10')+getVal('c11')+getVal('c12')+getVal('c13')+getVal('c14');
-  const attraction = getVal('c15')+getVal('c16')+getVal('c17');
-  const food = getVal('c18')+getVal('c19');
-  const other = getVal('c20')+getVal('c21')+getVal('c22');
-  const grand = flight+hotel+transport+attraction+food+other;
+const flight = getVal(‘c1’)+getVal(‘c2’);
+const hotel = getVal(‘c3’)+getVal(‘c4’)+getVal(‘c5’)+getVal(‘c6’)+getVal(‘c7’);
+const transport = getVal(‘c8’)+getVal(‘c9’)+getVal(‘c10’)+getVal(‘c11’)+getVal(‘c12’)+getVal(‘c13’)+getVal(‘c14’);
+const attraction = getVal(‘c15’)+getVal(‘c16’)+getVal(‘c17’);
+const food = getVal(‘c18’)+getVal(‘c19’);
+const other = getVal(‘c20’)+getVal(‘c21’)+getVal(‘c22’);
+const grand = flight+hotel+transport+attraction+food+other;
 
-  const s = document.getElementById('s-flight');
-  if(s) s.textContent = fmt(flight);
-  const sh = document.getElementById('s-hotel');
-  if(sh) sh.textContent = fmt(hotel);
-  const st = document.getElementById('s-transport');
-  if(st) st.textContent = fmt(transport);
-  const sa = document.getElementById('s-attraction');
-  if(sa) sa.textContent = fmt(attraction);
-  const sf = document.getElementById('s-food');
-  if(sf) sf.textContent = fmt(food);
-  const so = document.getElementById('s-other');
-  if(so) so.textContent = fmt(other);
-  const gt = document.getElementById('grand-total');
-  if(gt) gt.textContent = fmt(grand);
+const s = document.getElementById(‘s-flight’);
+if(s) s.textContent = fmt(flight);
+const sh = document.getElementById(‘s-hotel’);
+if(sh) sh.textContent = fmt(hotel);
+const st = document.getElementById(‘s-transport’);
+if(st) st.textContent = fmt(transport);
+const sa = document.getElementById(‘s-attraction’);
+if(sa) sa.textContent = fmt(attraction);
+const sf = document.getElementById(‘s-food’);
+if(sf) sf.textContent = fmt(food);
+const so = document.getElementById(‘s-other’);
+if(so) so.textContent = fmt(other);
+const gt = document.getElementById(‘grand-total’);
+if(gt) gt.textContent = fmt(grand);
 
-  // 儲存
-  const saved = {};
-  Object.keys(COST_DEFAULTS).forEach(k=>{
-    const el = document.getElementById(k);
-    if(el) saved[k] = el.value;
-  });
-  setSaved('costs', saved);
+// 儲存
+const saved = {};
+Object.keys(COST_DEFAULTS).forEach(k=>{
+const el = document.getElementById(k);
+if(el) saved[k] = el.value;
+});
+setSaved(‘costs’, saved);
 }
 
 function resetCosts(){
-  if(!confirm('確定要還原所有金額為預設值嗎？')) return;
-  Object.keys(COST_DEFAULTS).forEach(k=>{
-    const el = document.getElementById(k);
-    if(el) el.value = COST_DEFAULTS[k];
-  });
-  localStorage.removeItem('costs');
-  saveToCloud('costs', {});
-  calcCosts();
+if(!confirm(‘確定要還原所有金額為預設值嗎？’)) return;
+Object.keys(COST_DEFAULTS).forEach(k=>{
+const el = document.getElementById(k);
+if(el) el.value = COST_DEFAULTS[k];
+});
+localStorage.removeItem(‘costs’);
+saveToCloud(‘costs’, {});
+calcCosts();
+}
+
+// ══ 行程備註功能 ══
+function getNoteVal(key){
+const notes = getSaved(‘notes’) || {};
+return notes[key] || ‘’;
+}
+
+function toggleNote(key){
+const area = document.getElementById(‘note-area-’ + key);
+const btn = area.previousElementSibling;
+if(!area) return;
+const isHidden = area.style.display === ‘none’;
+area.style.display = isHidden ? ‘block’ : ‘none’;
+const val = getNoteVal(key);
+btn.textContent = isHidden ? (val ? ‘✏️ 收起備註’ : ‘✏️ 收起’) : (val ? ‘✏️ 查看備註’ : ‘✏️ 新增備註’);
+if(isHidden){
+const ta = document.getElementById(‘note-’ + key);
+if(ta) setTimeout(()=>ta.focus(), 100);
+}
+}
+
+let _noteTimer = {};
+function saveNote(key){
+const ta = document.getElementById(‘note-’ + key);
+const statusEl = document.getElementById(‘note-status-’ + key);
+if(!ta) return;
+const notes = getSaved(‘notes’) || {};
+notes[key] = ta.value;
+// 更新按鈕文字
+const area = document.getElementById(‘note-area-’ + key);
+if(area){
+const btn = area.previousElementSibling;
+if(btn) btn.textContent = ta.value ? ‘✏️ 收起備註’ : ‘✏️ 收起’;
+}
+if(statusEl) statusEl.textContent = ‘⏳ 儲存中…’;
+clearTimeout(_noteTimer[key]);
+_noteTimer[key] = setTimeout(()=>{
+setSaved(‘notes’, notes);
+if(statusEl) statusEl.textContent = ‘☁️ 已同步’;
+setTimeout(()=>{ if(statusEl) statusEl.textContent = ‘’; }, 2000);
+}, 800);
 }
 
 // ══ 安全設定函數 ══
 async function checkBinStatus(){
-  const el = document.getElementById('bin-status');
-  if(el) el.textContent = '檢查中...';
-  try {
-    const res = await fetch('https://api.jsonbin.io/v3/b/' + JBIN_ID + '/meta', {
-      headers: {'X-Master-Key': JBIN_KEY}
-    });
-    if(res.ok){
-      const data = await res.json();
-      const isPrivate = data.metadata?.private;
-      if(el){
-        el.textContent = isPrivate ? '🔒 私人（安全）' : '🔓 公開（建議設為私人）';
-        el.style.color = isPrivate ? 'var(--green)' : 'var(--red)';
-      }
-    }
-  } catch(e){
-    if(el){ el.textContent = '無法檢查'; el.style.color = 'var(--muted)'; }
-  }
+const el = document.getElementById(‘bin-status’);
+if(el) el.textContent = ‘檢查中…’;
+try {
+const res = await fetch(‘https://api.jsonbin.io/v3/b/’ + JBIN_ID + ‘/meta’, {
+headers: {‘X-Master-Key’: JBIN_KEY}
+});
+if(res.ok){
+const data = await res.json();
+const isPrivate = data.metadata?.private;
+if(el){
+el.textContent = isPrivate ? ‘🔒 私人（安全）’ : ‘🔓 公開（建議設為私人）’;
+el.style.color = isPrivate ? ‘var(–green)’ : ‘var(–red)’;
+}
+}
+} catch(e){
+if(el){ el.textContent = ‘無法檢查’; el.style.color = ‘var(–muted)’; }
+}
 }
 
 async function setBinPrivate(){
-  if(!confirm('確定要將資料設為「私人模式」嗎？\n設定後只有持有 API Key 才能讀取。')) return;
-  const el = document.getElementById('bin-status');
-  if(el) el.textContent = '設定中...';
-  try {
-    const res = await fetch('https://api.jsonbin.io/v3/b/' + JBIN_ID + '/meta/privacy', {
-      method: 'PUT',
-      headers: {'X-Master-Key': JBIN_KEY, 'X-Bin-Private': 'true'}
-    });
-    if(res.ok){
-      if(el){
-        el.textContent = '🔒 私人（安全）✅ 設定成功！';
-        el.style.color = 'var(--green)';
-      }
-      alert('✅ 已成功設為私人模式！\n資料現在只有持有 API Key 才能讀取。');
-    } else {
-      throw new Error('HTTP ' + res.status);
-    }
-  } catch(e){
-    if(el){ el.textContent = '❌ 設定失敗，請重試'; el.style.color = 'var(--red)'; }
-    alert('設定失敗：' + e.message);
-  }
+if(!confirm(‘確定要將資料設為「私人模式」嗎？\n設定後只有持有 API Key 才能讀取。’)) return;
+const el = document.getElementById(‘bin-status’);
+if(el) el.textContent = ‘設定中…’;
+try {
+const res = await fetch(‘https://api.jsonbin.io/v3/b/’ + JBIN_ID + ‘/meta/privacy’, {
+method: ‘PUT’,
+headers: {‘X-Master-Key’: JBIN_KEY, ‘X-Bin-Private’: ‘true’}
+});
+if(res.ok){
+if(el){
+el.textContent = ‘🔒 私人（安全）✅ 設定成功！’;
+el.style.color = ‘var(–green)’;
+}
+alert(‘✅ 已成功設為私人模式！\n資料現在只有持有 API Key 才能讀取。’);
+} else {
+throw new Error(’HTTP ’ + res.status);
+}
+} catch(e){
+if(el){ el.textContent = ‘❌ 設定失敗，請重試’; el.style.color = ‘var(–red)’; }
+alert(‘設定失敗：’ + e.message);
+}
 }
 
 function loadCosts(){
-  const saved = getSaved('costs');
-  Object.keys(saved).forEach(k=>{
-    const el = document.getElementById(k);
-    if(el) el.value = saved[k];
-  });
-  calcCosts();
+const saved = getSaved(‘costs’);
+Object.keys(saved).forEach(k=>{
+const el = document.getElementById(k);
+if(el) el.value = saved[k];
+});
+calcCosts();
 }
 
 // ══ Init ══
 // 先從雲端載入，再渲染
 loadFromCloud().then(()=>{
-  renderOverview();
-  renderItinerary();
-  renderTransport();
-  renderChecklist();
-  renderPacking();
-  renderMeds();
-  renderBookings();
-  loadCosts();
-  // 自動檢查 Bin 安全狀態
-  setTimeout(checkBinStatus, 2000);
+renderOverview();
+renderItinerary();
+renderTransport();
+renderChecklist();
+renderPacking();
+renderMeds();
+renderBookings();
+loadCosts();
+// 自動檢查 Bin 安全狀態
+setTimeout(checkBinStatus, 2000);
 });
-
 
 </script>
 </body>
