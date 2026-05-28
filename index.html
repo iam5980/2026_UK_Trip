@@ -415,45 +415,144 @@ a:hover{text-decoration:underline;}
 
 <!-- ══ 費用 ══ -->
 <div id="tab-costs" class="panel">
-  <div class="cost-sec">
-    <div class="cost-hdr">✈️ 機票</div>
-    <div class="cost-row"><span>土耳其航空（成人×2）</span><span class="cost-amt">NT$78,070</span></div>
-    <div class="cost-row"><span>土耳其航空（孩童×2）</span><span class="cost-amt">NT$61,834</span></div>
-    <div class="cost-row total"><span>機票合計</span><span class="cost-amt">NT$139,904</span></div>
-  </div>
-  <div class="cost-sec">
-    <div class="cost-hdr">🏨 住宿</div>
-    <div class="cost-row"><span>Residence Inn Manchester（5晚）</span><span class="cost-amt">NT$28,120</span></div>
-    <div class="cost-row"><span>Premier Inn Hammersmith（5晚）</span><span class="cost-amt">NT$36,715</span></div>
-    <div class="cost-row total"><span>住宿合計（10晚）</span><span class="cost-amt">NT$64,835</span></div>
-  </div>
-  <div class="cost-sec">
-    <div class="cost-hdr">🚂 交通</div>
-    <div class="cost-row"><span>Family & Friends Railcard</span><span class="cost-amt">£30（NT$1,200）</span></div>
-    <div class="cost-row"><span>Avanti 曼城→倫敦 ✅已訂</span><span class="cost-amt">£65（NT$2,600）</span></div>
-    <div class="cost-row"><span>曼城↔利物浦火車（6/30）</span><span class="cost-amt">£27（NT$1,080）</span></div>
-    <div class="cost-row"><span>曼城↔Chester火車（7/2）</span><span class="cost-amt">£40（NT$1,600）</span></div>
-    <div class="cost-row"><span>Thames Clipper格林威治來回</span><span class="cost-amt">£36（NT$1,440）</span></div>
-    <div class="cost-row"><span>計程車/Uber（估算）</span><span class="cost-amt">£80（NT$3,200）</span></div>
-    <div class="cost-row"><span>機場接送七人座升級費</span><span class="cost-amt">NT$500</span></div>
-  </div>
-  <div class="cost-sec">
-    <div class="cost-hdr">🏛️ 景點</div>
-    <div class="cost-row"><span>倫敦塔（2大+2孩）</span><span class="cost-amt">£107（NT$4,280）</span></div>
-    <div class="cost-row"><span>Mersey Ferry利物浦</span><span class="cost-amt">£36（NT$1,440）</span></div>
-    <div class="cost-row"><span>英國ETA（4人）</span><span class="cost-amt">£80（NT$3,200）</span></div>
-  </div>
-  <div class="cost-sec">
-    <div class="cost-hdr">🍽️ 餐飲（估算）</div>
-    <div class="cost-row"><span>曼城段（5天）</span><span class="cost-amt">£200（NT$8,000）</span></div>
-    <div class="cost-row"><span>倫敦段（5天）</span><span class="cost-amt">£250（NT$10,000）</span></div>
-  </div>
-  <div class="cost-sec">
-    <div class="cost-hdr">💳 其他</div>
-    <div class="cost-row"><span>旅遊保險（4人）</span><span class="cost-amt">NT$3,200</span></div>
-    <div class="cost-row"><span>eSIM上網卡</span><span class="cost-amt">NT$800</span></div>
-    <div class="cost-row total"><span>⭐ 旅遊總費用估算</span><span class="cost-amt">約 NT$250,000</span></div>
-  </div>
+
+<style>
+.cost-edit-row {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:8px 12px;
+  border-bottom:1px solid var(--border);
+  font-size:12px;
+  gap:8px;
+}
+.cost-edit-row:nth-child(even){background:var(--gray);}
+.cost-edit-row .c-label{flex:1;color:var(--text);}
+.cost-edit-row .c-input{
+  width:110px;
+  padding:4px 8px;
+  border:1.5px solid var(--border);
+  border-radius:6px;
+  font-size:12px;
+  text-align:right;
+  color:var(--navy);
+  font-weight:600;
+  background:#fff;
+}
+.cost-edit-row .c-input:focus{
+  border-color:var(--blue);
+  outline:none;
+  background:var(--sky);
+}
+.cost-subtotal{
+  display:flex;
+  justify-content:space-between;
+  padding:8px 12px;
+  background:var(--amberbg);
+  font-size:12px;
+  font-weight:700;
+  color:var(--navy);
+  border-bottom:2px solid var(--amber);
+}
+.cost-grand{
+  display:flex;
+  justify-content:space-between;
+  padding:12px;
+  background:var(--navy);
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  border-radius:8px;
+  margin:12px 0;
+}
+.cost-note{
+  font-size:10px;
+  color:var(--muted);
+  text-align:center;
+  padding:4px 0 10px;
+}
+.cost-reset{
+  width:100%;
+  padding:8px;
+  background:var(--redbg);
+  color:var(--red);
+  border:1.5px solid var(--red);
+  border-radius:8px;
+  font-size:12px;
+  font-weight:700;
+  cursor:pointer;
+  margin-bottom:12px;
+}
+</style>
+
+<div class="cost-note">💡 所有金額均可直接點擊修改，系統自動加總</div>
+<button class="cost-reset" onclick="resetCosts()">↺ 還原預設金額</button>
+
+<!-- 機票 -->
+<div class="cost-hdr">✈️ 機票</div>
+<div class="card" style="padding:0;margin-bottom:10px">
+  <div class="cost-edit-row"><span class="c-label">土耳其航空（成人×2）</span><input class="c-input" id="c1" type="number" value="78070" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">土耳其航空（孩童×2）</span><input class="c-input" id="c2" type="number" value="61834" oninput="calcCosts()"></div>
+  <div class="cost-subtotal"><span>機票合計</span><span id="s-flight">NT$139,904</span></div>
+</div>
+
+<!-- 住宿 -->
+<div class="cost-hdr">🏨 住宿</div>
+<div class="card" style="padding:0;margin-bottom:10px">
+  <div class="cost-edit-row"><span class="c-label">Residence Inn Manchester（5晚）</span><input class="c-input" id="c3" type="number" value="32667" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">曼城加人費用£350（待確認）</span><input class="c-input" id="c4" type="number" value="14869" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">曼城城市稅£5（到店付）</span><input class="c-input" id="c5" type="number" value="212" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">Premier Inn Hammersmith（5晚）</span><input class="c-input" id="c6" type="number" value="36715" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">倫敦早餐（4人×5天×£10.99）</span><input class="c-input" id="c7" type="number" value="11000" oninput="calcCosts()"></div>
+  <div class="cost-subtotal"><span>住宿合計</span><span id="s-hotel">NT$95,463</span></div>
+</div>
+
+<!-- 交通 -->
+<div class="cost-hdr">🚂 交通</div>
+<div class="card" style="padding:0;margin-bottom:10px">
+  <div class="cost-edit-row"><span class="c-label">Family & Friends Railcard</span><input class="c-input" id="c8" type="number" value="1200" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">Avanti 曼城→倫敦 ✅已訂</span><input class="c-input" id="c9" type="number" value="2600" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">曼城↔利物浦火車（6/30）</span><input class="c-input" id="c10" type="number" value="1080" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">曼城↔Chester火車（7/2）</span><input class="c-input" id="c11" type="number" value="1600" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">Thames Clipper格林威治來回</span><input class="c-input" id="c12" type="number" value="1440" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">計程車/Uber（估算）</span><input class="c-input" id="c13" type="number" value="3200" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">機場接送七人座升級費×2（來回）</span><input class="c-input" id="c14" type="number" value="1000" oninput="calcCosts()"></div>
+  <div class="cost-subtotal"><span>交通合計</span><span id="s-transport">NT$12,120</span></div>
+</div>
+
+<!-- 景點 -->
+<div class="cost-hdr">🏛️ 景點</div>
+<div class="card" style="padding:0;margin-bottom:10px">
+  <div class="cost-edit-row"><span class="c-label">倫敦塔（2大+2孩，£107.40）</span><input class="c-input" id="c15" type="number" value="4296" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">Mersey Ferry利物浦（4人£36）</span><input class="c-input" id="c16" type="number" value="1440" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">英國ETA（4人×£20）</span><input class="c-input" id="c17" type="number" value="3200" oninput="calcCosts()"></div>
+  <div class="cost-subtotal"><span>景點合計</span><span id="s-attraction">NT$8,936</span></div>
+</div>
+
+<!-- 餐飲 -->
+<div class="cost-hdr">🍽️ 餐飲（估算）</div>
+<div class="card" style="padding:0;margin-bottom:10px">
+  <div class="cost-edit-row"><span class="c-label">曼城段餐飲（5天）</span><input class="c-input" id="c18" type="number" value="8000" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">倫敦段餐飲（5天）</span><input class="c-input" id="c19" type="number" value="10000" oninput="calcCosts()"></div>
+  <div class="cost-subtotal"><span>餐飲合計</span><span id="s-food">NT$18,000</span></div>
+</div>
+
+<!-- 其他 -->
+<div class="cost-hdr">💳 其他</div>
+<div class="card" style="padding:0;margin-bottom:10px">
+  <div class="cost-edit-row"><span class="c-label">旅遊保險（4人）</span><input class="c-input" id="c20" type="number" value="3200" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">英國eSIM上網卡</span><input class="c-input" id="c21" type="number" value="800" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">零用錢/購物預算</span><input class="c-input" id="c22" type="number" value="10000" oninput="calcCosts()"></div>
+  <div class="cost-subtotal"><span>其他合計</span><span id="s-other">NT$14,000</span></div>
+</div>
+
+<!-- 總計 -->
+<div class="cost-grand">
+  <span>⭐ 旅遊總費用</span>
+  <span id="grand-total">NT$288,423</span>
+</div>
+<div class="cost-note">⚠️ 曼城加人費用£350待飯店確認，若豁免可修改為0<br>💡 點擊任何金額即可直接修改，自動重新計算</div>
+
 </div>
 
 <!-- ══ 工具 ══ -->
@@ -1276,6 +1375,70 @@ function toggleBooking(id){
   renderBookings();
 }
 
+// ══ 費用計算 ══
+const COST_DEFAULTS = {
+  c1:78070,c2:61834,c3:32667,c4:14869,c5:212,
+  c6:36715,c7:11000,c8:1200,c9:2600,c10:1080,
+  c11:1600,c12:1440,c13:3200,c14:1000,c15:4296,
+  c16:1440,c17:3200,c18:8000,c19:10000,
+  c20:3200,c21:800,c22:10000
+};
+
+function getVal(id){ return parseFloat(document.getElementById(id)?.value)||0; }
+function fmt(n){ return 'NT$'+Math.round(n).toLocaleString(); }
+
+function calcCosts(){
+  const flight = getVal('c1')+getVal('c2');
+  const hotel = getVal('c3')+getVal('c4')+getVal('c5')+getVal('c6')+getVal('c7');
+  const transport = getVal('c8')+getVal('c9')+getVal('c10')+getVal('c11')+getVal('c12')+getVal('c13')+getVal('c14');
+  const attraction = getVal('c15')+getVal('c16')+getVal('c17');
+  const food = getVal('c18')+getVal('c19');
+  const other = getVal('c20')+getVal('c21')+getVal('c22');
+  const grand = flight+hotel+transport+attraction+food+other;
+
+  const s = document.getElementById('s-flight');
+  if(s) s.textContent = fmt(flight);
+  const sh = document.getElementById('s-hotel');
+  if(sh) sh.textContent = fmt(hotel);
+  const st = document.getElementById('s-transport');
+  if(st) st.textContent = fmt(transport);
+  const sa = document.getElementById('s-attraction');
+  if(sa) sa.textContent = fmt(attraction);
+  const sf = document.getElementById('s-food');
+  if(sf) sf.textContent = fmt(food);
+  const so = document.getElementById('s-other');
+  if(so) so.textContent = fmt(other);
+  const gt = document.getElementById('grand-total');
+  if(gt) gt.textContent = fmt(grand);
+
+  // 儲存
+  const saved = {};
+  Object.keys(COST_DEFAULTS).forEach(k=>{
+    const el = document.getElementById(k);
+    if(el) saved[k] = el.value;
+  });
+  localStorage.setItem('costs', JSON.stringify(saved));
+}
+
+function resetCosts(){
+  if(!confirm('確定要還原所有金額為預設值嗎？')) return;
+  Object.keys(COST_DEFAULTS).forEach(k=>{
+    const el = document.getElementById(k);
+    if(el) el.value = COST_DEFAULTS[k];
+  });
+  localStorage.removeItem('costs');
+  calcCosts();
+}
+
+function loadCosts(){
+  const saved = JSON.parse(localStorage.getItem('costs')||'{}');
+  Object.keys(saved).forEach(k=>{
+    const el = document.getElementById(k);
+    if(el) el.value = saved[k];
+  });
+  calcCosts();
+}
+
 // ══ Init ══
 renderOverview();
 renderItinerary();
@@ -1284,6 +1447,7 @@ renderChecklist();
 renderPacking();
 renderMeds();
 renderBookings();
+loadCosts();
 </script>
 </body>
 </html>
