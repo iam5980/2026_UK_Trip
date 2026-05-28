@@ -649,6 +649,21 @@ a:hover{text-decoration:underline;}
     </div>
   </div>
 
+  <div class="sec">🔒 資料安全設定</div>
+  <div class="card warn" id="security-card">
+    <div class="card-title">☁️ JSONBin 雲端資料安全</div>
+    <div style="font-size:12px;line-height:2;margin-bottom:10px">
+      目前 Bin 狀態：<span id="bin-status" style="font-weight:700">檢查中...</span><br>
+      建議將資料設為「私人模式」，只有持有 API Key 才能讀取。
+    </div>
+    <button onclick="setBinPrivate()" style="width:100%;padding:10px;background:var(--red);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;margin-bottom:8px">
+      🔒 立刻設為私人（Private）
+    </button>
+    <button onclick="checkBinStatus()" style="width:100%;padding:8px;background:var(--sky);color:var(--navy);border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer">
+      🔍 檢查目前狀態
+    </button>
+  </div>
+
   <div class="sec">⚖️ 行李重量追蹤</div>
   <div class="converter">
     <div style="font-size:12px;color:var(--muted);text-align:center;margin-bottom:4px">去程行李（每人限 30KG）</div>
@@ -1317,59 +1332,80 @@ const BOOKINGS = [
   ]},
 ];
 
-// ══ 雲端同步核心（Artifact Storage API）══
-// 單一 key 'trip2026' 儲存所有狀態，跨裝置同步
-let _cloudData = {};  // 本地快取雲端資料
+// ══ 雲端同步核心（Firebase Realtime Database）══
+// 免費方案，真正跨裝置即時同步
+// ══ JSONBin.io 雲端同步 ══
+const JBIN_KEY = '$2a$10$DENhG4UAXGfyD6U6zsGMyevRagdqR/KKzEW1m8rDAu1BH0OPq1aum';
+const JBIN_ID  = '6a18024521f9ee59d29486a5';
+const JBIN_URL = 'https://api.jsonbin.io/v3/b/' + JBIN_ID;
+const JBIN_HDR = {'Content-Type':'application/json','X-Master-Key':JBIN_KEY,'X-Bin-Versioning':'false'};
+
+let _cloudData = {};
+let _syncTimer = null;
 
 async function loadFromCloud(){
   const statusEl = document.getElementById('sync-status');
   if(statusEl) statusEl.textContent = '⏳ 載入雲端資料...';
   try {
-    const r = await window.storage.get('trip2026');
-    if(r && r.value){
-      _cloudData = JSON.parse(r.value);
+    const res = await fetch(JBIN_URL + '/latest', {headers:{'X-Master-Key':JBIN_KEY}});
+    if(res.ok){
+      const json = await res.json();
+      const data = json.record || {};
+      _cloudData = data;
+      // 同步到 localStorage 備份
+      Object.keys(data).forEach(k=>{
+        if(k!=='updated') try{ localStorage.setItem(k, JSON.stringify(data[k])); }catch(e){}
+      });
       if(statusEl){
-        const t = _cloudData.updated ? new Date(_cloudData.updated).toLocaleString('zh-TW') : '';
-        statusEl.textContent = '☁️ 雲端同步｜最後更新：' + t;
+        const t = data.updated ? new Date(data.updated).toLocaleString('zh-TW') : '首次使用';
+        statusEl.textContent = '☁️ 已同步｜' + t;
       }
     } else {
-      _cloudData = {};
-      if(statusEl) statusEl.textContent = '☁️ 雲端同步已啟用（首次使用）';
+      throw new Error('HTTP ' + res.status);
     }
   } catch(e){
-    // Artifact Storage 不可用，退回 localStorage
+    // 退回 localStorage
     _cloudData = {};
-    if(statusEl) statusEl.textContent = '💾 本機儲存模式（單裝置）';
-    console.log('Cloud unavailable:', e);
+    if(statusEl) statusEl.textContent = '💾 離線模式（本機備份）';
+    console.log('Cloud load failed:', e);
   }
 }
 
 async function saveToCloud(key, val){
   _cloudData[key] = val;
   _cloudData.updated = new Date().toISOString();
-  // 同時存 localStorage 作備用
+  // 先存 localStorage
   try { localStorage.setItem(key, JSON.stringify(val)); } catch(e){}
-  // 存雲端
-  try {
-    await window.storage.set('trip2026', JSON.stringify(_cloudData));
+  // 防抖 800ms，避免快速操作時頻繁寫入
+  clearTimeout(_syncTimer);
+  _syncTimer = setTimeout(async ()=>{
     const statusEl = document.getElementById('sync-status');
-    if(statusEl){
-      const t = new Date().toLocaleString('zh-TW');
-      statusEl.textContent = '☁️ 雲端同步｜最後更新：' + t;
+    try {
+      if(statusEl) statusEl.textContent = '⏳ 同步中...';
+      const res = await fetch(JBIN_URL, {
+        method: 'PUT',
+        headers: JBIN_HDR,
+        body: JSON.stringify(_cloudData)
+      });
+      if(!res.ok) throw new Error('HTTP ' + res.status);
+      if(statusEl){
+        const t = new Date().toLocaleString('zh-TW');
+        statusEl.textContent = '☁️ 已同步｜' + t;
+      }
+    } catch(e){
+      if(statusEl) statusEl.textContent = '⚠️ 同步失敗，資料已存本機';
+      console.log('Cloud save failed:', e);
     }
-  } catch(e){
-    console.log('Cloud save failed:', e);
-  }
+  }, 800);
 }
 
 function getSaved(key){
-  // 優先從雲端快取讀取，其次 localStorage
   if(_cloudData[key] !== undefined) return _cloudData[key];
   try { return JSON.parse(localStorage.getItem(key)||'{}'); } catch(e){ return {}; }
 }
 
 function setSaved(key, val){
-  saveToCloud(key, val); // 同時存雲端和 localStorage
+  saveToCloud(key, val);
 }
 
 function renderBookings(){
@@ -1487,6 +1523,51 @@ function resetCosts(){
   calcCosts();
 }
 
+// ══ 安全設定函數 ══
+async function checkBinStatus(){
+  const el = document.getElementById('bin-status');
+  if(el) el.textContent = '檢查中...';
+  try {
+    const res = await fetch('https://api.jsonbin.io/v3/b/' + JBIN_ID + '/meta', {
+      headers: {'X-Master-Key': JBIN_KEY}
+    });
+    if(res.ok){
+      const data = await res.json();
+      const isPrivate = data.metadata?.private;
+      if(el){
+        el.textContent = isPrivate ? '🔒 私人（安全）' : '🔓 公開（建議設為私人）';
+        el.style.color = isPrivate ? 'var(--green)' : 'var(--red)';
+      }
+    }
+  } catch(e){
+    if(el){ el.textContent = '無法檢查'; el.style.color = 'var(--muted)'; }
+  }
+}
+
+async function setBinPrivate(){
+  if(!confirm('確定要將資料設為「私人模式」嗎？\n設定後只有持有 API Key 才能讀取。')) return;
+  const el = document.getElementById('bin-status');
+  if(el) el.textContent = '設定中...';
+  try {
+    const res = await fetch('https://api.jsonbin.io/v3/b/' + JBIN_ID + '/meta/privacy', {
+      method: 'PUT',
+      headers: {'X-Master-Key': JBIN_KEY, 'X-Bin-Private': 'true'}
+    });
+    if(res.ok){
+      if(el){
+        el.textContent = '🔒 私人（安全）✅ 設定成功！';
+        el.style.color = 'var(--green)';
+      }
+      alert('✅ 已成功設為私人模式！\n資料現在只有持有 API Key 才能讀取。');
+    } else {
+      throw new Error('HTTP ' + res.status);
+    }
+  } catch(e){
+    if(el){ el.textContent = '❌ 設定失敗，請重試'; el.style.color = 'var(--red)'; }
+    alert('設定失敗：' + e.message);
+  }
+}
+
 function loadCosts(){
   const saved = getSaved('costs');
   Object.keys(saved).forEach(k=>{
@@ -1507,6 +1588,8 @@ loadFromCloud().then(()=>{
   renderMeds();
   renderBookings();
   loadCosts();
+  // 自動檢查 Bin 安全狀態
+  setTimeout(checkBinStatus, 2000);
 });
 
 
