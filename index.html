@@ -195,6 +195,7 @@ a:hover{text-decoration:underline;}
 <div class="hdr">
   <h1>✈️ 2026 英國親子旅遊</h1>
   <p>曼徹斯特 × 倫敦　6/28–7/10　2大+2孩（8歲、11歲）｜台灣時間 = 英國時間 +7小時</p>
+  <p id="sync-status" style="font-size:10px;opacity:.7;margin-top:2px">⏳ 載入中...</p>
 </div>
 
 <div class="tabs">
@@ -500,10 +501,10 @@ a:hover{text-decoration:underline;}
 <div class="cost-hdr">🏨 住宿</div>
 <div class="card" style="padding:0;margin-bottom:10px">
   <div class="cost-edit-row"><span class="c-label">Residence Inn Manchester（5晚）</span><input class="c-input" id="c3" type="number" value="32667" oninput="calcCosts()"></div>
-  <div class="cost-edit-row"><span class="c-label">曼城加人費用£350（待確認）</span><input class="c-input" id="c4" type="number" value="14869" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">曼城加人費用£350（✅已確認免收）</span><input class="c-input" id="c4" type="number" value="0" oninput="calcCosts()"></div>
   <div class="cost-edit-row"><span class="c-label">曼城城市稅£5（到店付）</span><input class="c-input" id="c5" type="number" value="212" oninput="calcCosts()"></div>
-  <div class="cost-edit-row"><span class="c-label">Premier Inn Hammersmith（5晚）</span><input class="c-input" id="c6" type="number" value="36715" oninput="calcCosts()"></div>
-  <div class="cost-edit-row"><span class="c-label">倫敦早餐（4人×5天×£10.99）</span><input class="c-input" id="c7" type="number" value="11000" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">Premier Inn Hammersmith Klook（5晚含早餐）</span><input class="c-input" id="c6" type="number" value="44471" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">倫敦早餐（✅Klook已含全家早餐）</span><input class="c-input" id="c7" type="number" value="0" oninput="calcCosts()"></div>
   <div class="cost-subtotal"><span>住宿合計</span><span id="s-hotel">NT$95,463</span></div>
 </div>
 
@@ -1186,7 +1187,7 @@ function renderTransport(){
 
 // ══ 渲染 Checklist ══
 function renderChecklist(){
-  const saved=JSON.parse(localStorage.getItem('cl')||'{}');
+  const saved=getSaved('cl');
   ['red','amber','green'].forEach(p=>{
     const c=document.getElementById(`cl-${p}`);
     CL.filter(i=>i.p===p).forEach((item,idx)=>{
@@ -1208,7 +1209,7 @@ function renderChecklist(){
 }
 
 function toggleCL(key){
-  const saved=JSON.parse(localStorage.getItem('cl')||'{}');
+  const saved=getSaved('cl');
   saved[key]=document.getElementById(`c-${key}`).checked;
   localStorage.setItem('cl',JSON.stringify(saved));
   document.getElementById(`c-${key}`).closest('.chk-item').classList.toggle('done',saved[key]);
@@ -1216,7 +1217,7 @@ function toggleCL(key){
 }
 
 function updateProg(){
-  const saved=JSON.parse(localStorage.getItem('cl')||'{}');
+  const saved=getSaved('cl');
   const done=Object.values(saved).filter(Boolean).length;
   const total=CL.length;
   const pct=Math.round(done/total*100);
@@ -1235,21 +1236,21 @@ function renderPacking(){
     c.appendChild(div);
   });
   // 讀取儲存
-  const saved=JSON.parse(localStorage.getItem('packing')||'{}');
+  const saved=getSaved('packing');
   Object.keys(saved).forEach(k=>{const el=document.getElementById(k);if(el)el.checked=saved[k];});
 }
 
 function savePack(el,key){
-  const saved=JSON.parse(localStorage.getItem('packing')||'{}');
+  const saved=getSaved('packing');
   saved[key]=el.checked;
-  localStorage.setItem('packing',JSON.stringify(saved));
+  setSaved('packing',saved);
 }
 
 // ══ 渲染常備藥 ══
 function renderMeds(){
   const c=document.getElementById('medicine-list');
   c.innerHTML=MEDS.map((m,i)=>`<div class="pack-item"><input type="checkbox" id="med-${i}" onchange="savePack(this,'med-${i}')"><label for="med-${i}" style="cursor:pointer;font-size:12px">${m}</label></div>`).join('');
-  const saved=JSON.parse(localStorage.getItem('packing')||'{}');
+  const saved=getSaved('packing');
   MEDS.forEach((_,i)=>{const el=document.getElementById(`med-${i}`);if(el)el.checked=saved[`med-${i}`]||false;});
 }
 
@@ -1316,8 +1317,63 @@ const BOOKINGS = [
   ]},
 ];
 
+// ══ 雲端同步核心（Artifact Storage API）══
+// 單一 key 'trip2026' 儲存所有狀態，跨裝置同步
+let _cloudData = {};  // 本地快取雲端資料
+
+async function loadFromCloud(){
+  const statusEl = document.getElementById('sync-status');
+  if(statusEl) statusEl.textContent = '⏳ 載入雲端資料...';
+  try {
+    const r = await window.storage.get('trip2026');
+    if(r && r.value){
+      _cloudData = JSON.parse(r.value);
+      if(statusEl){
+        const t = _cloudData.updated ? new Date(_cloudData.updated).toLocaleString('zh-TW') : '';
+        statusEl.textContent = '☁️ 雲端同步｜最後更新：' + t;
+      }
+    } else {
+      _cloudData = {};
+      if(statusEl) statusEl.textContent = '☁️ 雲端同步已啟用（首次使用）';
+    }
+  } catch(e){
+    // Artifact Storage 不可用，退回 localStorage
+    _cloudData = {};
+    if(statusEl) statusEl.textContent = '💾 本機儲存模式（單裝置）';
+    console.log('Cloud unavailable:', e);
+  }
+}
+
+async function saveToCloud(key, val){
+  _cloudData[key] = val;
+  _cloudData.updated = new Date().toISOString();
+  // 同時存 localStorage 作備用
+  try { localStorage.setItem(key, JSON.stringify(val)); } catch(e){}
+  // 存雲端
+  try {
+    await window.storage.set('trip2026', JSON.stringify(_cloudData));
+    const statusEl = document.getElementById('sync-status');
+    if(statusEl){
+      const t = new Date().toLocaleString('zh-TW');
+      statusEl.textContent = '☁️ 雲端同步｜最後更新：' + t;
+    }
+  } catch(e){
+    console.log('Cloud save failed:', e);
+  }
+}
+
+function getSaved(key){
+  // 優先從雲端快取讀取，其次 localStorage
+  if(_cloudData[key] !== undefined) return _cloudData[key];
+  try { return JSON.parse(localStorage.getItem(key)||'{}'); } catch(e){ return {}; }
+}
+
+function setSaved(key, val){
+  saveToCloud(key, val); // 同時存雲端和 localStorage
+}
+
 function renderBookings(){
-  const saved = JSON.parse(localStorage.getItem('bookings')||'{}');
+  const saved = getSaved('bookings');
   const c = document.getElementById('bookings-container');
   if(!c) return;
   c.innerHTML = '';
@@ -1371,14 +1427,14 @@ function toggleBooking(id){
   }));
   const current = saved[id] !== undefined ? saved[id] : origStatus;
   saved[id] = current === 'done' ? 'pending' : 'done';
-  localStorage.setItem('bookings', JSON.stringify(saved));
+  setSaved('bookings', saved);
   renderBookings();
 }
 
 // ══ 費用計算 ══
 const COST_DEFAULTS = {
-  c1:78070,c2:61834,c3:32667,c4:14869,c5:212,
-  c6:36715,c7:11000,c8:1200,c9:2600,c10:1080,
+  c1:78070,c2:61834,c3:32667,c4:0,c5:212,
+  c6:44471,c7:0,c8:1200,c9:2600,c10:1080,
   c11:1600,c12:1440,c13:3200,c14:1000,c15:4296,
   c16:1440,c17:3200,c18:8000,c19:10000,
   c20:3200,c21:800,c22:10000
@@ -1417,7 +1473,7 @@ function calcCosts(){
     const el = document.getElementById(k);
     if(el) saved[k] = el.value;
   });
-  localStorage.setItem('costs', JSON.stringify(saved));
+  setSaved('costs', saved);
 }
 
 function resetCosts(){
@@ -1427,11 +1483,12 @@ function resetCosts(){
     if(el) el.value = COST_DEFAULTS[k];
   });
   localStorage.removeItem('costs');
+  saveToCloud('costs', {});
   calcCosts();
 }
 
 function loadCosts(){
-  const saved = JSON.parse(localStorage.getItem('costs')||'{}');
+  const saved = getSaved('costs');
   Object.keys(saved).forEach(k=>{
     const el = document.getElementById(k);
     if(el) el.value = saved[k];
@@ -1440,14 +1497,19 @@ function loadCosts(){
 }
 
 // ══ Init ══
-renderOverview();
-renderItinerary();
-renderTransport();
-renderChecklist();
-renderPacking();
-renderMeds();
-renderBookings();
-loadCosts();
+// 先從雲端載入，再渲染
+loadFromCloud().then(()=>{
+  renderOverview();
+  renderItinerary();
+  renderTransport();
+  renderChecklist();
+  renderPacking();
+  renderMeds();
+  renderBookings();
+  loadCosts();
+});
+
+
 </script>
 </body>
 </html>
