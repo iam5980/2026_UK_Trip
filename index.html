@@ -15,19 +15,19 @@
   --text:#212121; --muted:#757575;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:-apple-system,BlinkMacSystemFont,'PingFang TC','Microsoft JhengHei',sans-serif;background:#F0F4F8;color:var(--text);font-size:14px;line-height:1.6;padding-bottom:80px;}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang TC','Microsoft JhengHei',sans-serif;background:#F0F4F8;color:var(--text);font-size:16px;line-height:1.6;padding-bottom:80px;}
 a{color:var(--blue);text-decoration:none;}
 a:hover{text-decoration:underline;}
 
 /* Header */
 .hdr{background:linear-gradient(135deg,var(–navy),#2E5090);color:#fff;padding:16px;position:sticky;top:0;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,.3);}
-.hdr h1{font-size:17px;font-weight:700;}
+.hdr h1{font-size:20px;font-weight:700;}
 .hdr p{font-size:11px;opacity:.85;margin-top:2px;}
 
 /* Tab Nav */
 .tabs{display:flex;overflow-x:auto;background:#fff;border-bottom:2px solid var(–border);-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:68px;z-index:100;}
 .tabs::-webkit-scrollbar{display:none;}
-.tab{flex:0 0 auto;padding:10px 13px;font-size:12px;font-weight:500;color:var(–muted);background:none;border:none;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap;}
+.tab{flex:0 0 auto;padding:11px 14px;font-size:14px;font-weight:500;color:var(–muted);background:none;border:none;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap;}
 .tab.on{color:var(–blue);border-bottom-color:var(–blue);font-weight:700;}
 
 /* Panels */
@@ -41,33 +41,33 @@ a:hover{text-decoration:underline;}
 .card.tr{border-left-color:var(–amber);}
 .card.warn{border-left-color:var(–red);background:var(–redbg);}
 .card.tip{border-left-color:var(–green);background:var(–greenbg);}
-.card-title{font-size:14px;font-weight:700;color:var(–navy);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+.card-title{font-size:16px;font-weight:700;color:var(–navy);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
 
 /* Badge */
-.badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700;background:var(–navy);color:#fff;}
+.badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:13px;font-weight:700;background:var(–navy);color:#fff;}
 .badge.man{background:#2196F3;}
 .badge.lon{background:var(–green);}
 .badge.tr{background:var(–amber);color:var(–navy);}
 
 /* Section header */
-.sec{font-size:13px;font-weight:700;color:var(–navy);background:var(–sky);padding:7px 12px;border-radius:6px;margin:12px 0 8px;display:flex;align-items:center;gap:5px;}
+.sec{font-size:15px;font-weight:700;color:var(–navy);background:var(–sky);padding:7px 12px;border-radius:6px;margin:12px 0 8px;display:flex;align-items:center;gap:5px;}
 
 /* Timeline */
 .tl{display:flex;gap:8px;margin-bottom:10px;position:relative;}
 .tl::before{content:’’;position:absolute;left:32px;top:24px;bottom:-10px;width:2px;background:var(–border);}
 .tl:last-child::before{display:none;}
-.tl-time{flex:0 0 46px;font-size:11px;font-weight:700;color:var(–blue);text-align:right;padding-top:2px;}
+.tl-time{flex:0 0 52px;font-size:13px;font-weight:700;color:var(–blue);text-align:right;padding-top:2px;}
 .tl-dot{flex:0 0 14px;width:14px;height:14px;border-radius:50%;background:var(–blue);margin-top:4px;z-index:1;flex-shrink:0;}
 .tl-dot.food{background:var(–amber);}
 .tl-dot.star{background:#9C27B0;}
 .tl-dot.warn{background:var(–red);}
 .tl-body{flex:1;}
-.tl-title{font-size:13px;font-weight:700;color:var(–text);margin-bottom:2px;}
-.tl-desc{font-size:11px;color:var(–muted);margin-bottom:3px;}
+.tl-title{font-size:15px;font-weight:700;color:var(–text);margin-bottom:2px;}
+.tl-desc{font-size:13px;color:var(–muted);margin-bottom:3px;}
 
 /* Tags */
 .tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;}
-.tag{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:12px;font-size:10px;font-weight:500;}
+.tag{display:inline-flex;align-items:center;gap:3px;padding:3px 8px;border-radius:12px;font-size:12px;font-weight:500;}
 .tag.tr{background:#E3F2FD;color:#1565C0;}
 .tag.alt{background:#FFF3E0;color:#E65100;}
 .tag.food{background:#FFF8E1;color:#F57F17;}
@@ -78,14 +78,14 @@ a:hover{text-decoration:underline;}
 .tag.fr{background:#E8F5E9;color:#2E7D32;}
 
 /* Map link */
-.maplink{display:inline-flex;align-items:center;gap:3px;color:var(–blue);font-size:11px;padding:3px 8px;background:var(–sky);border-radius:10px;margin-top:3px;}
+.maplink{display:inline-flex;align-items:center;gap:3px;color:var(–blue);font-size:13px;padding:3px 8px;background:var(–sky);border-radius:10px;margin-top:3px;}
 
 /* Toilet */
-.toilet{background:#E3F2FD;border-radius:8px;padding:7px 10px;margin:4px 0;font-size:11px;display:flex;align-items:flex-start;gap:5px;}
+.toilet{background:#E3F2FD;border-radius:8px;padding:8px 10px;margin:4px 0;font-size:13px;display:flex;align-items:flex-start;gap:5px;}
 
 /* Day selector */
 .day-sel{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;}
-.day-btn{padding:5px 9px;border-radius:14px;font-size:11px;font-weight:600;border:2px solid var(–border);cursor:pointer;background:#fff;color:var(–muted);}
+.day-btn{padding:6px 10px;border-radius:14px;font-size:13px;font-weight:600;border:2px solid var(–border);cursor:pointer;background:#fff;color:var(–muted);}
 .day-btn.man{border-color:#2196F3;}
 .day-btn.lon{border-color:var(–green);}
 .day-btn.tr{border-color:var(–amber);}
@@ -97,19 +97,19 @@ a:hover{text-decoration:underline;}
 
 /* Day header */
 .day-hdr{background:var(–navy);color:#fff;padding:10px 12px;border-radius:8px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;}
-.day-hdr .dn{font-size:17px;font-weight:700;}
-.day-hdr .dd{font-size:11px;opacity:.85;}
+.day-hdr .dn{font-size:19px;font-weight:700;}
+.day-hdr .dd{font-size:13px;opacity:.85;}
 
 /* Depart/Return box */
 .dr-box{background:var(–sky);border-radius:8px;padding:8px 12px;margin-bottom:10px;font-size:12px;}
-.dr-box .dr-title{font-weight:700;color:var(–navy);margin-bottom:4px;font-size:12px;}
-.dr-row{display:flex;align-items:flex-start;gap:6px;margin-top:3px;}
-.dr-icon{font-size:14px;flex-shrink:0;}
+.dr-box .dr-title{font-weight:700;color:var(–navy);margin-bottom:4px;font-size:14px;}
+.dr-row{display:flex;align-items:flex-start;gap:6px;margin-top:4px;font-size:13px;}
+.dr-icon{font-size:16px;flex-shrink:0;}
 
 /* Table */
-.tbl{width:100%;border-collapse:collapse;font-size:12px;}
-.tbl th{background:var(–navy);color:#fff;padding:7px 9px;text-align:left;font-weight:600;}
-.tbl td{padding:7px 9px;border-bottom:1px solid var(–border);vertical-align:top;}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;}
+.tbl th{background:var(–navy);color:#fff;padding:8px 10px;text-align:left;font-weight:600;}
+.tbl td{padding:8px 10px;border-bottom:1px solid var(–border);vertical-align:top;}
 .tbl tr:nth-child(even) td{background:var(–gray);}
 
 /* Checklist */
@@ -118,59 +118,59 @@ a:hover{text-decoration:underline;}
 .chk-item input[type=checkbox]{flex-shrink:0;width:18px;height:18px;margin-top:2px;accent-color:var(–green);}
 .chk-item.done .chk-title{text-decoration:line-through;color:var(–muted);}
 .chk-text{flex:1;}
-.chk-title{font-weight:600;font-size:13px;}
-.chk-desc{font-size:11px;color:var(–muted);margin-top:2px;}
-.chk-link{font-size:11px;color:var(–blue);word-break:break-all;}
-.pbadge{flex-shrink:0;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:700;}
+.chk-title{font-weight:600;font-size:15px;}
+.chk-desc{font-size:13px;color:var(–muted);margin-top:2px;}
+.chk-link{font-size:12px;color:var(–blue);word-break:break-all;}
+.pbadge{flex-shrink:0;font-size:12px;padding:2px 6px;border-radius:10px;font-weight:700;}
 .pr{background:var(–redbg);color:var(–red);}
 .pa{background:var(–amberbg);color:#7B5E00;}
 .pg{background:var(–greenbg);color:var(–green);}
 
 /* Cost */
 .cost-sec{margin-bottom:14px;}
-.cost-hdr{font-size:12px;font-weight:700;color:#fff;background:var(–navy);padding:6px 12px;border-radius:6px 6px 0 0;}
-.cost-row{display:flex;justify-content:space-between;padding:7px 12px;border-bottom:1px solid var(–border);font-size:12px;}
+.cost-hdr{font-size:14px;font-weight:700;color:#fff;background:var(–navy);padding:6px 12px;border-radius:6px 6px 0 0;}
+.cost-row{display:flex;justify-content:space-between;padding:8px 12px;border-bottom:1px solid var(–border);font-size:14px;}
 .cost-row:nth-child(even){background:var(–gray);}
-.cost-row.total{background:var(–amberbg);font-weight:700;font-size:13px;}
+.cost-row.total{background:var(–amberbg);font-weight:700;font-size:15px;}
 .cost-amt{font-weight:600;color:var(–navy);}
 
 /* Currency converter */
 .converter{background:#fff;border-radius:10px;padding:14px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,.08);}
-.converter input{width:100%;padding:10px;border:2px solid var(–border);border-radius:8px;font-size:16px;text-align:center;margin:6px 0;}
-.converter .result{font-size:20px;font-weight:700;color:var(–navy);text-align:center;padding:8px;}
-.converter .rate{font-size:11px;color:var(–muted);text-align:center;}
+.converter input{width:100%;padding:10px;border:2px solid var(–border);border-radius:8px;font-size:17px;text-align:center;margin:6px 0;}
+.converter .result{font-size:22px;font-weight:700;color:var(–navy);text-align:center;padding:8px;}
+.converter .rate{font-size:13px;color:var(–muted);text-align:center;}
 .btn-swap{width:100%;padding:8px;background:var(–sky);border:none;border-radius:8px;color:var(–navy);font-weight:700;cursor:pointer;margin:4px 0;}
 
 /* Summary grid */
 .sum-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px;}
 .sum-card{background:#fff;border-radius:10px;padding:12px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.08);}
-.sum-card .sn{font-size:20px;font-weight:700;color:var(–navy);}
-.sum-card .sl{font-size:11px;color:var(–muted);margin-top:2px;}
+.sum-card .sn{font-size:22px;font-weight:700;color:var(–navy);}
+.sum-card .sl{font-size:13px;color:var(–muted);margin-top:2px;}
 
 /* Hotel grid */
 .hotel-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;}
 @media(max-width:400px){.hotel-grid{grid-template-columns:1fr;}}
 .hotel-card{background:#fff;border-radius:10px;padding:12px;box-shadow:0 1px 4px rgba(0,0,0,.1);border-top:4px solid var(–blue);}
 .hotel-card.lon{border-top-color:var(–green);}
-.hotel-name{font-size:12px;font-weight:700;color:var(–navy);margin-bottom:5px;}
-.hotel-info{font-size:10px;color:var(–muted);line-height:1.9;}
-.hotel-price{font-size:15px;font-weight:700;color:var(–amber);margin:6px 0 3px;}
-.hotel-rating{display:inline-block;background:var(–green);color:#fff;font-size:11px;font-weight:700;padding:2px 7px;border-radius:5px;}
+.hotel-name{font-size:14px;font-weight:700;color:var(–navy);margin-bottom:5px;}
+.hotel-info{font-size:13px;color:var(–muted);line-height:1.9;}
+.hotel-price{font-size:17px;font-weight:700;color:var(–amber);margin:6px 0 3px;}
+.hotel-rating{display:inline-block;background:var(–green);color:#fff;font-size:13px;font-weight:700;padding:2px 7px;border-radius:5px;}
 
 /* Emergency */
-.em-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid var(–border);}
+.em-item{display:flex;align-items:center;gap:10px;padding:11px 12px;border-bottom:1px solid var(–border);}
 .em-icon{font-size:22px;flex-shrink:0;}
-.em-label{font-size:11px;color:var(–muted);}
-.em-value{font-size:13px;font-weight:600;}
+.em-label{font-size:13px;color:var(–muted);}
+.em-value{font-size:15px;font-weight:600;}
 
 /* Booking list */
 .bk-item{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 12px;border-bottom:1px solid var(–border);font-size:12px;}
-.bk-name{font-weight:600;color:var(–navy);}
-.bk-detail{font-size:11px;color:var(–muted);margin-top:2px;}
-.bk-num{font-size:13px;font-weight:700;color:var(–amber);text-align:right;min-width:80px;}
+.bk-name{font-weight:600;color:var(–navy);font-size:14px;}
+.bk-detail{font-size:13px;color:var(–muted);margin-top:2px;}
+.bk-num{font-size:14px;font-weight:700;color:var(–amber);text-align:right;min-width:80px;}
 
 /* Phrase */
-.phrase-item{display:flex;justify-content:space-between;padding:9px 12px;border-bottom:1px solid var(–border);font-size:12px;}
+.phrase-item{display:flex;justify-content:space-between;padding:10px 12px;border-bottom:1px solid var(–border);font-size:14px;}
 .phrase-zh{color:var(–navy);font-weight:600;}
 .phrase-en{color:var(–muted);}
 
@@ -180,31 +180,31 @@ a:hover{text-decoration:underline;}
 
 /* Weather */
 .wx-card{background:#fff;border-radius:10px;padding:12px;margin-bottom:8px;box-shadow:0 1px 4px rgba(0,0,0,.08);}
-.wx-city{font-weight:700;color:var(–navy);font-size:13px;}
-.wx-temp{font-size:22px;font-weight:700;color:var(–amber);}
-.wx-desc{font-size:11px;color:var(–muted);}
+.wx-city{font-weight:700;color:var(–navy);font-size:15px;}
+.wx-temp{font-size:24px;font-weight:700;color:var(–amber);}
+.wx-desc{font-size:13px;color:var(–muted);}
 
 /* Packing */
 .pack-day{background:#fff;border-radius:8px;padding:10px 12px;margin-bottom:8px;box-shadow:0 1px 3px rgba(0,0,0,.07);}
-.pack-day-title{font-weight:700;font-size:12px;color:var(–navy);margin-bottom:6px;}
-.pack-item{display:flex;align-items:center;gap:6px;font-size:12px;padding:3px 0;}
+.pack-day-title{font-weight:700;font-size:14px;color:var(–navy);margin-bottom:6px;}
+.pack-item{display:flex;align-items:center;gap:6px;font-size:14px;padding:3px 0;}
 .pack-item input[type=checkbox]{accent-color:var(–amber);}
 
 /* ── 行程備註 ── */
 .note-btn{
 display:inline-flex;align-items:center;gap:3px;
-padding:3px 8px;background:#FFF8E1;color:#F57F17;
+padding:4px 9px;background:#FFF8E1;color:#F57F17;
 border:1px solid #FFE082;border-radius:10px;
-font-size:10px;font-weight:600;cursor:pointer;
+font-size:12px;font-weight:600;cursor:pointer;
 margin-top:4px;
 }
 .note-btn:hover{background:#FFE082;}
 .note-box{
 margin-top:6px;width:100%;
-padding:7px 10px;
+padding:8px 10px;
 border:1.5px solid var(–amber);
 border-radius:8px;
-font-size:12px;
+font-size:14px;
 font-family:inherit;
 background:#FFFDE7;
 color:var(–text);
@@ -213,16 +213,83 @@ min-height:60px;
 line-height:1.6;
 }
 .note-box:focus{outline:none;border-color:var(–blue);background:#fff;}
-.note-saved{font-size:10px;color:var(–green);margin-top:2px;}
-</style>
+.note-saved{font-size:12px;color:var(–green);margin-top:2px;}
 
+.cost-edit-row {
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:8px 12px;
+border-bottom:1px solid var(–border);
+font-size:12px;
+gap:8px;
+}
+.cost-edit-row:nth-child(even){background:var(–gray);}
+.cost-edit-row .c-label{flex:1;color:var(–text);font-size:14px;}
+.cost-edit-row .c-input{
+width:120px;
+padding:5px 8px;
+border:1.5px solid var(–border);
+border-radius:6px;
+font-size:14px;
+text-align:right;
+color:var(–navy);
+font-weight:600;
+background:#fff;
+}
+.cost-edit-row .c-input:focus{
+border-color:var(–blue);
+outline:none;
+background:var(–sky);
+}
+.cost-subtotal{
+display:flex;
+justify-content:space-between;
+padding:9px 12px;
+background:var(–amberbg);
+font-size:12px;
+font-weight:700;
+color:var(–navy);
+border-bottom:2px solid var(–amber);
+}
+.cost-grand{
+display:flex;
+justify-content:space-between;
+padding:12px;
+background:var(–navy);
+color:#fff;
+font-size:16px;
+font-weight:700;
+border-radius:8px;
+margin:12px 0;
+}
+.cost-note{
+font-size:13px;
+color:var(–muted);
+text-align:center;
+padding:4px 0 10px;
+}
+.cost-reset{
+width:100%;
+padding:8px;
+background:var(–redbg);
+color:var(–red);
+border:1.5px solid var(–red);
+border-radius:8px;
+font-size:12px;
+font-weight:700;
+cursor:pointer;
+margin-bottom:12px;
+}
+
+</style>
 </head>
 <body>
 
 <div class="hdr">
   <h1>✈️ 2026 英國親子旅遊</h1>
   <p>曼徹斯特 × 倫敦　6/28–7/10　2大+2孩（8歲、11歲）｜台灣時間 = 英國時間 +7小時</p>
-  <p id="sync-status" style="font-size:10px;opacity:.7;margin-top:2px">⏳ 載入中...</p>
+  <p id="sync-status" style="font-size:13px;opacity:.7;margin-top:2px">⏳ 載入中...</p>
 </div>
 
 <div class="tabs">
@@ -249,7 +316,7 @@ line-height:1.6;
 
   <div class="card warn">
     <div class="card-title">⏰ 時差提醒</div>
-    <div style="font-size:12px">英國夏令時間（BST）比台灣<strong>慢 7 小時</strong><br>
+    <div style="font-size:14px">英國夏令時間（BST）比台灣<strong>慢 7 小時</strong><br>
     台灣 21:45 出發 = 英國當地時間 14:45<br>
     與家人聯絡時請注意時差！</div>
   </div>
@@ -257,8 +324,8 @@ line-height:1.6;
   <div class="sec">✈️ 航班資訊</div>
   <div class="card">
     <div class="card-title">去程</div>
-    <div style="font-size:12px"><strong>土耳其航空 TK</strong>　6/28 21:45 TPE T2 出發</div>
-    <div style="font-size:11px;color:var(--muted)">→ 伊斯坦堡 IST（停留 4h45m）→ 6/29 12:05 MAN T2</div>
+    <div style="font-size:14px"><strong>土耳其航空 TK</strong>　6/28 21:45 TPE T2 出發</div>
+    <div style="font-size:13px;color:var(--muted)">→ 伊斯坦堡 IST（停留 4h45m）→ 6/29 12:05 MAN T2</div>
     <div class="tags" style="margin-top:6px">
       <span class="tag ok">✅ 過境免簽</span>
       <span class="tag ok">✅ 行李直掛 30KG</span>
@@ -267,8 +334,8 @@ line-height:1.6;
   </div>
   <div class="card">
     <div class="card-title">回程</div>
-    <div style="font-size:12px"><strong>TK1986 → TK024</strong>　7/9 16:45 LHR T2 出發</div>
-    <div style="font-size:11px;color:var(--muted)">→ 伊斯坦堡（停留 2h55m）→ 7/10 17:55 TPE T2</div>
+    <div style="font-size:14px"><strong>TK1986 → TK024</strong>　7/9 16:45 LHR T2 出發</div>
+    <div style="font-size:13px;color:var(--muted)">→ 伊斯坦堡（停留 2h55m）→ 7/10 17:55 TPE T2</div>
     <div class="tags" style="margin-top:6px">
       <span class="tag w">⚠️ T2B 閘口走 30 分</span>
       <span class="tag ok">✅ 行李直掛</span>
@@ -278,7 +345,7 @@ line-height:1.6;
   <div class="sec">🚕 出發日接送</div>
   <div class="card tip">
     <div class="card-title">🚐 匯豐輕旅卡 × 全峰汽車七人座（來回）</div>
-    <div style="font-size:12px;line-height:2">
+    <div style="font-size:14px;line-height:2">
       <strong>📤 去程送機</strong><br>
       🗓️ 6/28（週日）　乘車時間：<strong>19:00–19:30</strong><br>
       📍 桃園中壢<strong>太子天廈</strong> → 桃園機場 T2<br>
@@ -346,7 +413,7 @@ line-height:1.6;
 
   <div class="sec">⚠️ 訂房注意</div>
   <div class="card warn">
-    <div style="font-size:12px;line-height:2">
+    <div style="font-size:14px;line-height:2">
       📌 曼城備註：「quiet room away from noise」<br>
       📌 倫敦備註：「full window room preferred」<br>
       📌 曼城城市稅：£1.20/晚 × 5晚 = £6，現場繳<br>
@@ -357,7 +424,7 @@ line-height:1.6;
 
   <div class="sec">🚻 廁所備案</div>
   <div class="card">
-    <div style="font-size:12px;font-weight:700;margin-bottom:6px">倫敦主要戶外景點廁所</div>
+    <div style="font-size:14px;font-weight:700;margin-bottom:6px">倫敦主要戶外景點廁所</div>
     <div class="toilet"><span>🚻</span><div><strong>海德公園</strong>：Lido Café廁所（Diana噴泉旁，免費）<br><a href="https://maps.google.com/maps?q=Hyde+Park+toilets+London">📍 Google Maps</a></div></div>
     <div class="toilet"><span>🚻</span><div><strong>格林威治公園</strong>：公園入口旁公廁（免費）<br><a href="https://maps.google.com/maps?q=Greenwich+Park+toilets">📍 Google Maps</a></div></div>
     <div class="toilet"><span>🚻</span><div><strong>Borough Market</strong>：市集內免費廁所<br><a href="https://maps.google.com/maps?q=Borough+Market+toilets">📍 Google Maps</a></div></div>
@@ -384,7 +451,7 @@ line-height:1.6;
 
   <div class="sec">🚌 曼徹斯特 Metroshuttle 免費巴士</div>
   <div class="card tip">
-    <div style="font-size:12px;line-height:2">
+    <div style="font-size:14px;line-height:2">
       <strong>上車地點：Manchester Piccadilly 火車站（Station Approach 出口）</strong><br>
       ⚠️ 不是 Piccadilly Gardens！那裡是付費公車站<br>
       <strong>Route 1（橘線）</strong>：Piccadilly站→中國城→MOSI→Spinningfields→Deansgate<br>
@@ -409,7 +476,7 @@ line-height:1.6;
 
   <div class="sec">🚇 倫敦交通重點</div>
   <div class="card">
-    <div style="font-size:12px;line-height:2">
+    <div style="font-size:14px;line-height:2">
       💳 <strong>付款</strong>：感應信用卡/Apple Pay（費率與 Oyster 相同）<br>
       ✈️ <strong>機場</strong>：Piccadilly Line 直達 Heathrow T2（35-40分，0換乘）<br>
       🚢 <strong>格林威治</strong>：Hammersmith Pier 步行 12 分，Thames Clipper £9/人<br>
@@ -427,7 +494,7 @@ line-height:1.6;
 <div id="tab-checklist" class="panel">
   <div style="padding:4px 0 10px">
     <div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
-    <div style="text-align:center;font-size:12px;color:var(--muted)" id="prog-text">完成進度：0 / 0</div>
+    <div style="text-align:center;font-size:14px;color:var(--muted)" id="prog-text">完成進度：0 / 0</div>
   </div>
   <div class="sec">🔴 立刻辦理</div>
   <div id="cl-red"></div>
@@ -440,7 +507,7 @@ line-height:1.6;
 <!-- ══ 預訂確認 ══ -->
 
 <div id="tab-bookings" class="panel">
-  <div style="font-size:11px;color:var(--muted);text-align:center;padding:6px 0 10px">
+  <div style="font-size:13px;color:var(--muted);text-align:center;padding:6px 0 10px">
     點擊任一項目可切換「待訂 / ✅已完成」狀態，狀態自動儲存
   </div>
 
@@ -450,75 +517,6 @@ line-height:1.6;
 <!-- ══ 費用 ══ -->
 
 <div id="tab-costs" class="panel">
-
-<style>
-.cost-edit-row {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:8px 12px;
-  border-bottom:1px solid var(--border);
-  font-size:12px;
-  gap:8px;
-}
-.cost-edit-row:nth-child(even){background:var(--gray);}
-.cost-edit-row .c-label{flex:1;color:var(--text);}
-.cost-edit-row .c-input{
-  width:110px;
-  padding:4px 8px;
-  border:1.5px solid var(--border);
-  border-radius:6px;
-  font-size:12px;
-  text-align:right;
-  color:var(--navy);
-  font-weight:600;
-  background:#fff;
-}
-.cost-edit-row .c-input:focus{
-  border-color:var(--blue);
-  outline:none;
-  background:var(--sky);
-}
-.cost-subtotal{
-  display:flex;
-  justify-content:space-between;
-  padding:8px 12px;
-  background:var(--amberbg);
-  font-size:12px;
-  font-weight:700;
-  color:var(--navy);
-  border-bottom:2px solid var(--amber);
-}
-.cost-grand{
-  display:flex;
-  justify-content:space-between;
-  padding:12px;
-  background:var(--navy);
-  color:#fff;
-  font-size:14px;
-  font-weight:700;
-  border-radius:8px;
-  margin:12px 0;
-}
-.cost-note{
-  font-size:10px;
-  color:var(--muted);
-  text-align:center;
-  padding:4px 0 10px;
-}
-.cost-reset{
-  width:100%;
-  padding:8px;
-  background:var(--redbg);
-  color:var(--red);
-  border:1.5px solid var(--red);
-  border-radius:8px;
-  font-size:12px;
-  font-weight:700;
-  cursor:pointer;
-  margin-bottom:12px;
-}
-</style>
 
 <div class="cost-note">💡 所有金額均可直接點擊修改，系統自動加總</div>
 <button class="cost-reset" onclick="resetCosts()">↺ 還原預設金額</button>
@@ -593,7 +591,7 @@ line-height:1.6;
   <span>⭐ 旅遊總費用</span>
   <span id="grand-total">NT$288,423</span>
 </div>
-<div class="cost-note">⚠️ 曼城加人費用£350待飯店確認，若豁免可修改為0<br>💡 點擊任何金額即可直接修改，自動重新計算</div>
+<div class="cost-note">💡 點擊任何金額即可直接修改，自動重新計算</div>
 
 </div>
 
@@ -603,12 +601,12 @@ line-height:1.6;
 
   <div class="sec">💱 匯率換算</div>
   <div class="converter">
-    <div style="font-size:12px;color:var(--muted);text-align:center;margin-bottom:4px">英鎊 → 新台幣</div>
+    <div style="font-size:14px;color:var(--muted);text-align:center;margin-bottom:4px">英鎊 → 新台幣</div>
     <input type="number" id="gbp-in" placeholder="輸入英鎊金額（£）" oninput="calcGBP()">
     <div class="result" id="gbp-result">= NT$ 0</div>
     <div class="rate">參考匯率：1 £ = NT$ 40　｜　實際匯率以銀行為準</div>
     <button class="btn-swap" onclick="swapCurrency()">⇅ 換算方向</button>
-    <div style="font-size:12px;color:var(--muted);text-align:center;margin-top:4px" id="swap-label">目前：£ → NT$</div>
+    <div style="font-size:14px;color:var(--muted);text-align:center;margin-top:4px" id="swap-label">目前：£ → NT$</div>
   </div>
 
   <div class="sec">🌤️ 天氣參考</div>
@@ -626,7 +624,7 @@ line-height:1.6;
   </div>
   <div class="card warn">
     <div class="card-title">☔ 雨天備案景點（室內）</div>
-    <div style="font-size:12px;line-height:2">
+    <div style="font-size:14px;line-height:2">
       🏛️ 曼博物館（免費，Oxford Road）<br>
       🏛️ MOSI 科學工業博物館（免費）<br>
       🏛️ Manchester Art Gallery（免費）<br>
@@ -668,10 +666,10 @@ line-height:1.6;
 
   <div class="sec">🏥 醫療資訊</div>
   <div class="card">
-    <div style="font-size:12px;line-height:2;font-weight:600;color:var(--navy);margin-bottom:6px">常備藥清單</div>
+    <div style="font-size:14px;line-height:2;font-weight:600;color:var(--navy);margin-bottom:6px">常備藥清單</div>
     <div id="medicine-list"></div>
-    <div style="font-size:12px;line-height:2;font-weight:600;color:var(--navy);margin:10px 0 4px">英國就醫流程</div>
-    <div style="font-size:12px;line-height:2">
+    <div style="font-size:14px;line-height:2;font-weight:600;color:var(--navy);margin:10px 0 4px">英國就醫流程</div>
+    <div style="font-size:14px;line-height:2">
       💊 <strong>輕症</strong>：Boots / Superdrug 藥局購藥<br>
       📞 <strong>中症</strong>：撥打 <a href="tel:111"><strong>111</strong></a>（NHS 非緊急諮詢）<br>
       🚑 <strong>重症</strong>：撥打 <a href="tel:999"><strong>999</strong></a>（緊急救護）
@@ -680,7 +678,7 @@ line-height:1.6;
 
   <div class="sec">📄 重要文件備份</div>
   <div class="card tip">
-    <div style="font-size:12px;line-height:2">
+    <div style="font-size:14px;line-height:2">
       ✅ 護照（4人）拍照存入手機相簿<br>
       ✅ ETA 電子授權截圖備份<br>
       ✅ 機票電子票截圖<br>
@@ -694,26 +692,26 @@ line-height:1.6;
   <div class="sec">🔒 資料安全設定</div>
   <div class="card warn" id="security-card">
     <div class="card-title">☁️ JSONBin 雲端資料安全</div>
-    <div style="font-size:12px;line-height:2;margin-bottom:10px">
+    <div style="font-size:14px;line-height:2;margin-bottom:10px">
       目前 Bin 狀態：<span id="bin-status" style="font-weight:700">檢查中...</span><br>
       建議將資料設為「私人模式」，只有持有 API Key 才能讀取。
     </div>
     <button onclick="setBinPrivate()" style="width:100%;padding:10px;background:var(--red);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;margin-bottom:8px">
       🔒 立刻設為私人（Private）
     </button>
-    <button onclick="checkBinStatus()" style="width:100%;padding:8px;background:var(--sky);color:var(--navy);border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer">
+    <button onclick="checkBinStatus()" style="width:100%;padding:8px;background:var(--sky);color:var(--navy);border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer">
       🔍 檢查目前狀態
     </button>
   </div>
 
   <div class="sec">⚖️ 行李重量追蹤</div>
   <div class="converter">
-    <div style="font-size:12px;color:var(--muted);text-align:center;margin-bottom:4px">去程行李（每人限 30KG）</div>
+    <div style="font-size:14px;color:var(--muted);text-align:center;margin-bottom:4px">去程行李（每人限 30KG）</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
-      <div><div style="font-size:11px;color:var(--muted);text-align:center">大人1行李(KG)</div><input type="number" id="bag1" placeholder="0" oninput="calcBags()" style="text-align:center;padding:8px;width:100%;border:2px solid var(--border);border-radius:8px;font-size:16px;"></div>
-      <div><div style="font-size:11px;color:var(--muted);text-align:center">大人2行李(KG)</div><input type="number" id="bag2" placeholder="0" oninput="calcBags()" style="text-align:center;padding:8px;width:100%;border:2px solid var(--border);border-radius:8px;font-size:16px;"></div>
-      <div><div style="font-size:11px;color:var(--muted);text-align:center">孩子1行李(KG)</div><input type="number" id="bag3" placeholder="0" oninput="calcBags()" style="text-align:center;padding:8px;width:100%;border:2px solid var(--border);border-radius:8px;font-size:16px;"></div>
-      <div><div style="font-size:11px;color:var(--muted);text-align:center">孩子2行李(KG)</div><input type="number" id="bag4" placeholder="0" oninput="calcBags()" style="text-align:center;padding:8px;width:100%;border:2px solid var(--border);border-radius:8px;font-size:16px;"></div>
+      <div><div style="font-size:13px;color:var(--muted);text-align:center">大人1行李(KG)</div><input type="number" id="bag1" placeholder="0" oninput="calcBags()" style="text-align:center;padding:8px;width:100%;border:2px solid var(--border);border-radius:8px;font-size:16px;"></div>
+      <div><div style="font-size:13px;color:var(--muted);text-align:center">大人2行李(KG)</div><input type="number" id="bag2" placeholder="0" oninput="calcBags()" style="text-align:center;padding:8px;width:100%;border:2px solid var(--border);border-radius:8px;font-size:16px;"></div>
+      <div><div style="font-size:13px;color:var(--muted);text-align:center">孩子1行李(KG)</div><input type="number" id="bag3" placeholder="0" oninput="calcBags()" style="text-align:center;padding:8px;width:100%;border:2px solid var(--border);border-radius:8px;font-size:16px;"></div>
+      <div><div style="font-size:13px;color:var(--muted);text-align:center">孩子2行李(KG)</div><input type="number" id="bag4" placeholder="0" oninput="calcBags()" style="text-align:center;padding:8px;width:100%;border:2px solid var(--border);border-radius:8px;font-size:16px;"></div>
     </div>
     <div class="result" id="bag-result">總重量：0 KG / 限制 120 KG</div>
     <div class="rate" id="bag-warn"></div>
@@ -731,7 +729,7 @@ line-height:1.6;
     <div style="font-size:16px;font-weight:700;color:var(--navy);margin-top:8px">
       <a href="tel:111">111</a>
     </div>
-    <div style="font-size:12px">NHS 非緊急醫療諮詢</div>
+    <div style="font-size:14px">NHS 非緊急醫療諮詢</div>
   </div>
 
   <div class="sec">📞 重要聯絡</div>
@@ -1544,7 +1542,7 @@ const gt = document.getElementById(‘grand-total’);
 if(gt) gt.textContent = fmt(grand);
 
 // 儲存
-const saved = {};
+const saved = {_version: ‘20260528’};
 Object.keys(COST_DEFAULTS).forEach(k=>{
 const el = document.getElementById(k);
 if(el) saved[k] = el.value;
@@ -1651,8 +1649,21 @@ alert(‘設定失敗：’ + e.message);
 }
 
 function loadCosts(){
+// 版本號：每次更新預設值時遞增，自動清除舊儲存
+const COST_VERSION = ‘20260528’;
 const saved = getSaved(‘costs’);
+
+if(saved._version !== COST_VERSION){
+// 版本不同（預設值已更新），清除舊儲存，使用最新預設值
+setSaved(‘costs’, {_version: COST_VERSION});
+// 使用 HTML 預設值（已內嵌最新金額）
+calcCosts();
+return;
+}
+
+// 版本相同，讀取使用者手動修改的值
 Object.keys(saved).forEach(k=>{
+if(k === ‘_version’) return;
 const el = document.getElementById(k);
 if(el) el.value = saved[k];
 });
