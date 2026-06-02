@@ -535,7 +535,7 @@ a:hover{text-decoration:underline;}
 <!-- 交通 -->
 <div class="cost-hdr">🚂 交通</div>
 <div class="card" style="padding:0;margin-bottom:10px">
-  <div class="cost-edit-row"><span class="c-label">Family & Friends Railcard</span><input class="c-input" id="c8" type="number" value="1200" oninput="calcCosts()"></div>
+  <div class="cost-edit-row"><span class="c-label">Family & Friends Railcard（暫不購買）</span><input class="c-input" id="c8" type="number" value="0" oninput="calcCosts()"></div>
   <div class="cost-edit-row"><span class="c-label">Avanti 曼城→倫敦 ✅已訂</span><input class="c-input" id="c9" type="number" value="2600" oninput="calcCosts()"></div>
   <div class="cost-edit-row"><span class="c-label">曼城↔利物浦火車（6/30）</span><input class="c-input" id="c10" type="number" value="1080" oninput="calcCosts()"></div>
   <div class="cost-edit-row"><span class="c-label">曼城↔Chester火車（7/2）</span><input class="c-input" id="c11" type="number" value="1600" oninput="calcCosts()"></div>
@@ -823,15 +823,15 @@ const DAYS=[
      maps:'https://maps.google.com/maps/dir//Manchester+Museum',
      toilet:'館內各樓層（親子廁所✅）',
      tip:'博物館週一公休，7/1週三正常開放。免費無需預約。'},
-    {time:'12:30',title:'🍽️ Earth Café 午餐',desc:'蔬食友善咖啡廳，Oxford Road步行5分',type:'food',indoor:true,
-     maps:'https://maps.google.com/maps/dir//Earth+Cafe+Manchester',
+    {time:'12:30',title:'🍽️ Hawksmoor Manchester 午餐（⚠️待確認訂位）',desc:'Lunch Set Menu £20/人×4=£80（約NT$3,200），⚠️需重新完成訂位',type:'food',indoor:true,
+     maps:'https://maps.google.com/maps/dir//Hawksmoor+Manchester',
      food:'🍽️ 推薦餐點：\n• 蔬菜咖哩飯£9（口味溫和，孩子接受度高）\n• 自製蛋糕£4（巧克力蛋糕、紅蘿蔔蛋糕）\n• 現榨果汁£4\n• 環境安靜，適合帶孩子'},
     {time:'13:30',title:'Manchester Art Gallery（免費）',desc:'【參觀重點】\n① Pre-Raphaelite畫作收藏：Millais、Rossetti等19世紀名作，畫面細膩鮮豔，孩子覺得像童話插圖\n② 兒童藝術工作坊（Clore Interactive Gallery）：孩子可以臨摹畫作，免費材料提供\n③ The Craft & Design Collection：珠寶、陶瓷、玻璃工藝品，視覺衝擊強\n④ 特別推薦：讓11歲孩子挑一幅畫臨摹，帶回家作紀念\n建議停留：1.5小時',type:'n',indoor:true,
      maps:'https://maps.google.com/maps/dir//Manchester+Art+Gallery',
      transport:'🚌 免費巴士 Route 2→Peter Street',
      toilet:'一樓入口旁（親子廁所✅）',
      tip:'免費，10:00-17:00，兒童工作坊需問工作人員索取材料'},
-    {time:'19:00',title:'🍽️ Hawksmoor 晚餐',desc:'英國最知名牛排館，Deansgate旗艦店，裝潢典雅',type:'food',indoor:true,
+    {time:'19:00',title:'🍽️ 晚餐輕食（Hawksmoor午餐後）',desc:'英國最知名牛排館，Deansgate旗艦店，裝潢典雅',type:'food',indoor:true,
      maps:'https://maps.google.com/maps/dir//Hawksmoor+Manchester',
      food:'🍽️ 推薦餐點：\n• Porterhouse牛排750g £65（2人分食最佳，Medium Rare最推薦）\n• Bone-In Rib Eye £52（油花豐富，入口即化）\n• Beef Dripping Triple-Cooked Chips £7（牛油薯條，絕配！）\n• 兒童Burger £14（薯條+漢堡）\n• Sticky Toffee Pudding甜點£9（英式傳統甜點，必點）\n• 4人合計約£100-130',
      warn:'⚠️ 提前2-3週訂位 thehawksmoor.com',
@@ -1086,12 +1086,12 @@ const TRANSPORT_DAYS=[
 const CL=[
   // 🔴 立刻辦理
   {p:'red',t:'英國ETA電子旅行授權（4人各申請）',d:'⚠️ 未完成！每人£20，台灣護照必須申請，未申請無法登機',l:'https://www.gov.uk/eta'},
-  {p:'red',t:'確認護照效期（2027/01以上）',d:'所有人護照需有效至2027年1月以上',l:''},
+  {p:'red',t:'確認護照效期 ✅',d:'護照效期確認無問題',l:''},
   {p:'red',t:'確認機票（去回程）✅',d:'TK：TPE 21:45→IST→MAN；TK1986：LHR T2 16:45→IST→TPE',l:''},
   {p:'red',t:'購買旅遊保險 ✅',d:'富邦保險，成人NT$2,589×2+孩童NT$1,540×2=NT$8,258',l:''},
   {p:'red',t:'匯豐輕旅卡機場接送去程 ✅',d:'6/28 18:00，中壢仁美里中山東路三段61號→桃園T2，七人座+NT$300，已預約',l:'https://www.hsbc.com.tw'},
   // 🟡 出發前 4–6 週
-  {p:'amber',t:'Family & Friends Railcard購買',d:'⚠️ 未完成！£30，火車票省1/3',l:'https://www.railcard.co.uk'},
+  {p:'amber',t:'Family & Friends Railcard（暫不購買）',d:'節省金額與費用相當（約£30打平），暫時決定不購買',l:'https://www.railcard.co.uk'},
   {p:'amber',t:'Avanti火車票（7/4）✅',d:'12:14 MAN→EUS，Coach E，E17-E20，£65/4人',l:''},
   {p:'amber',t:'曼城↔利物浦火車（6/30）',d:'⚠️ 未完成！4人來回約£25-30',l:'https://www.nationalrail.co.uk'},
   {p:'amber',t:'曼城↔Chester火車（7/2）',d:'⚠️ 未完成！4人來回約£35-45',l:'https://www.nationalrail.co.uk'},
@@ -1101,7 +1101,7 @@ const CL=[
   {p:'amber',t:'大英博物館預約（7/8，10:30）✅',d:'訂單：9832313，免費已預約',l:'https://www.britishmuseum.org/visit'},
   {p:'amber',t:'倫敦塔預約（7/6，14:00）',d:'⚠️ 未完成！2大+2孩，£107.40',l:'https://www.hrp.org.uk/tower-of-london/visit/'},
   {p:'amber',t:'Dishoom柯芬園訂位（7/6，19:30）',d:'⚠️ 未完成！7月旺季必須提前2-3週訂位',l:'https://www.dishoom.com/covent-garden/'},
-  {p:'amber',t:'Hawksmoor Manchester訂位（7/1，12:30）',d:'⚠️ 未完成！Lunch Set Menu £20/人，共£80',l:'https://thehawksmoor.com/locations/manchester/'},
+  {p:'amber',t:'Hawksmoor Manchester訂位（7/1，12:30）',d:'⚠️ 未完成！請重新前往 thehawksmoor.com 完成訂位，Lunch Set Menu £20/人×4=£80',l:'https://thehawksmoor.com/locations/manchester/'},
   {p:'amber',t:'英國eSIM上網卡購買',d:'3支手機：ThreeUK 15天×1（NT$569）＋Sparks A 15天×2（NT$629×2）=NT$1,827',l:'https://www.kkday.com'},
   {p:'amber',t:'回程接機預約（全峰汽車）',d:'截止7/7（週一），7/10落地17:55，桃園T2→中壢仁美里中山東路三段61號，七人座+NT$300',l:'https://www.hsbc.com.tw'},
   // 🟢 出發前 1–2 週
@@ -1365,7 +1365,7 @@ const BOOKINGS = [
     {id:'bk-a3', name:'大英博物館（7/8，10:30）', detail:'免費｜訂單：9832313', status:'done', note:'✅ 已預約'},
   ]},
   {sec:'🍽️ 餐廳訂位', items:[
-    {id:'bk-r1', name:'Hawksmoor Manchester（7/1）', detail:'thehawksmoor.com/manchester', status:'pending', note:'待訂'},
+    {id:'bk-r1', name:'Hawksmoor Manchester（7/1，12:30）', detail:'Lunch Set Menu £20/人×4=£80｜thehawksmoor.com/manchester', status:'pending', note:'⚠️待訂'},
     {id:'bk-r2', name:'Dishoom 柯芬園（7/6，19:30）', detail:'dishoom.com/covent-garden', status:'pending', note:'待訂'},
   ]},
   {sec:'🚕 機場接送', items:[
@@ -1510,7 +1510,7 @@ function toggleBooking(id){
 // ══ 費用計算 ══
 const COST_DEFAULTS = {
   c1:79410,c2:63192,c3:32667,c4:0,c5:212,
-  c6:46742,c7:0,c8:1200,c9:2600,c10:1080,
+  c6:46742,c7:0,c8:0,c9:2600,c10:1080,
   c11:1600,c12:1440,c13:3200,c14:600,c15:4296,
   c16:1440,c17:3200,c18:8000,c19:10000,
   c20:8258,c21:800,c22:10000
@@ -1652,7 +1652,7 @@ async function setBinPrivate(){
 
 function loadCosts(){
   // 版本號：每次更新預設值時遞增，自動清除舊儲存
-  const COST_VERSION = '20260530';
+  const COST_VERSION = '20260531';
   const saved = getSaved('costs');
   
   if(saved._version !== COST_VERSION){
